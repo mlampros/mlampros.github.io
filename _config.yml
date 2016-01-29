@@ -13,7 +13,7 @@ baseurl:             '/'
 # Use paginate to set the number of pages shown
 paginate:            5
 
-#excerpt_separator: <!--more-->  # you can specify your own separator, of course.
+excerpt_separator: '<br>'
 
 author:
   name: 'Mouselimis Lampros'
