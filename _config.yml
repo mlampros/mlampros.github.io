@@ -9,7 +9,7 @@ title:               'mlampros'
 tagline:             'My Blog'
 description:         ''
 url:                 mlampros.github.io
-baseurl:             ''
+baseurl:             '/'
 # Use paginate to set the number of pages shown
 paginate:            5
 
@@ -25,4 +25,4 @@ author:
 version:          1.0.0
 
 github:
-  repo:           https://github.com/poole/lanyon
+  repo:           https://github.com/mlampros
