@@ -21,8 +21,9 @@
 
       <div class="container content">
         {{ content }}
-        {% include google_analytics.html %}
+        
         {% include comments.html %}
+        
       </div>
     </div>
 
@@ -47,4 +48,7 @@
     </script>
     <script id="dsq-count-scr" src="//lampros.disqus.com/count.js" async></script>
   </body>
+  
+  {% include google_analytics.html %}
+  
 </html>
