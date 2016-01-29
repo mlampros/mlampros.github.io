@@ -11,8 +11,12 @@ description:         ''
 url:                 mlampros.github.io
 baseurl:             ''
 # Use paginate to set the number of pages shown
-paginate:            1
+paginate:            5
 name:                Mouselimis Lampros
 email:               mouselimislampros@gmail.com
 
-version:             1.0.0
+# Custom vars
+version:          1.0.0
+
+github:
+  repo:           https://github.com/poole/lanyon
