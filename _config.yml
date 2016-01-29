@@ -9,7 +9,7 @@ title:               mlampros
 tagline:             'My Blog'
 description:         ''
 url:                 mlampros.github.io
-baseurl:             'mlampros.github.io'
+baseurl:             ''
 # Use paginate to set the number of pages shown
 paginate:            1
 name:                Mouselimis Lampros
