@@ -1,8 +1,22 @@
-<script src="https://apis.google.com/js/plusone.js"></script>
+{% if page.comments %}
+  <!-- Add Disqus comments. -->
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
   
-  <div class="g-comments"
-      data-href="{{site.baseurl}}{{page.url}}"
-      data-width="642"
-      data-first_party_property="BLOGGER"
-      data-view_type="FILTERED_POSTMOD">
-  </div>
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    var disqus_shortname = 'lampros'; // required: replace example with your forum shortname
+    var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+
+      s.src = '//lampros.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+{% endif %}
