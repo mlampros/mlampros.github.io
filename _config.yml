@@ -10,6 +10,8 @@ tagline:             'My Blog'
 description:         ''
 url:                 mlampros.github.io
 baseurl:             ''
-paginate:            5
-
+# Use paginate to set the number of pages shown
+paginate:            1
+name:                Mouselimis Lampros
+email:               mouselimislampros@gmail.com
 
