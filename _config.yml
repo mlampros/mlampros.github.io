@@ -5,15 +5,21 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               mlampros
+title:               'mlampros'
 tagline:             'My Blog'
 description:         ''
 url:                 mlampros.github.io
 baseurl:             ''
 # Use paginate to set the number of pages shown
 paginate:            5
-name:                Mouselimis Lampros
-email:               mouselimislampros@gmail.com
+
+author:
+  name: 'Mouselimis Lampros'
+  email: 'mouselimislampros@gmail.com'
+  github: mlampros
+  email_md5: abe1a64ce1807f540ca9deeebdf47820
+  google_analytics_id: UA-72555431-1
+  google_analytics_url: mlampros.github.io
 
 # Custom vars
 version:          1.0.0
