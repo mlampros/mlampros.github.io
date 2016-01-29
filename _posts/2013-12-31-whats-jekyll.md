@@ -1,6 +1,5 @@
 ---
-layout: default
-comments:true
+layout: post
 title: What's Jekyll?
 ---
 
