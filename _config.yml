@@ -16,7 +16,6 @@ excerpt_separator: '<br>'
 
 author:
   name: 'Mouselimis Lampros'
-  email: 'mouselimislampros@gmail.com'
   github: mlampros
   email_md5: abe1a64ce1807f540ca9deeebdf47820
   google_analytics_id: UA-72555431-1
@@ -27,3 +26,4 @@ version:          1.0.0
 
 github:
   repo:           https://github.com/mlampros
+  messages:       https://github.com/mlampros/mlampros_github_io_messages/issues/new
