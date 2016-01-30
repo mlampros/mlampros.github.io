@@ -4,27 +4,5 @@ title: About
 ---
 
 <p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
+  I'm Mouselimis Lampros and I hold a degree in business administration from the university tuebingen, germany. In the last years I participated in many MOOCs (massive open online courses) about machine learning and data science. A detailed list can be found [here](https://github.com/mlampros/mlampros.github.io/blob/master/images/list_moocs_about.md). I do like sports like running, cycling, swimming, tennis playing. From time to time I take part in kaggle competitions to improve my coding skills and to learn about new machine learning methods. My feature plans are to write a phd in machine learning and to work in data science projects.  
 </p>
-
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
-
-There are currently two themes built on Poole:
-
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
-
-Learn more and contribute on [GitHub](https://github.com/poole).
-
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
