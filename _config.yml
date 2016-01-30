@@ -1,11 +1,11 @@
+# TODO: add redcarpet extensions when becomming comfortable with markdown
+
 # Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 
 # Setup
 title:               'mlampros'
-tagline:             'My Blog'
+tagline:             'Sharing ideas, Organizing thoughts, Receiving constructive feedback'
 description:         ''
 url:                 mlampros.github.io
 baseurl:             '/'
