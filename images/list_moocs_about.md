@@ -1,5 +1,5 @@
 ---
-layout: page
+images: list_moocs_about
 title: list of moocs
 ---
 
