@@ -1,8 +1,8 @@
 ---
 layout: post
 title: how I created my blog using Lanyon, Poole and Jekyll 
-Tags:[setup]
-comments:true
+tags: [setup]
+comments: true
 ---
 
 In my first blog post I'll explain how I created my blog. I don't have any knowledge of building web sites and somehow I thought it will be difficult. However, after lots of 'googling' I finally managed it.
