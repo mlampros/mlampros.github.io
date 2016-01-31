@@ -1,7 +1,6 @@
 ---
 layout: post
 title: how I created my blog using Lanyon, Poole and Jekyll 
-tags: [set-ups]
 comments:true
 ---
 
