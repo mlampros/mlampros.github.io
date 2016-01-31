@@ -2,7 +2,7 @@
 layout: post
 title: how I created my blog using Lanyon, Poole and Jekyll 
 categories: []
-tags: [set ups]
+tags: [set-ups]
 comments:true
 ---
 
