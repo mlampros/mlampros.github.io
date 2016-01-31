@@ -25,8 +25,8 @@ As I said I use the Lanyon theme, so I thought a nice idea would be to search on
 
 For further customization of my blog, like adding archives or tags to the hidden drawer and creating links to github, gravatar I found helpful the following blogs,
 
-- [http://anandmanisankar.com](http://anandmanisankar.com/)
-- [http://patricksteadman.ca/](http://patricksteadman.ca/)
-- [http://recology.info](http://recology.info/)
+- [msanand.github.io](https://github.com/msanand/msanand.github.io)
+- [psteadman.github.io](https://github.com/psteadman/psteadman.github.io)
+- [sckott.github.com](https://github.com/sckott/sckott.github.com)
 
 I hope this post will be helpful for anyone interested in building a blog. 
