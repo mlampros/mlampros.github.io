@@ -5,7 +5,7 @@ tags: [setups]
 comments: true
 ---
 
-In my first blog post I'll explain how I created my blog. I don't have any knowledge of building web sites and somehow I thought it will be difficult. However, after lots of 'googling' I finally managed it.
+In my first blog post, I'll explain how I created my blog. I don't have any knowledge of building web sites and somehow I thought it will be difficult. However, after lots of 'googling', I finally managed it.
 
 I use the Lanyon theme of the Poole sliding sidebar theme, which is a jekyll setup. For all those, like me, who a week ago didn't know what Poole or jekyll is, the following two links can give some more details,<br>
 
