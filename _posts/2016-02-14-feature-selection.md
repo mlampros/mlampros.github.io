@@ -36,6 +36,7 @@ To experiment with the previously mentioned algorithms, I have built a wrapper p
 <br>
 
 ```R
+<sub>
 trainingdata <- read.csv("~/training.csv")
 MIR_measurements <- trainingdata[, 2:2655]
 MIR_DER <- MIR_measurements- cbind(NA, MIR_measurements)[, -(dim(MIR_measurements)[2]+1)]
@@ -44,6 +45,7 @@ MIR_measurements <- trainingdata[, 2671:3579]
 MIR_DER <- MIR_measurements- cbind(NA, MIR_measurements)[, -(dim(MIR_measurements)[2]+1)]
 X_train <- cbind(X_train, MIR_DER[, -1])
 X_train$Depth = as.numeric(X_train$Depth)
+<?sub>
 ```
 
 <br>
