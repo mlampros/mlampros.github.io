@@ -44,12 +44,12 @@ body {
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 900px) {
+/*@media screen and (max-width: 900px) {
   body {
     font-size:18px;
   }
 }
-
+*/
 html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
