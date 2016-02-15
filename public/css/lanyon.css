@@ -77,7 +77,8 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 .container {
-  max-width: 28rem;
+/*  max-width: 28rem; */
+    width: 850px; 
 }
 @media (min-width: 38em) {
   .container {
