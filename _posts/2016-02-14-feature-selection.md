@@ -31,7 +31,7 @@ Random forest feature selection has some [drawbacks](https://en.wikipedia.org/wi
 
 ### a wrapper package
 
-To experiment with the previously mentioned algorithms, I have built a wrapper package called **FeatureSelection**, which can be installed from [Github](https://github.com/mlampros/FeatureSelection) using the install_github(repo, username) function of the devtools package. Furthermore, I will use the high-dimensional *africa soil properties* data from a past kaggle competition, which can be downloaded [here](https://www.kaggle.com/c/afsis-soil-properties/data). The purpose of the competition was to predict physical and chemical properties of soil using spectral measurements. The data came with a preprocessing script, which took the [first derivatives to smooth out the measurement noise](http://afsiskaggle.qed.ai/) 
+To experiment with the previously mentioned algorithms, I have built a wrapper package called **FeatureSelection**, which can be installed from [Github](https://github.com/mlampros/FeatureSelection) using install_github('mlampros/FeatureSelection') of the devtools package. Furthermore, I will use the high-dimensional *africa soil properties* data from a past kaggle competition, which can be downloaded [here](https://www.kaggle.com/c/afsis-soil-properties/data). The purpose of the competition was to predict physical and chemical properties of soil using spectral measurements. The data came with a preprocessing script, which took the [first derivatives to smooth out the measurement noise](http://afsiskaggle.qed.ai/) 
 <br>
 <br>
 
