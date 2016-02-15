@@ -241,4 +241,4 @@ In case of classification rather than calculating the correlation between featur
 
 ## final word
 
-This post was a small introduction to feature selection using three different algorithms. I used various functions from the [wrapper-package *FeatureSelection*](https://github.com/mlampros/FeatureSelection) to show how one can extract important features from data. 
+This post was a small introduction to feature selection using three different algorithms. I used various functions from the wrapper-package [*FeatureSelection*](https://github.com/mlampros/FeatureSelection) to show how one can extract important features from data. 
