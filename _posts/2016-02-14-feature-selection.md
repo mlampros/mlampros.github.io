@@ -82,18 +82,16 @@ library(FeatureSelection)
 params_glmnet = list(alpha = 1, family = 'gaussian', nfolds = 5, parallel = TRUE)
 
 
-params_xgboost = list( params = list("objective" = "reg:linear", "bst:eta" = 0.001, "subsample" = 0.75,
+params_xgboost = list( params = list("objective" = "reg:linear", "bst:eta" = 0.001, "subsample" = 0.75, "max_depth" = 5,
  
-                                     "max_depth" = 5, "colsample_bytree" = 0.75, "nthread" = 6),
+                                     "colsample_bytree" = 0.75, "nthread" = 6),
                       
                                       nrounds = 1000, print.every.n = 250, maximize = FALSE)
                        
 
-params_ranger = list(dependent.variable.name = 'y', probability = FALSE, num.trees = 1000, verbose = TRUE,
+params_ranger = list(dependent.variable.name = 'y', probability = FALSE, num.trees = 1000, verbose = TRUE, mtry = 5, 
 
-                     mtry = 5, min.node.size = 10, num.threads = 6, classification = FALSE, 
-                     
-                     importance = 'permutation')
+                     min.node.size = 10, num.threads = 6, classification = FALSE, importance = 'permutation')
 
 
 params_features = list(keep_number_feat = NULL, union = TRUE)
@@ -157,9 +155,7 @@ The *func_correlation * function can be used here to return the predictors that 
 
 dat = data.frame(p = p, X_train)
 
-cor_feat = func_correlation(dat, target = 'p', correlation_thresh = 0.1, use_obs = 'complete.obs', 
-
-                            correlation_method = 'pearson')
+cor_feat = func_correlation(dat, target = 'p', correlation_thresh = 0.1, use_obs = 'complete.obs', correlation_method = 'pearson')
 
 > head(cor_feat)
                  p
@@ -183,9 +179,9 @@ The same function *func_correlation* can be applied to reveal if multicollineari
 
 ```R
 
-cor_lasso = func_correlation(X_train[, feat$all_feat$`glmnet-lasso`[, 1]], target = NULL, 
+cor_lasso = func_correlation(X_train[, feat$all_feat$`glmnet-lasso`[, 1]], target = NULL, correlation_thresh = 0.9, 
 
-                            correlation_thresh = 0.9, use_obs = 'complete.obs', correlation_method = 'pearson')
+                             use_obs = 'complete.obs', correlation_method = 'pearson')
 
 > head(cor_lasso$out_df)
   predictor1 predictor2      prob
@@ -202,7 +198,7 @@ cor_lasso = func_correlation(X_train[, feat$all_feat$`glmnet-lasso`[, 1]], targe
 
 cor_xgb = func_correlation(X_train[, feat$all_feat$xgboost[, 1][1:100]], target = NULL, correlation_thresh = 0.9, 
 
-                          use_obs = 'complete.obs', correlation_method = 'pearson')
+                           use_obs = 'complete.obs', correlation_method = 'pearson')
 
 > head(cor_xgb$out_df)
   predictor1 predictor2      prob
