@@ -37,9 +37,9 @@
 /* Prevent scroll on narrow devices */
 html,
 body {
-  max-width: 1080px;
-  margin: 0 auto !important;
-  float: none !important;
+  max-width: 900px;
+  padding: 12px;
+  padding-bottom: 0;
   font-size: 18px;
   overflow-x: hidden;
 }
