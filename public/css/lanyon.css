@@ -44,6 +44,12 @@ body {
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 900px) {
+  body {
+    font-size:18px;
+  }
+}
+
 html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
@@ -76,10 +82,10 @@ h1, h2, h3, h4, h5, h6 {
  * Center the page content.
  */
 
-/*.container {
-  max-width: 28rem; 
+.container {
+  max-width: 38rem; 
 }
-*/
+
 
 @media (min-width: 38em) {
   .container {
