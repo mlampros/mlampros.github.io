@@ -37,19 +37,10 @@
 /* Prevent scroll on narrow devices */
 html,
 body {
-/*  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;*/
-  font-size: 18px;
+  font-size: 18px;            /* change here if I want to adjust the font-size */
   overflow-x: hidden;
 }
 
-/*@media screen and (max-width: 900px) {
-  body {
-    font-size:18px;
-  }
-}
-*/
 html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
@@ -89,16 +80,16 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 38em) {
   .container {
- /*   max-width: 32rem; */
-    max-width: 75%;
-    margin-left: 25%;
+    max-width: 75%;          /* change percentatges here, if I want to adjust the margins or width of the blog-body */
+    margin-left: 20%;
+    margin-right: 10%;
   }
 }
 @media (min-width: 56em) {
   .container {
-/*  max-width: 38rem; */ 
-    max-width: 75%;
-    margin-left: 25%; 
+    max-width: 75%;            /* change percentatges here, if I want to adjust the margins or width of the blog-body */
+    margin-left: 20%; 
+    margin-right: 10%;
   }
 }
 
