@@ -35,7 +35,7 @@ To experiment with the previously mentioned algorithms, I have built a wrapper p
 <br>
 <br>
 
-<span style="font-size:5em;">
+
 ```R
 trainingdata <- read.csv("~/training.csv")
 MIR_measurements <- trainingdata[, 2:2655]
@@ -46,7 +46,7 @@ MIR_DER <- MIR_measurements- cbind(NA, MIR_measurements)[, -(dim(MIR_measurement
 X_train <- cbind(X_train, MIR_DER[, -1])
 X_train$Depth = as.numeric(X_train$Depth)
 ```
-</span>
+
 <br>
 Similarly, one could use the function *gapDer* of the *prospectr* package to calculate the Gap-Segment derivatives of the data, however I'll continue with the former one. There were 5 target soil functional properties from diffuse reflectance infrared spectroscopy measurements to predict, but for the simplicity of the illustration I'll proceed with a single one, i.e with the *P* target variable.
 <br>
