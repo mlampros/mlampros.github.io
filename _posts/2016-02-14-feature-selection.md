@@ -35,7 +35,7 @@ To experiment with the previously mentioned algorithms, I have built a wrapper p
 <br>
 <br>
 
-<span style="font-size:2em;">
+<span style="font-size:5em;">
 ```R
 trainingdata <- read.csv("~/training.csv")
 MIR_measurements <- trainingdata[, 2:2655]
