@@ -35,7 +35,7 @@ To experiment with the previously mentioned algorithms, I have built a wrapper p
 <br>
 <br>
 
-```{r}
+```R
 trainingdata <- read.csv("~/training.csv")
 MIR_measurements <- trainingdata[, 2:2655]
 MIR_DER <- MIR_measurements- cbind(NA, MIR_measurements)[, -(dim(MIR_measurements)[2]+1)]
@@ -50,7 +50,7 @@ X_train$Depth = as.numeric(X_train$Depth)
 Similarly, one could use the function *gapDer* of the *prospectr* package to calculate the Gap-Segment derivatives of the data, however I'll continue with the former one. There were 5 target soil functional properties from diffuse reflectance infrared spectroscopy measurements to predict, but for the simplicity of the illustration I'll proceed with a single one, i.e with the *P* target variable.
 <br>
 
-``` {r}
+``` R
 p = trainingdata[, 'P']
 ```
 
@@ -74,7 +74,7 @@ The *FeatureSelection* package comes with the following functions:
 Once downloaded from Github one can view the details of each single function using ?, for instance ?feature_selection.
 To continue with the soil data set, I'll use the *wrapper_feat_select* function in order to get the important features of all three algorithms,
 
-```{r}
+```R
 
 library(FeatureSelection)
 
@@ -111,7 +111,7 @@ Each one of the *params_glmnet*, *params_xgoobst* and *params_ranger* takes argu
 
 The resulted object of the *wrapper_feat_select* function can be a list of data frames if union is FALSE or a list of lists if union is TRUE, so in this case, it returns
 
-```{r}
+```R
 str(feat)
 
 List of 2
@@ -136,7 +136,7 @@ List of 2
 
 The feature importance of the object *feat* can be plotted using the *barplot_feat_select* function, which takes as an additional argument the *params_barplot*, 
 
-```{r}
+```R
 params_barplot = list(keep_features = 30, horiz = TRUE, cex.names = 1.0)
 
 barplot_feat_select(feat, params_barplot, xgb_sort = 'Cover')
@@ -152,7 +152,7 @@ After the important features of each algorithm are returned, a next step could b
 
 The *func_correlation * function can be used here to return the predictors that are highly correlated with the response
 
-```{r}
+```R
 
 dat = data.frame(p = p, X_train)
 
@@ -180,7 +180,7 @@ List of 3
 It turns out that predictors highly correlated with the response appear in all methods as the *out_lst* object shows (taking into account the top 100 selected features).
 The same function *func_correlation* can be applied to reveal if multicollinearity is present in the top selected features of each method,
 
-```{r}
+```R
 
 cor_lasso = func_correlation(X_train[, feat$all_feat$`glmnet-lasso`[, 1]], target = NULL, 
 
