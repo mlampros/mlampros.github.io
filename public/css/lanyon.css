@@ -40,13 +40,12 @@ body {
 /*  max-width: 900px;
   margin-left: auto;
   margin-right: auto;*/
+  font-size: 18px;
   overflow-x: hidden;
 }
 
 html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  width:850px;
 }
 
 h1, h2, h3, h4, h5, h6 {
