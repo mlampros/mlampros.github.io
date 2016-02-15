@@ -80,14 +80,14 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 38em) {
   .container {
-    max-width: 75%;          /* change percentatges here, if I want to adjust the margins or width of the blog-body */
+    max-width: 75%;          /* change percentages here, if I want to adjust the margins or width of the blog-body */
     margin-left: 20%;
     margin-right: 10%;
   }
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 75%;            /* change percentatges here, if I want to adjust the margins or width of the blog-body */
+    max-width: 75%;            /* change percentages here, if I want to adjust the margins or width of the blog-body */
     margin-left: 20%; 
     margin-right: 10%;
   }
