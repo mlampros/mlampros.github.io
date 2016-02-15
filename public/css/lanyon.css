@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrap {
   position: relative;
-  width: 120%; 
+  width: 100%; 
 }
 
 
@@ -76,18 +76,23 @@ h1, h2, h3, h4, h5, h6 {
  * Center the page content.
  */
 
-.container {
+/*.container {
   max-width: 28rem; 
 }
+*/
 
 @media (min-width: 38em) {
   .container {
-    max-width: 32rem;
+ /*   max-width: 32rem; */
+    max-width: 85%;
+    margin-left: 7%;
   }
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem; 
+/*  max-width: 38rem; */ 
+    max-width: 85%;
+    margin-left: 7%;
   }
 }
 
