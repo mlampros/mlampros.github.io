@@ -81,7 +81,18 @@ h1, h2, h3, h4, h5, h6 {
     width: 850px; 
 }
 
-
+@media (min-width: 38em) {
+  .container {
+/*    max-width: 32rem; */
+    width: 900pxm;
+  }
+}
+@media (min-width: 56em) {
+  .container {
+/*    max-width: 38rem; */
+    width: 950pxm;
+  }
+}
 
 /*
  * Masthead
