@@ -11,8 +11,8 @@
   </div>
   
 <div id="contact-list" style="text-align:center">
-    {% if site.github.messages %}
-      <a href="{{ site.github.messages }}" target="_blank">
+    {% if site.author.email_md5 %}
+      <a href="mailto:{{ site.author.email_md5 }}">
         <span class="fa-stack fa-lg">
           <i class="fa fa-square-o fa-stack-2x"></i>
           <i class="fa fa-envelope fa-stack-1x"></i>
@@ -20,7 +20,7 @@
       </a>
     {% endif %}
 </div>
-  
+
   <div class="sidebar-item">
     <p>{{ site.description }}</p>
   </div>
