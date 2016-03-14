@@ -11,7 +11,7 @@ This blog post is about randomly searching for the optimal parameters of various
 
 ### RandomSearchR
 
-For the purpose of this post I created the package **RandomSearchR**, which returns the optimal parameters for a variety of R models. The package can be installed from [Github](https://github.com/mlampros/RandomSearchR) using the install_github('mlampros/RandomSearchR') function of the devtools package. I'll employ both regression and classification data sets to illustrate the results of the RandomSearchR package functions.
+For the purpose of this post, I created the package **RandomSearchR**, which returns the optimal parameters for a variety of R models. The package can be installed from [Github](https://github.com/mlampros/RandomSearchR) using the install_github('mlampros/RandomSearchR') function of the devtools package. I'll employ both regression and classification data sets to illustrate the results of the RandomSearchR package functions.
 <br>
 <br>
 
@@ -36,9 +36,10 @@ ALL_DATA = Boston
 The main function of the *RandomSearchR* package is the **random_search_resample** function, which takes the following arguments as shown in the case of the extreme learning machines
 
 ```R
-# extreme learing machines
+# extreme learning machines
 
 grid_extrLm = list(nhid = 5:50, actfun = c('sig', 'sin', 'purelin', 'radbas', 'poslin'))
+
 
 res_exttLm = random_search_resample(y = y1, tune_iters = 30,
                              
@@ -59,13 +60,13 @@ res_exttLm = random_search_resample(y = y1, tune_iters = 30,
 
 
 * **y** is the response variable
-* **tune_iters** is the number of times the algorithm should be run. In each iteration a different subset of parameters from the grid_extLm list will be fitted to the algorithm. The number of iterations depends on the number of the parameters, for instance knn will be run less times than svm.
-* **resampling_method**,  there are 3 methods available: cross-validation, bootstrap and train-test-split. If more than one algorithm will be employed, then it's recommended to use the same resampling techinque, so that a performance comparison between models is possible
+* **tune_iters** is the number of times the algorithm should be run. In each iteration, a different subset of parameters from the grid_extLm list will be fitted to the algorithm.
+* **resampling_method**,  there are 3 methods available: cross-validation, bootstrap and train-test-split. If more than one algorithm will be employed, then it's recommended to use the same resampling technique, so that a performance comparison between models is possible
 * **ALGORITHM**, takes the package and the function to be used as parameters, here the *elmtrain* function of the *elmNN* package
 * **grid_params** takes the defined grid of parameters, here the *nhid* and *actfun* of the *elmtrain* function
 * **DATA** should be a list with the data. The following forms, as they appear in most of the packages, can be included: (x, y), (formula, data) or (target, data). In order to make xgboost and h2o work, I made some modifications, thus for **xgboost** the DATA should be a *watchlist*, such as **watchlist = list(label = y1, data = X)** and for **h2o** a pair of the following form (h2o.x, h2o.y), i.e. **list(h2o.x = X, h2o.y = y1)**
 * **Args** list takes arguments that are necessary for the function, such as *scale = TRUE* (it can be also NULL, to indicate that no further arguments for the function are needed)
-* **regression** should be TRUE in regression tasks, to get the right form of predictions
+* **regression** should be TRUE in regression tasks so that predictions are returned in the correct form.
 * **re_run_params** should be TRUE only in case that the optimized parameters should be re-run for performance comparison with other models.
 <br>
 
@@ -95,7 +96,7 @@ The *res_exttLm* object returns 2 lists, the *PREDS*, which includes the train-p
 ```
 
 <br>
-The following algorithms were tested and can be run in regression and classification without errors, 
+The following algorithms were tested and can be run in regression and classification error-free, 
 
 algorithm         |  package
 ----------        |  --------
@@ -126,7 +127,7 @@ Bagging           |   RWeka
 **Worth mentioning**
 
 
-* depending on the number of optimized parameters some algorithms can be run fewer/more times than other (for instance, knn vs. svm)
+* depending on the number of optimized parameters some algorithms can be run fewer/more times than other (for instance knn will be run fewer times than svm)
 * when xgboost or h2o are used, the progress bars appear multiple times and functions such as capture.output() or invisible() can't help much here. 
 If it happens that you use the package and came across a problem then commit an issue on github.
 <br>
@@ -137,6 +138,7 @@ To continue here are some other grid-examples for illustration,
 # random forest
 
 grid_rf = list(ntree = seq(30, 50, 5), mtry = c(2:3), nodesize = seq(5, 15, 5))
+
 
 res_rf = random_search_resample(y1, tune_iters = 30, 
                               
@@ -185,6 +187,7 @@ res_xgb = random_search_resample(y1, tune_iters = 30,
 
 grid_h2o = list(ntrees = seq(30, 50, 5), max_depth = seq(3, 5, 1), min_rows = seq(5, 15, 1), learn_rate = seq(0.01, 0.1, 0.005))
 
+
 res_h2o = capture.output(random_search_resample(y1, tune_iters = 30, 
                                
                                resampling_method = list(method = 'cross_validation', repeats = NULL, sample_rate = NULL, folds = 5),
@@ -224,12 +227,13 @@ ALL_DATA$Type = as.factor(y1)
 ```
 <br>
 
-Important here is that the labels are factors and begin from 1, this modification was necessary so that all package functions could work. Moreover the *regression* argument should be set to FALSE. Here are some example grids for classification using *bootstrap* as a resampling method,
+Important here is that the labels are factors and begin from 1, this modification was necessary so that all package functions could work. Moreover, the *regression* argument should be set to FALSE. Here are some example grids for classification using *bootstrap* as a resampling method,
 
 ```R
 # Extra Trees classifier
 
 grid_extTr = list(ntree = seq(30, 50, 5), mtry = c(2:3), nodesize = seq(5, 15, 5))
+
 
 res_extT = random_search_resample(as.factor(y1), tune_iters = 30, 
                               
@@ -254,6 +258,7 @@ grid_kknn = list(k = 3:20, distance = c(1, 2), kernel = c("rectangular", "triang
 
                                                           "cos", "inv", "gaussian", "rank", "optimal"))
 
+
 res_kkn = random_search_resample(as.factor(y1), tune_iters = 30, 
                               
                               resampling_method = list(method = 'bootstrap', repeats = 25, sample_rate = 0.65, folds = NULL),
@@ -274,6 +279,7 @@ res_kkn = random_search_resample(as.factor(y1), tune_iters = 30,
 # support vector classifier
 
 grid_kern = list(type = c('C-svc', 'C-bsvc'), C = c(0.1, 0.5, 1, 2, 10, 100), nu = c(0.1, 0.2, 0.5))
+
 
 res_kern = random_search_resample(as.factor(y1), tune_iters = 30, 
                                
@@ -430,8 +436,8 @@ This function returns four values: the first is a list of the grid parameters ev
 ```
 <br>
 
-Definitely not all grid-parameters maximized the evaluation metric, so we can keep a subset of them to re-run them on the same resampling method. Subsets can be taken using the **subset_mods** function, which takes 3 arguments:
-the result from the *performance_measures* function, the number of best performing grid-models (here 5) and a boolean, meaning, if the train or test predictions should be taken into account when subseting the data.frames. It returns a list with the optimal parameters for each algorithm,
+Definitely, not all grid-parameters maximized the evaluation metric, so we can keep a subset of them to re-run them on the same resampling method. Subsets can be taken using the **subset_mods** function, which takes 3 arguments:
+the result from the *performance_measures* function, the number of best-performing grid-models (here 5) and a boolean, meaning, if the train or test predictions should be taken into account when subsetting the data.frames. It returns a list with the optimal parameters for each algorithm,
 
 ```R
 bst_m = subset_mods(perf_meas_OBJ = perf, bst_mods = 5, train_params = FALSE)
@@ -559,6 +565,7 @@ Now, using the optimized parameters for each model on the same folds we can run 
 ```R
 tmp_lst = list(extT = res2_extTr, kknn = res2_kknn, ksvm = res2_ksvm, j48_weka = res2_j48)
 
+
 res = model_selection(tmp_lst, on_Train = FALSE, regression = FALSE, 
 
                      evaluation_metric = 'acc', t.test.conf.int = 0.95, 
@@ -588,4 +595,4 @@ res
 
 <br>
 
-The paired t.test, generally, can be used to determine if two sets of data are significantly different from each other, under the assumption that the differences between the paired values are nomally distributed. So, under the assumption of normality one can reject the null hypothesis that there is no difference between two algorithmic models, if the t.test.p.value is lower than 0.05 (significance level 5%). The correlation test, similarly, shows if a correlation is present between the algorithms using also a p.value for assessment.
+The t.test, generally, can be used to determine if two sets of data are significantly different from each other, under the assumption that the differences between the values are normally distributed. So, under the assumption of normality one can reject the null hypothesis that there is no difference between two algorithmic models, if the t.test.p.value is lower than 0.05 (significance level 5%). The correlation test, similarly, shows if a correlation is present between the algorithms using also a p.value for assessment.
