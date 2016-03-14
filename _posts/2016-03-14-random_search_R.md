@@ -9,13 +9,13 @@ This blog post is about randomly searching for the optimal parameters of various
 <br>
 <br>
 
-#### RandomSearchR
+### RandomSearchR
 
 For the purpose of this post I created the package **RandomSearchR**, which returns the optimal parameters for a variety of R models. The package can be installed from [Github](https://github.com/mlampros/RandomSearchR) using the install_github('mlampros/RandomSearchR') function of the devtools package. I'll employ both regression and classification data sets to illustrate the results of the RandomSearchR package functions.
 <br>
 <br>
 
-#### Random search for regression
+### Random search for regression
 <br>
 For regression I'll utilize the Boston data set,
 
@@ -203,7 +203,7 @@ res_h2o = capture.output(random_search_resample(y1, tune_iters = 30,
 <br>
 <br>
 
-#### Random search for classification
+### Random search for classification
 <br>
 
 The same function **random_search_resample** can be applied to classification tasks, 
@@ -315,7 +315,7 @@ res_j48 = random_search_resample(as.factor(y1), tune_iters = 30,
 <br>
 <br>
 
-#### Model selection
+### Model selection
 
 Assuming that multiple model algorithms have been fitted, as previously in classification examples, then it would be of interest to observe which grid parameters optimize the evaluation metric. This can be done using the **performance_measures** function, which takes as arguments : *a list of the resulted objects*, *the evaluation metric* and *the sorting method of the results*. In the *performance measures* function we'll try to maximize the evaluation metric (here accuracy), 
 
@@ -577,13 +577,13 @@ res
 # 6        ksvm    j48_weka  ||          0.0000             -0.2471             -0.1564              -0.2017  ||
 
 
-                             ||  spearman_estimate.rho spearman_p.value  ||  acc_algorithm_1 acc_algorithm_2
-                             ||                 0.7873           0.0001  ||        0.6654928       0.5403322
-                             ||                 0.6631           0.0101  ||        0.6654928       0.4762126
-                             ||                 0.7129           0.0070  ||        0.6654928       0.6779623
-                             ||                 0.8011           0.0000  ||        0.5403322       0.4762126
-                             ||                 0.7753           0.0000  ||        0.5403322       0.6779623
-                             ||                 0.7227           0.0000  ||        0.4762126       0.6779623
+#                            ||  spearman_estimate.rho spearman_p.value  ||  acc_algorithm_1 acc_algorithm_2
+#                            ||                 0.7873           0.0001  ||        0.6654928       0.5403322
+#                            ||                 0.6631           0.0101  ||        0.6654928       0.4762126
+#                            ||                 0.7129           0.0070  ||        0.6654928       0.6779623
+#                            ||                 0.8011           0.0000  ||        0.5403322       0.4762126
+#                            ||                 0.7753           0.0000  ||        0.5403322       0.6779623
+#                            ||                 0.7227           0.0000  ||        0.4762126       0.6779623
 ```
 
 <br>
