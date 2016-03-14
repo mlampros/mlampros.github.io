@@ -568,13 +568,22 @@ res = model_selection(tmp_lst, on_Train = FALSE, regression = FALSE,
 res
 
 
-#   algorithm_1 algorithm_2  ||  t.test.p.value t.test.conf.int.min t.test.conf.int.max t.test.mean.of.diffs  ||  spearman_estimate.rho spearman_p.value  ||  acc_algorithm_1 acc_algorithm_2
-# 1        kknn        extT  ||          0.0000              0.0885              0.1618               0.1252  ||                 0.7873           0.0001  ||        0.6654928       0.5403322
-# 2        kknn        ksvm  ||          0.0000              0.1530              0.2256               0.1893  ||                 0.6631           0.0101  ||        0.6654928       0.4762126
-# 3        kknn    j48_weka  ||          0.4332             -0.0448              0.0198              -0.0125  ||                 0.7129           0.0070  ||        0.6654928       0.6779623
-# 4        extT        ksvm  ||          0.0034              0.0234              0.1049               0.0641  ||                 0.8011           0.0000  ||        0.5403322       0.4762126
-# 5        extT    j48_weka  ||          0.0000             -0.1861             -0.0892              -0.1376  ||                 0.7753           0.0000  ||        0.5403322       0.6779623
-# 6        ksvm    j48_weka  ||          0.0000             -0.2471             -0.1564              -0.2017  ||                 0.7227           0.0000  ||        0.4762126       0.6779623
+#   algorithm_1 algorithm_2  ||  t.test.p.value t.test.conf.int.min t.test.conf.int.max t.test.mean.of.diffs  ||
+# 1        kknn        extT  ||          0.0000              0.0885              0.1618               0.1252  ||
+# 2        kknn        ksvm  ||          0.0000              0.1530              0.2256               0.1893  ||
+# 3        kknn    j48_weka  ||          0.4332             -0.0448              0.0198              -0.0125  ||
+# 4        extT        ksvm  ||          0.0034              0.0234              0.1049               0.0641  ||
+# 5        extT    j48_weka  ||          0.0000             -0.1861             -0.0892              -0.1376  ||
+# 6        ksvm    j48_weka  ||          0.0000             -0.2471             -0.1564              -0.2017  ||
+
+
+                             ||  spearman_estimate.rho spearman_p.value  ||  acc_algorithm_1 acc_algorithm_2
+                             ||                 0.7873           0.0001  ||        0.6654928       0.5403322
+                             ||                 0.6631           0.0101  ||        0.6654928       0.4762126
+                             ||                 0.7129           0.0070  ||        0.6654928       0.6779623
+                             ||                 0.8011           0.0000  ||        0.5403322       0.4762126
+                             ||                 0.7753           0.0000  ||        0.5403322       0.6779623
+                             ||                 0.7227           0.0000  ||        0.4762126       0.6779623
 ```
 
 <br>
