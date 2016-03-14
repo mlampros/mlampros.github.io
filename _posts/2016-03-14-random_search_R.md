@@ -20,7 +20,6 @@ For the purpose of this post I created the package **RandomSearchR**, which retu
 For regression I'll utilize the Boston data set,
 
 ```R
-
 library(MASS)
 data(Boston)
 
@@ -30,7 +29,6 @@ y1 = Boston[, dim(Boston)[2]]
 form <- as.formula(paste('medv ~', paste(names(X), collapse = '+')))  
 
 ALL_DATA = Boston
-
 ```
 <br>
 
@@ -38,7 +36,6 @@ ALL_DATA = Boston
 The main function of the *RandomSearchR* package is the **random_search_resample** function, which takes the following arguments as shown in the case of the extreme learning machines
 
 ```R
-
 # extreme learing machines
 
 grid_extrLm = list(nhid = 5:50, actfun = c('sig', 'sin', 'purelin', 'radbas', 'poslin'))
@@ -56,7 +53,6 @@ res_exttLm = random_search_resample(y = y1, tune_iters = 30,
                                     Args = NULL,
                                    
                                     regression = TRUE, re_run_params = FALSE)
-
 ```
 <br>
 
@@ -76,7 +72,6 @@ res_exttLm = random_search_resample(y = y1, tune_iters = 30,
 The *res_exttLm* object returns 2 lists, the *PREDS*, which includes the train-predictions (pred_tr), the test-predictions (pred_te), the response values for train (y_tr), and the response values for test (y_te) of each sample. Furthermore it returns the random parameters of each iteration *PARAMS*,
 
 ```R
-
 # > str(res)
 # List of 2
 #  $ PREDS :List of 30
@@ -128,17 +123,17 @@ Bagging           |   RWeka
 
 
 
-**Worth mentioning:** 
-* algorithms with less parameters, such as knn, can be can be run more/less than other (depending on the number of optimized parameters), the 'performance_measures' function is not 
-# affected from the number of 'tune_iters' in the 'random_search_resample' function. For instance,  knn which has 1 parameter doesn't need as many random-search-iterations as gbm, which has multiple.
+**Worth mentioning**
 
-is that when xgboost or h2o are used, the progress bars appear multiple times. Functions such as capture.output() or invisible() can't help much here. If it happens that you use the package and came across a problem then commit an issue on github.
+
+* depending on the number of optimized parameters some algorithms can be run fewer/more times than other (for instance, knn vs. svm)
+* when xgboost or h2o are used, the progress bars appear multiple times and functions such as capture.output() or invisible() can't help much here. 
+If it happens that you use the package and came across a problem then commit an issue on github.
 <br>
 <br>
 To continue here are some other grid-examples for illustration,
 
 ```R
-
 # random forest
 
 grid_rf = list(ntree = seq(30, 50, 5), mtry = c(2:3), nodesize = seq(5, 15, 5))
@@ -160,12 +155,13 @@ res_rf = random_search_resample(y1, tune_iters = 30,
 <br>
 
 ```R
-
 # xgboost
 
-grid_xgb = list(params = list("objective" = "reg:linear", "bst:eta" = seq(0.05, 0.1, 0.005), "subsample" = seq(0.65, 0.85, 0.05), "max_depth" = seq(3, 5, 1), 
+grid_xgb = list(params = list("objective" = "reg:linear", "bst:eta" = seq(0.05, 0.1, 0.005), "subsample" = seq(0.65, 0.85, 0.05), 
+
+                              "max_depth" = seq(3, 5, 1), "eval_metric" = "rmse", "colsample_bytree" = seq(0.65, 0.85, 0.05), 
                               
-                              "eval_metric" = "rmse", "colsample_bytree" = seq(0.65, 0.85, 0.05), "lambda" = 1e-5, "alpha" = 1e-5, "nthread" = 4))
+                              "lambda" = 1e-5, "alpha" = 1e-5, "nthread" = 4))
 
 
 res_xgb = random_search_resample(y1, tune_iters = 30, 
@@ -185,7 +181,6 @@ res_xgb = random_search_resample(y1, tune_iters = 30,
 <br>
 
 ```R
-
 # h2o gbm
 
 grid_h2o = list(ntrees = seq(30, 50, 5), max_depth = seq(3, 5, 1), min_rows = seq(5, 15, 1), learn_rate = seq(0.01, 0.1, 0.005))
@@ -214,7 +209,6 @@ res_h2o = capture.output(random_search_resample(y1, tune_iters = 30,
 The same function **random_search_resample** can be applied to classification tasks, 
 
 ```R
-
 library(kknn)
 data(glass)
 
@@ -233,7 +227,6 @@ ALL_DATA$Type = as.factor(y1)
 Important here is that the labels are factors and begin from 1, this modification was necessary so that all package functions could work. Moreover the *regression* argument should be set to FALSE. Here are some example grids for classification using *bootstrap* as a resampling method,
 
 ```R
-
 # Extra Trees classifier
 
 grid_extTr = list(ntree = seq(30, 50, 5), mtry = c(2:3), nodesize = seq(5, 15, 5))
@@ -253,11 +246,13 @@ res_extT = random_search_resample(as.factor(y1), tune_iters = 30,
                               regression = FALSE, re_run_params = FALSE)
 ```
 <br>
-```R
 
+```R
 # kernel knn
 
-grid_kknn = list(k = 3:20, distance = c(1, 2), kernel = c("rectangular", "triangular", "epanechnikov", "biweight", "triweight", "cos", "inv", "gaussian", "rank", "optimal"))
+grid_kknn = list(k = 3:20, distance = c(1, 2), kernel = c("rectangular", "triangular", "epanechnikov", "biweight", "triweight", 
+
+                                                          "cos", "inv", "gaussian", "rank", "optimal"))
 
 res_kkn = random_search_resample(as.factor(y1), tune_iters = 30, 
                               
@@ -274,11 +269,11 @@ res_kkn = random_search_resample(as.factor(y1), tune_iters = 30,
                               regression = FALSE, re_run_params = FALSE)
 ```
 <br>
-```R
 
+```R
 # support vector classifier
 
-grid_kern = list(type = c('C-svc', 'C-bsvc'), C = c(0.1, 0.5, 1, 2, 10, 100), nu = c(0.1, 0.2, 0.5))     # probability estimates only supported for C-svc, C-bsvc and nu-svc  [ however nu-svc gives error ]
+grid_kern = list(type = c('C-svc', 'C-bsvc'), C = c(0.1, 0.5, 1, 2, 10, 100), nu = c(0.1, 0.2, 0.5))
 
 res_kern = random_search_resample(as.factor(y1), tune_iters = 30, 
                                
@@ -295,8 +290,8 @@ res_kern = random_search_resample(as.factor(y1), tune_iters = 30,
                               regression = FALSE, re_run_params = FALSE)
 ```
 <br>
-```R
 
+```R
 # RWeka J48
 #                    [ RWeka::WOW("J48") : gives info for the parameters of the RWeka control list ]
 
@@ -325,7 +320,6 @@ res_j48 = random_search_resample(as.factor(y1), tune_iters = 30,
 Assuming that multiple model algorithms have been fitted, as previously in classification examples, then it would be of interest to observe which grid parameters optimize the evaluation metric. This can be done using the **performance_measures** function, which takes as arguments : *a list of the resulted objects*, *the evaluation metric* and *the sorting method of the results*. In the *performance measures* function we'll try to maximize the evaluation metric (here accuracy), 
 
 ```R
-
 acc = function(y_true, preds) {             
   
   out = table(y_true, max.col(preds, ties.method = "random"))
@@ -334,7 +328,6 @@ acc = function(y_true, preds) {
   
   acc
 }
-
 ```
 
 The evaluation metric can be customized to any other metric as long as the order of the arguments is (y_true, preds).
@@ -344,18 +337,19 @@ The evaluation metric can be customized to any other metric as long as the order
 The next example function uses the four algorithm-grids illustrated in classification,
 
 ```R
+perf = performance_measures(list_objects = list(extT = res_extT, kknn = res_kkn, ksvm = res_kern, j48_weka = res_j48), 
 
-perf = performance_measures(list_objects = list(extT = res_extT, kknn = res_kkn, ksvm = res_kern, j48_weka = res_j48), eval_metric = acc, sort = list(variable = 'Median', decreasing = TRUE))
+                            eval_metric = acc, 
+                            
+                            sort = list(variable = 'Median', decreasing = TRUE))
 
 perf
-
 ```
 <br>
 
 This function returns four values: the first is a list of the grid parameters evaluated on the train data, the second is the same list of parameters evaluated on test data, the third gives summary statistics for the predictions of each algorithm compared with the other algorithms and the fourth list shows if any of the models had missing values in the predictions. The following is example output of the results,
 
 ```R
-
 # 1st list TRAIN DATA
 
 # extra trees
@@ -433,7 +427,6 @@ This function returns four values: the first is a list of the grid parameters ev
 # $NAs_in_predictions
 # kknn_regr      extT      ksvm  j48_weka 
 #         0         0         0         0 
-
 ```
 <br>
 
@@ -441,7 +434,6 @@ Definitely not all grid-parameters maximized the evaluation metric, so we can ke
 the result from the *performance_measures* function, the number of best performing grid-models (here 5) and a boolean, meaning, if the train or test predictions should be taken into account when subseting the data.frames. It returns a list with the optimal parameters for each algorithm,
 
 ```R
-
 bst_m = subset_mods(perf_meas_OBJ = perf, bst_mods = 5, train_params = FALSE)
 
 bst_m
@@ -489,16 +481,12 @@ bst_m
 # 
 # $j48_weka$A
 # [1] "FALSE" "TRUE"  "FALSE" "FALSE" "FALSE"
-
-
-
 ```
 <br>
 
 Using the optimal parameters we can re-run the algorithms, however the *tune_iters* argument is adjusted to the number of optimal grid-params which is 5, thus any given number won't be taken into consideration. Furthermore the *grid_params* for each algorithm is the list of optimal parameters resulted of the previous object *bst_m* and the *re_run_params* should be set to TRUE,
 
 ```R
-
 res2_extTr = random_search_resample(as.factor(y1), tune_iters = 30, 
                               
                               resampling_method = list(method = 'cross_validation', repeats = NULL, sample_rate = NULL, folds = 5),
@@ -512,11 +500,10 @@ res2_extTr = random_search_resample(as.factor(y1), tune_iters = 30,
                               Args = NULL,
                               
                               regression = FALSE, re_run_params = TRUE)
-
 ```
 <br>
-```R
 
+```R
 res2_kknn = random_search_resample(as.factor(y1), tune_iters = 30, 
 
                               resampling_method = list(method = 'cross_validation', repeats = NULL, sample_rate = NULL, folds = 5),
@@ -532,8 +519,8 @@ res2_kknn = random_search_resample(as.factor(y1), tune_iters = 30,
                               regression = FALSE, re_run_params = TRUE)
 ```
 <br>
-```R
 
+```R
 res2_ksvm = random_search_resample(as.factor(y1), tune_iters = 30, 
                                
                                resampling_method = list(method = 'cross_validation', repeats = NULL, sample_rate = NULL, folds = 5),
@@ -549,8 +536,8 @@ res2_ksvm = random_search_resample(as.factor(y1), tune_iters = 30,
                                regression = FALSE, re_run_params = TRUE)
 ```
 <br>
-```R
 
+```R
 res2_j48 = random_search_resample(as.factor(y1), tune_iters = 30, 
                                
                                resampling_method = list(method = 'cross_validation', repeats = NULL, sample_rate = NULL, folds = 5),
@@ -570,10 +557,13 @@ res2_j48 = random_search_resample(as.factor(y1), tune_iters = 30,
 Now, using the optimized parameters for each model on the same folds we can run the **model_selection** function, which returns the t.test statistic, correlation and evaluation metric (here accuracy) for each pair of the selected algorithms. The function takes seven arguments : a list of the algorithms (which were re-run previously), a boolean if the statistics should be run on train or test predictions, an evaluation metric in form of a string (here 'acc'), the t.test confidence interval (defaults to 0.95), the correlation test (one of spearman, pearson, kendal) and a boolean if the evaluation metric should be sorted in decreasing order,
 
 ```R
-
 tmp_lst = list(extT = res2_extTr, kknn = res2_kknn, ksvm = res2_ksvm, j48_weka = res2_j48)
 
-res = model_selection(tmp_lst, on_Train = FALSE, regression = FALSE, evaluation_metric = 'acc', t.test.conf.int = 0.95, cor.test = list(method = 'spearman'), sort_decreasing = TRUE)
+res = model_selection(tmp_lst, on_Train = FALSE, regression = FALSE, 
+
+                     evaluation_metric = 'acc', t.test.conf.int = 0.95, 
+                     
+                     cor.test = list(method = 'spearman'), sort_decreasing = TRUE)
 
 res
 
@@ -585,8 +575,8 @@ res
 # 4        extT        ksvm  ||          0.0034              0.0234              0.1049               0.0641  ||                 0.8011           0.0000  ||        0.5403322       0.4762126
 # 5        extT    j48_weka  ||          0.0000             -0.1861             -0.0892              -0.1376  ||                 0.7753           0.0000  ||        0.5403322       0.6779623
 # 6        ksvm    j48_weka  ||          0.0000             -0.2471             -0.1564              -0.2017  ||                 0.7227           0.0000  ||        0.4762126       0.6779623
-
 ```
+
 <br>
 
 The paired t.test, generally, can be used to determine if two sets of data are significantly different from each other, under the assumption that the differences between the paired values are nomally distributed. So, under the assumption of normality one can reject the null hypothesis that there is no difference between two algorithmic models, if the t.test.p.value is lower than 0.05 (significance level 5%). The correlation test, similarly, shows if a correlation is present between the algorithms using also a p.value for assessment.
