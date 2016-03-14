@@ -11,7 +11,7 @@ This blog post is about randomly searching for the optimal parameters of various
 
 ### RandomSearchR
 
-For the purpose of this post, I created the package **RandomSearchR**, which returns the optimal parameters for a variety of R models. The package can be installed from [Github](https://github.com/mlampros/RandomSearchR) using the install_github('mlampros/RandomSearchR') function of the devtools package. I'll employ both regression and classification data sets to illustrate the results of the RandomSearchR package functions.
+For the purpose of this post, I created the package **RandomSearchR**, which returns the optimal parameters for a variety of R models. The package can be installed from [Github](https://github.com/mlampros/RandomSearchR) using the install_github('mlampros/RandomSearchR') function of the devtools package (required is the most recent release of devtools). I'll employ both regression and classification data sets to illustrate the results of the RandomSearchR package functions.
 <br>
 <br>
 
