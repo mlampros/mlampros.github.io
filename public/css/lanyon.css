@@ -163,8 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 30em) {
   .sidebar {
-    /*font-size: .75rem; /* 14px */
-    font-size: 30px;
+    font-size: 16px;      /* change here if I want to change the font-size in the side bar*/          
   }
 }
 
