@@ -155,9 +155,8 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
   overflow-y: auto;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-size: 18px; /*.875rem */
-  color: #4863A0;
-  /*color: rgba(255,255,255,.6);*/
+  font-size: 24px; /*.875rem */
+  color: rgba(255,255,255,.6);
   background-color: #202020;
   -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
