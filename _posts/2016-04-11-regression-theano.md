@@ -48,6 +48,7 @@ Then, I initialize the weights of the parameters ( here I use a glorot uniform i
 ```py
 
 init_weights_params = theano.shared(np.asarray(np.random.uniform(low = -np.sqrt(6. / (inp + outp)), high = np.sqrt(6. / (inp + outp)), 
+                                                                 
                                                                  size = shape), 
                                                                  
                                                                  dtype=theano.config.floatX)) # shape == dims of the weights matrix
@@ -213,7 +214,6 @@ The explained code-chunks can be found in the [Regression_theano.py](https://git
 I'll test the *Theano_regression* package using the [Boston data](http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html) for regression and the [Mnist data](https://www.kaggle.com/c/digit-recognizer/data) for classification,
 
 ```py
-
 from Regression_theano import Regression
 from sklearn import preprocessing
 from sklearn.datasets import load_boston
@@ -342,7 +342,6 @@ custom_eval             | use a custom evaluation function in form of a tuple (f
 The second example is about classification using the **mnist** data set (digit recognition),
 
 ```py
-
 from Regression_theano import Regression
 from sklearn import preprocessing
 import pandas as pd
