@@ -290,6 +290,7 @@ print 'mean_squared_error on test data is', str(metrics.mean_squared_error(y_te,
 <br>
 For a random train-test split on the data the sgd-linear-regression gives after 1740 iterations a mse-error of 27.04 on train-data and 12.74 on test-data. As a comparison I've run also a sklearn-linear-regression, which gives comparable results,
 <br>
+
 ```py
 from sklearn.linear_model import LinearRegression
 
@@ -307,8 +308,8 @@ print 'mean_squared_error on train data is', str(metrics.mean_squared_error(y_tr
 
 print 'mean_squared_error on test data is', str(metrics.mean_squared_error(y_te, pred_te_skl))
 # mean_squared_error on test data is 14.51736
-
 ```
+
 <br>
 A few words about the parameters in the **Regression()** function,
 
