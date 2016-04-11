@@ -46,8 +46,8 @@ When implementing a simple linear or logistic regression model in theano the fir
 Then, I initialize the weights of the parameters ( here I use a glorot uniform initialization as explained in this [jupyter notebook](http://nbviewer.jupyter.org/github/vkaynig/ComputeFest2015_DeepLearning/blob/master/Fully_Connected_Networks.ipynb)),
 ```py
 
-init_weights_params = theano.shared(np.asarray(np.random.uniform(low = -np.sqrt(6. / (inp + outp)), high = np.sqrt(6. / (inp + outp)), size = shape), dtype=theano.config.floatX))       
-# shape here is the dimensions of the resulted weights matrix
+init_weights_params = theano.shared(np.asarray(np.random.uniform(low = -np.sqrt(6. / (inp + outp)), high = np.sqrt(6. / (inp + outp)), size = shape), 
+                                                                 dtype=theano.config.floatX)) # shape == dims of the weights matrix
 
 ```
 
