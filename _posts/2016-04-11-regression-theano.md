@@ -47,7 +47,9 @@ Then, I initialize the weights of the parameters ( here I use a glorot uniform i
 
 ```py
 
-init_weights_params = theano.shared(np.asarray(np.random.uniform(low = -np.sqrt(6. / (inp + outp)), high = np.sqrt(6. / (inp + outp)), size = shape), 
+init_weights_params = theano.shared(np.asarray(np.random.uniform(low = -np.sqrt(6. / (inp + outp)), high = np.sqrt(6. / (inp + outp)), 
+                                                                 size = shape), 
+                                                                 
                                                                  dtype=theano.config.floatX)) # shape == dims of the weights matrix
 
 ```
