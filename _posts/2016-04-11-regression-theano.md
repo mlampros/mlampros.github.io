@@ -58,9 +58,11 @@ and the weights for the bias ( which default to zero ),
 
 ```py
 
-init_weights_bias = theano.shared(np.asarray(0, dtype=theano.config.floatX))                                      # for linear regression is a single value
+init_weights_bias = theano.shared(np.asarray(0, dtype=theano.config.floatX))                                      
+# for linear regression is a single value
 
-init_weights_bias = theano.shared(np.zeros((self.y.shape[1],), dtype=theano.config.floatX))                       # for logistic regression is an array of values
+init_weights_bias = theano.shared(np.zeros((self.y.shape[1],), dtype=theano.config.floatX))                       
+# for logistic regression is an array of values
 
 ```
 
