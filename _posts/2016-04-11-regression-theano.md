@@ -349,7 +349,7 @@ from sklearn import metrics
 from scikits.statsmodels.tools import categorical
 
 
-df = pd.read_csv('train.csv')                                       # assuming the train data is downloaded in the current working directory
+df = pd.read_csv('train.csv')                           # assuming the train data is downloaded in the current working directory
  
 X = np.array(df.iloc[:,1:df.shape[1]].as_matrix(columns=None)) 
 X = X.astype(np.float32)
@@ -389,7 +389,9 @@ init = Regression(Xtr, y_categ, Xte, y_categ_te, iters = 1000, learning_rate = 0
                   
                   L1 = 0.00001, L2 = 0.00001, maximize = False, early_stopping_rounds = 10, weights_initialization = 'normal', 
                   
-                  objective = 'categorical_crossentropy', linear_regression = False, add_bias = True, custom_eval = (evaluation_func, 'accuracy'))
+                  objective = 'categorical_crossentropy', linear_regression = False, add_bias = True, 
+                  
+                  custom_eval = (evaluation_func, 'accuracy'))
     
 # fit data
 
