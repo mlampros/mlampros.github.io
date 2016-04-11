@@ -169,7 +169,7 @@ predict_valid = theano.function(inputs = [index],
                                 
                                 outputs = py_x, 
                                 
-                                givens = { X: test_X[0:index]},                                            # return the predictions when all train data are used
+                                givens = { X: test_X[0:index]},     # returns the predictions when all train data are used
                                 
                                 allow_input_downcast = True)
 
@@ -179,7 +179,9 @@ predict_valid = theano.function(inputs = [index],
                                 
                                 outputs = py_x,                               
                                 
-                                givens = { X: test_X[index * batch_size: (index + 1) * batch_size]},        # return the predictions when batch-index of train data is used
+                                # returns the predictions when batch-index of train data is used
+                                
+                                givens = { X: test_X[index * batch_size: (index + 1) * batch_size]},        
                                 
                                 allow_input_downcast = True)
 
