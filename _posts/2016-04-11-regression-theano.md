@@ -15,7 +15,7 @@ Then you,
 
 * can download the zip file from the [repository](https://github.com/mlampros/Regression_theano)
 * unzip it
-* open the unziped file (it includes a *setup.py* file) 
+* make the unziped file your current directory (it includes a *setup.py* file) 
 * run **python setup.py install** to install it.
 
 By the way, a tutorial on how to create a package from python code can be found [here](http://python-packaging.readthedocs.org/en/latest/index.html).
