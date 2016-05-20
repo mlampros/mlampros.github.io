@@ -128,7 +128,7 @@ Bagging           |   RWeka
 
 
 * depending on the number of optimized parameters some algorithms can be run fewer/more times than other (for instance knn will be run fewer times than svm)
-* when xgboost or h2o are used, the progress bars appear multiple times and functions such as capture.output() or invisible() can't help much here. 
+* to hide the progressbar when xgboost runs adjust the 'print_every_n' argument. 
 If it happens that you use the package and came across a problem then commit an issue on github.
 <br>
 <br>
