@@ -572,7 +572,7 @@ res = model_selection(tmp_lst, on_Train = FALSE, regression = FALSE,
 
                      evaluation_metric = 'acc', t.test.conf.int = 0.95, 
                      
-                     cor.test = list(method = 'spearman'), sort_decreasing = TRUE)
+                     cor_test = list(method = 'spearman'), sort_decreasing = TRUE)
 
 res
 
