@@ -128,7 +128,7 @@ The following algorithms were tested and can be run in regression and classifica
 
 **Worth mentioning**
 
-
+* detailed examples with code of the previous table can be found on the [Github repository](https://github.com/mlampros/RandomSearchR/blob/master/tests/testthat/test-randomsearch.R)
 * depending on the number of optimized parameters some algorithms can be run fewer/more times than other (for instance knn will be run fewer times than svm)
 * to hide the progressbar when xgboost runs adjust the 'print_every_n' argument. 
 If it happens that you use the package and came across a problem then commit an issue on github.
