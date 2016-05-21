@@ -98,29 +98,31 @@ The *res_exttLm* object returns 2 lists, the *PREDS*, which includes the train-p
 <br>
 The following algorithms were tested and can be run in regression and classification error-free, 
 
-algorithm         |  package
-----------        |  --------
-elmtrain          |   elmNN
-knnreg            |   caret 
-knn3              |   caret
-kknn              |   kknn
-randomForest      |   randomForest
-xgb.train         |   xgboost
-extraTrees        |   extraTrees
-gbm.fit           |   gbm
-LiblineaR         |   LiblineaR
-ksvm              |   kernlab
-nnet              |   nnet
-ranger            |   ranger
-svm               |   e1071
-h2o.gbm           |   h2o
-h2o.randomForest  |   h2o
-h2o.deeplearning  |   h2o
-J48               |   RWeka
-LogitBoost        |   RWeka
-IBk               |   RWeka
-M5Rules           |   RWeka
-Bagging           |   RWeka
+|    package      |   algorithm        |  regression   |  binary classification   |   multiclass classification   |
+| :-----------:   |  :-------------:   | :-----------: | :----------------------: | :---------------------------: |  
+|   elmNN         |  elmtrain          |    **x**      |                          |                               | 
+|   randomForest  |  randomForest      |    **x**      |             **x**        |              **x**            | 
+|   kernlab       |  ksvm              |    **x**      |             **x**        |              **x**            |
+|   caret         |  knnreg, knn3      |    **x**      |             **x**        |              **x**            |
+|   RWeka         |  IBk               |    **x**      |             **x**        |              **x**            |
+|   RWeka         |  AdaBoostM1        |               |             **x**        |              **x**            |
+|   RWeka         |  Bagging           |    **x**      |             **x**        |              **x**            |
+|   RWeka         |  LogitBoost        |               |             **x**        |              **x**            |
+|   RWeka         |  J48               |               |             **x**        |              **x**            |
+|   RWeka         |  M5P               |    **x**      |                          |                               |
+|   RWeka         |  M5Rules           |    **x**      |                          |                               |
+|   RWeka         |  SMO               |               |             **x**        |              **x**            |
+|   gbm           |  gbm               |    **x**      |             **x**        |              **x**            |
+|   h2o           |  h2o.randomForest  |    **x**      |             **x**        |              **x**            |
+|   h2o           |  h2o.deeplearning  |    **x**      |             **x**        |              **x**            |
+|   h2o           |  h2o.gbm           |    **x**      |             **x**        |              **x**            |
+|   xgboost       | xgb.train          |    **x**      |             **x**        |              **x**            |
+|   e1071         | svm                |    **x**      |             **x**        |              **x**            |
+|   LiblineaR     | LiblineaR          |    **x**      |             **x**        |              **x**            |
+|   extraTrees    | extraTrees         |    **x**      |             **x**        |              **x**            |
+|   glmnet        | cv.glmnet          |    **x**      |             **x**        |              **x**            |
+|   nnet          |  nnet              |    **x**      |             **x**        |              **x**            |
+|   ranger        |  ranger            |    **x**      |             **x**        |              **x**            |
 
 
 
