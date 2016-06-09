@@ -589,9 +589,9 @@ cat('log loss of train is :', mean(tr_er), '\n')
 
 # log loss of train is : 1.952143
 
-cat('log loss of train is :',  mean(tes_er), '\n')
+cat('log loss of test is :',  mean(tes_er), '\n')
 
-# log loss of train is : 2.232479
+# log loss of test is : 2.232479
 
 lap = unlist(lapply(fit$res, function(x) x$TEST_lst), recursive = FALSE)
 
