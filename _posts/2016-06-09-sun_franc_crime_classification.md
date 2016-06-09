@@ -576,7 +576,7 @@ fit = xgboost_cv(y, ntrain, ntest, repeats = 1, Folds = 4, idx_train = NULL, par
 ```
 <br>
 
-Before, submitting the csv-predictions, I had to calculate the train and test error for each fold, then to average the predictions of the unknown test data and to add the column names of the sample submission (the column names had to be in the correct form, otherwise the submission is not accepted, thus check.names = F when reading the data was necessary),
+Before, submitting the csv-predictions, I had to calculate the train and test error for each fold, then to average the predictions of the unknown test data and to add the column names of the sample submission (the column names had to be in the correct form, otherwise the submission wasn't accepted, thus check.names = F when reading the data was necessary),
 
 
 ```R
