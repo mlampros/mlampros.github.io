@@ -587,7 +587,11 @@ tes_er = unlist(lapply(fit$res, function(x) x$tes_er))
 
 cat('log loss of train is :', mean(tr_er), '\n')
 
+# log loss of train is : 1.952143
+
 cat('log loss of train is :',  mean(tes_er), '\n')
+
+# log loss of train is : 2.232479
 
 lap = unlist(lapply(fit$res, function(x) x$TEST_lst), recursive = FALSE)
 
