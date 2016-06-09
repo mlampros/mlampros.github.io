@@ -135,7 +135,7 @@ train$Address = rem_sl2
 ```
 <br>
 
-To continue, I did some preprocessing to the **Address** column, as it appeared that some of these were in lower case, whereas others in upper case. First, I replaced c('/', " ") with an empty string "" and then I converted all addresses to lower case.
+To continue, I did some preprocessing of the **Address** column, as it appeared that some of these were in lower case, whereas others in upper case. First, I replaced c('/', " ") with an empty string "" and then I converted all addresses to lower case.
 <br>
 
 ```R
