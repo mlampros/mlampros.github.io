@@ -273,7 +273,7 @@ gcd.hf <- function(long1, lat1, long2, lat2) {                 # http://www.r-bl
 }
 
 
-get_reference_address = function(initial_data, split_column) {                                                               # function to calculate km-distances
+get_reference_address = function(initial_data, split_column) {           # function to calculate km-distances
   
   s_col = lapply(unique(initial_data[, split_column]), function(x) initial_data[initial_data[, split_column] == x, ])
   
