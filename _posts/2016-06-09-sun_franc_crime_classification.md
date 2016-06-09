@@ -540,7 +540,9 @@ xgboost_cv = function(RESP, data, TEST, repeats, Folds, idx_train = NULL, param,
       gc()
     }
     
-    out_ALL[[j]] = list(TEST_lst = TEST_lst, PARAMS = PARAMS, sample_seed = sample_seed, tr_er = tr_er,PREDS_tr = PREDS_tr, PREDS_te = PREDS_te, tes_er = tes_er)
+    out_ALL[[j]] = list(TEST_lst = TEST_lst, PARAMS = PARAMS, sample_seed = sample_seed, tr_er = tr_er,PREDS_tr = PREDS_tr, 
+    
+                        PREDS_te = PREDS_te, tes_er = tes_er)
 
     cat('================================================================================================================', '\n')
     
