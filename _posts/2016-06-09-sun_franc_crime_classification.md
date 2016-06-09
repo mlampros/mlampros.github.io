@@ -255,7 +255,7 @@ address_frequency = function(sublist) {
 }
 
 
-gcd.hf <- function(long1, lat1, long2, lat2) {                                                                             # http://www.r-bloggers.com/great-circle-distance-calculations-in-r/
+gcd.hf <- function(long1, lat1, long2, lat2) {                 # http://www.r-bloggers.com/great-circle-distance-calculations-in-r/                                                      
   
   R <- 6371                                               # Earth mean radius [km]
   
