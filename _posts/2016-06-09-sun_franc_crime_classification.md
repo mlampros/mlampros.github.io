@@ -599,7 +599,7 @@ avg_dfs = (lap[[1]] + lap[[2]] + lap[[3]] + lap[[4]])/4
 
 subms = data.frame(ID_TEST, avg_dfs)
 
-sampleSubmission <- read.csv("~/Desktop/kaggle_gpu/SFCC/sampleSubmission.csv", check.names = F)
+sampleSubmission <- read.csv("sampleSubmission.csv", check.names = F)
 
 colnames(subms) = colnames(sampleSubmission)
 
