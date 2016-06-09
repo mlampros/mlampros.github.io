@@ -479,7 +479,6 @@ xgboost_cv = function(RESP, data, TEST, repeats, Folds, idx_train = NULL, param,
     cat('REPEAT', j, '\n')
     
     TEST_lst = PARAMS = PREDS_tr = PREDS_te = list()
-    PARAMS = PREDS_tr = PREDS_te = list()
     
     if (is.numeric(Folds)) {
       
