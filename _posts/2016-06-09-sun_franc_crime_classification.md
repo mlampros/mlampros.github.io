@@ -282,6 +282,7 @@ get_reference_address = function(initial_data, split_column) {                  
   reference_lon_lat = lapply(1:length(s_col), function(x) filter(s_col[[x]], Address == reference_address[[x]])[1, c('X','Y')])
   
   Distance = lapply(1:length(s_col), function(f) sapply(1:nrow(s_col[[f]]), function(x) gcd.hf(s_col[[f]][x, 7], s_col[[f]][x, 8], 
+                    
                     reference_lon_lat[[f]]$X, reference_lon_lat[[f]]$Y)))
   
   tmp_id = do.call(rbind, s_col)$Id
