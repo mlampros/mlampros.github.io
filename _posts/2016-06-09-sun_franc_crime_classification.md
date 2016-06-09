@@ -25,18 +25,24 @@ train <- read.csv("train.csv", stringsAsFactors = F)
 sort(table(train$Category), decreasing = T)
 
 
-              LARCENY/THEFT              OTHER OFFENSES                NON-CRIMINAL                     ASSAULT               DRUG/NARCOTIC               VEHICLE THEFT 
-                     174900                      126182                       92304                       76876                       53971                       53781 
-                  VANDALISM                    WARRANTS                    BURGLARY              SUSPICIOUS OCC              MISSING PERSON                     ROBBERY 
-                      44725                       42214                       36755                       31414                       25989                       23000 
-                      FRAUD      FORGERY/COUNTERFEITING             SECONDARY CODES                 WEAPON LAWS                PROSTITUTION                    TRESPASS 
-                      16679                       10609                        9985                        8555                        7484                        7326 
-            STOLEN PROPERTY       SEX OFFENSES FORCIBLE          DISORDERLY CONDUCT                 DRUNKENNESS           RECOVERED VEHICLE                  KIDNAPPING 
-                       4540                        4388                        4320                        4280                        3138                        2341 
-DRIVING UNDER THE INFLUENCE                     RUNAWAY                 LIQUOR LAWS                       ARSON                   LOITERING                EMBEZZLEMENT 
-                       2268                        1946                        1903                        1513                        1225                        1166 
-                    SUICIDE             FAMILY OFFENSES                  BAD CHECKS                     BRIBERY                   EXTORTION   SEX OFFENSES NON FORCIBLE 
-                        508                         491                         406                         289                         256                         148 
+              LARCENY/THEFT              OTHER OFFENSES                NON-CRIMINAL                     ASSAULT 
+                     174900                      126182                       92304                       76876 
+              DRUG/NARCOTIC               VEHICLE THEFT                   VANDALISM                    WARRANTS 
+                      53971                       53781                       44725                       42214 
+                   BURGLARY              SUSPICIOUS OCC              MISSING PERSON                     ROBBERY 
+                      36755                       31414                       25989                       23000 
+                      FRAUD      FORGERY/COUNTERFEITING             SECONDARY CODES                 WEAPON LAWS 
+                      16679                       10609                        9985                        8555 
+               PROSTITUTION                    TRESPASS             STOLEN PROPERTY       SEX OFFENSES FORCIBLE 
+                       7484                        7326                        4540                        4388 
+         DISORDERLY CONDUCT                 DRUNKENNESS           RECOVERED VEHICLE                  KIDNAPPING 
+                       4320                        4280                        3138                        2341 
+DRIVING UNDER THE INFLUENCE                     RUNAWAY                 LIQUOR LAWS                       ARSON 
+                       2268                        1946                        1903                        1513 
+                  LOITERING                EMBEZZLEMENT                     SUICIDE             FAMILY OFFENSES 
+                       1225                        1166                         508                         491 
+                 BAD CHECKS                     BRIBERY                   EXTORTION   SEX OFFENSES NON FORCIBLE 
+                        406                         289                         256                         148 
                    GAMBLING     PORNOGRAPHY/OBSCENE MAT                        TREA 
                         146                          22                           6 
 
