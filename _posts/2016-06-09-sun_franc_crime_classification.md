@@ -611,4 +611,49 @@ write.csv(subms, "xgb_post_submission_train_error_1_95_test_error_2_2324.csv", r
 <br>
 
 
+Finally, I'll plot the important variables using xgboost and ranger of the FeatureSelection package,
+
+
+```R
+
+ntr = as.matrix(ntrain)
+
+colnames(ntr) = make.names(colnames(ntr))
+
+
+library(FeatureSelection)
+
+
+params_xgboost = list(params = list("objective" = "multi:softprob", "eval_metric" = "mlogloss", "num_class" = 39, "booster" = "gbtree", 
+
+                                    "bst:eta" = 0.5, "subsample" = 0.65, "max_depth" = 5, "colsample_bytree" = 0.65, "nthread" = 6, 
+                                    
+                                    "scale_pos_weight" = 0.0, "min_child_weight" = 0.0, "max_delta_step" = 1.0), 
+                                    
+                      nrounds = 50, print.every.n = 5, verbose = 1, maximize = F)
+                      
+
+params_ranger = list(write.forest = TRUE, probability = TRUE, num.threads = 6, num.trees = 50, verbose = FALSE, classification = TRUE, 
+                     
+                     mtry = 4, min.node.size = 5, importance = 'impurity')
+                     
+
+params_features = list(keep_number_feat = NULL, union = F)
+
+
+feat = wrapper_feat_select(ntr, y, params_glmnet = NULL, params_xgboost = params_xgboost, params_ranger = params_ranger, xgb_sort = NULL,
+                           
+                           CV_folds = 4, stratified_regr = FALSE, cores_glmnet = 2, params_features = params_features)
+
+
+params_barplot = list(keep_features = 28, horiz = TRUE, cex.names = 0.8)
+
+barplot_feat_select(feat, params_barplot, xgb_sort = 'Cover')
+
+```
+
+![Alt text](/images/sfcc_plot.png)
+
+<br>
+
 The complete script of this blog post can be found as a single file in my [Github account](https://github.com/mlampros/kaggle_competitions/tree/san_francisco_crime_classification_competition).
