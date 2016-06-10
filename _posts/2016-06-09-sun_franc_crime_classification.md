@@ -611,7 +611,7 @@ write.csv(subms, "xgb_post_submission_train_error_1_95_test_error_2_2324.csv", r
 <br>
 
 
-Finally, I'll plot the important variables using xgboost and ranger of the FeatureSelection package,
+Finally, I'll utilize the *FeatureSelection* package and especially xgboost and ranger to plot the important variables,
 
 
 ```R
