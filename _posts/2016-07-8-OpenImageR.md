@@ -612,10 +612,10 @@ as.vector(dh_bin_a)
 **invariant_hash** is an extension function for image hashing. It takes two images as input (image1, image2) and by altering one of those (random flipping, rotating and cropping) it calculates the *hamming distance* (if the mode is 'binary') or the *levenshtein distance* if (the mode is 'hash'). If any of the *flip*, *rotate*, *crop* equals TRUE then the function returns the MIN,MAX similarity between the two images. If, on the other hand all *flip*, *rotate*, *crop* equal FALSE then a single similarity value is returned meaning no random transformations of the second image are performed.
 <br><br>
 
-Although, in the previous example the gamma correction doesn't influence the dhash of the *view3.jpg*, a *vertical flip* of the image would change both the hash value and the binary features considerably,
+Although, in the previous example the gamma correction doesn't influence the dhash of the *view3.jpg*, a *horizontal flip* of the image would change both the hash value and the binary features considerably,
 
 ```R
-image3b = flipImage(image3, mode = "vertical")
+image3b = flipImage(image3, mode = "horizontal")
 
 imageShow(image3b)
 
