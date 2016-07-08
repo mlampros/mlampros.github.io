@@ -9,7 +9,7 @@ comments: true
 This blog post is about my recently released package on CRAN , **OpenImageR**. The package supports functions for image pre-processing, filtering and image recognition and it uses *RccpArmadillo* extensively to reduce the execution time of computationally intesive functions. OpenImageR can be split in 3 parts : **basic functions** (*convolution*, *cropImage*, *down_sample_image*, *flipImage*, *gamma_correction*, *imageShow*, *image_thresholding*, *List_2_Array*, *MinMaxObject*, *NormalizeObject*, *readImage*, *resizeImage*, *rgb_2gray*, *rotateFixed*, *rotateImage*, *writeImage*), **image filtering** (*Augmentation*, *delationErosion*, *edge_detection*, *translation*, *uniform_filter*, *ZCAwhiten*) and **image recognition** (*average_hash*, *dhash*, *hash_apply*, *HOG*, *HOG_apply*, *invariant_hash, phash*). The following code snippets explain the functionality of the OpenImageR package in more detail, 
 <br><br>
 
-### Basic functions
+## Basic functions
 
 <br>
 
@@ -210,7 +210,7 @@ imageShow(tr)
 here, *shift_rows* and *shift_cols* correspond to the rows and columns of the image. 
 <br><br><br>
 
-### Image filtering
+## Image filtering
 
 <br>
 
@@ -399,7 +399,7 @@ res = lapply(1:length(samp_rot), function(x)
 
 
 
-### Image recognition
+## Image recognition
 
 <br>
 
@@ -412,6 +412,7 @@ The *HOG* function of the OpenImageR package is a modification and extention of 
 <br><br>
 
 The purpose of the function is to create a vector of HOG descriptors, which can be used in classification tasks. It takes either RGB (they will be converted to gray) or gray images as input,
+
 ```R
 
 image = readImage('image2.jpg')
