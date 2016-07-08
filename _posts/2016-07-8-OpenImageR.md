@@ -293,7 +293,7 @@ imageShow(gcor)
 
 #### **ZCAwhiten**
 
-[**Whitening** (or sphering)](http://ufldl.stanford.edu/wiki/index.php/Whitening) is the preprocessing needed for some algorithms. If we are training on images, the raw input is redundant, since adjacent pixel values are highly correlated. The purpose of whitening is to reduce the correlation between features and to return features with the same variance,
+[**Whitening** (or sphering)](http://ufldl.stanford.edu/wiki/index.php/Whitening) is the preprocessing needed for some algorithms. If we utilize an algorithm to train on images, the raw input is redundant, since adjacent pixel values are highly correlated. The purpose of whitening is to reduce the correlation between features and to return features with the same variance,
 
 ```R
 res = ZCAwhiten(im, k = 20, epsilon = 0.1)
