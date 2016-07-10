@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OpenImageR, an image processing toolkit
-tags: [R, package]
+tags: [R, package, R-bloggers]
 comments: true
 ---
 
