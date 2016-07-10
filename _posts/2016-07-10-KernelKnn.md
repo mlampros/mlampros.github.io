@@ -225,7 +225,7 @@ The *KernelKnnCV* function can be employed to return the prediction accuracy usi
 
 
 | k  |      method    |  kernel       |
-|----|:--------------:|:--------------|
+|:---|:--------------:|:--------------|
 | 10 |  canberra      | tricube       |
 | 9  |    canberra    |  epanechnikov |
 
@@ -438,7 +438,7 @@ I experimented with different settings and the following parameters gave the bes
 
 
 |irlba_singlular_vectors | k  |      method    |  kernel                     |
-|:-----------------------|----|:--------------:|:----------------------------|
+|:-----------------------|:---|:--------------:|:----------------------------|
 |40                      | 8  |  braycurtis    | biweight_tricube_MULT       |
 
 
