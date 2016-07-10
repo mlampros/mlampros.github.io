@@ -381,11 +381,11 @@ In the KernelKnn package the user can also combine kernels by adding or multiply
 I'll illustrate this option of the package using two image data sets in form of matrices, i.e. the *MNIST* and the *CIFAR-10*. From within R one can download the data in a linux OS using,
 
 ```R
-system(“wget https://raw.githubusercontent.com/mlampros/DataSets/master/mnist.zip”)
+system("wget https://raw.githubusercontent.com/mlampros/DataSets/master/mnist.zip")
 
 and 
 
-system(“wget https://raw.githubusercontent.com/mlampros/DataSets/master/cifar_10.zip”)
+system("wget https://raw.githubusercontent.com/mlampros/DataSets/master/cifar_10.zip")
 
 ```
 <br>
