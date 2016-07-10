@@ -6,7 +6,7 @@ comments: true
 ---
 
 
-This blog post is about my recently released package on CRAN, **KernelKnn**. The package consists of three functions **KernelKnn**, **KernelKnnCV** and **knn.index.dist**. It also includes two data sets (*housing data*, *ionosphere*), which will be used here to illustrate the functionality of KernelKnn.
+This blog post is about my recently released package on CRAN, **KernelKnn**. The package consists of three functions **KernelKnn**, **KernelKnnCV** and **knn.index.dist**. It also includes two data sets (*housing data*, *ionosphere*), which will be used here to illustrate the functionality of the package.
 
 
 ### k nearest neighbors
@@ -68,6 +68,9 @@ Both in regression and classification the **KernelKnn** function accepts a numer
 # convert y from factor to numeric in classification
 
 y = c(1:length(unique(y)))[ match(ionosphere$class, sort(unique(ionosphere$class))) ]
+
+
+# random split in train-test
 
 spl_train = sample(1:length(y), round(length(y) * 0.75))
 
