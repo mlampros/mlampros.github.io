@@ -36,5 +36,3 @@ sitemap:
     {% endfor %}
   </channel>
 </rss>
-
-<!-- Page code borrowed by https://github.com/daattali/daattali.github.io/blob/master/r-bloggers-feed.xml -->
