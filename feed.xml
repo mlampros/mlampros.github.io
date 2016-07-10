@@ -3,7 +3,7 @@ layout: null
 sitemap:
   exclude: true
 ---
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>           <!-- Page code borrowed by https://github.com/daattali/daattali.github.io/blob/master/r-bloggers-feed.xml -->
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ "mlampros blog" | xml_escape }}</title>
