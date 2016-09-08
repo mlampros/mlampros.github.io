@@ -390,7 +390,7 @@ system("wget https://raw.githubusercontent.com/mlampros/DataSets/master/cifar_10
 ```
 <br>
 
-Moreover, the **irlba** and the **OpenImageR** packages are needed for comparison purposes, which can be installed directly from CRAN using the install.packages() function. A 4-fold cross-validation using the KernelKnnCV function can take 40-50 minutes utilizing 6 threads (for each data set). An alternative to reduce the computation time would be a train-test split of the data at the cost of performance validation.
+Moreover, the **irlba** and the **OpenImageR** packages are needed for comparison purposes, which can be installed directly from CRAN using the install.packages() function. A 4-fold cross-validation using the KernelKnnCV function can take approximately 26-30 minutes utilizing 6 threads (for each data set). An alternative to reduce the computation time would be a train-test split of the data at the cost of performance validation.
 
 <br>
 
@@ -500,7 +500,7 @@ In this chunk of code, besides KernelKnnCV I'll also use HOG. The histogram of o
 
 library(OpenImageR)
 
-hog = HOG_apply(X, cells = 6, orientations = 9, height = 28, width = 28, threads = 6)
+hog = HOG_apply(X, cells = 6, orientations = 9, rows = 28, columns = 28, threads = 6)
 
 ## 
 ## time to complete : 1.802997 secs
@@ -648,9 +648,9 @@ Next, I'll run the KernelKnnCV using the HOG-descriptors,
 
 ```R
 
-hog = HOG_apply(X, cells = 6, orientations = 9, height = 32,
+hog = HOG_apply(X, cells = 6, orientations = 9, rows = 32,
                 
-                width = 32, threads = 6)
+                columns = 32, threads = 6)
 
 ## 
 ## time to complete : 3.394621 secs
