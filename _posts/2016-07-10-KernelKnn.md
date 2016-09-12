@@ -700,4 +700,4 @@ By using hog-descriptors in a 4-fold cross-validation model the accuracy in the 
 <br><br>
 
 
-An updated version of the **KernelKnn** package can be found in the [Github repository](https://github.com/mlampros/KernelKnn) and to report bugs/issues please use the following link, [https://github.com/mlampros/KernelKnn/issues](https://github.com/mlampros/KernelKnn/issues).
+An updated version of the **KernelKnn** package can be found in my [Github repository](https://github.com/mlampros/KernelKnn) and to report bugs/issues please use the following link, [https://github.com/mlampros/KernelKnn/issues](https://github.com/mlampros/KernelKnn/issues).
