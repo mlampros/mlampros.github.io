@@ -424,7 +424,6 @@ cm = Cluster_Medoids(gwd_mat, clusters = 2, swap_phase = TRUE, verbose = F)
 |adusted_rand_index  |     avg_silhouette_width    |
 |--------------------|-----------------------------|
 |      0.5733587     |         0.2545221           |
-|                    |                             |
 
 
 As mentioned before the *gowdis* function of the FD package allows the user to give different weights to each separate variable. The weights parameter can be tuned, for example by using [random search](http://www.math.vu.nl/~sbhulai/papers/paper-vandenhoven.pdf), in order to achieve better clustering results. For instance, by using the following weights for each separate variable one can improve both the *adjusted-rand-index* (external validation) and the *average silhouette width* (internal validation),
@@ -454,7 +453,6 @@ As mentioned before the *gowdis* function of the FD package allows the user to g
 |spore_print_color           | 127.87   |
 |population                  | 64.019   |
 |habitat                     | 44.519   |
-|                            |          |
 
 
 ```R
@@ -478,7 +476,6 @@ cm_w = Cluster_Medoids(gwd_mat_w, clusters = 2, swap_phase = TRUE, verbose = F)
 |adusted_rand_index  |     avg_silhouette_width    |
 |--------------------|-----------------------------|
 |      0.6197672     |         0.3000048           |
-|                    |                             |
 
 
 <br>
@@ -526,7 +523,6 @@ cat('time to complete :', t, attributes(t)$units, '\n')
 |adusted_rand_index  |     avg_silhouette_width    |
 |--------------------|-----------------------------|
 |      0.5944456     |         0.2678507           |
-|                    |                             |
 
 <br>
 
@@ -553,7 +549,6 @@ cat('time to complete :', t, attributes(t)$units, '\n')
 |adusted_rand_index  |     avg_silhouette_width    |
 |--------------------|-----------------------------|
 |      0.5733587     |         0.2545221           |
-|                    |                             |
 
 
 Using the *hamming* distance, both the *Clara_Medoids* and the *Cluster_Medoids* functions return approximately the same result (comparable also with the *gower* distance results), only that the *Clara_Medoids* function outputs more than four times faster than the *Cluster_Medoids* for this data set.<br><br>
@@ -683,6 +678,6 @@ For this data set (5625 observations and 3 columns) the *Clara_Medoids* function
 
 <br>
 
-An updated version of the *ClusterR* package can be found in the Github repository and to report bugs/issues please use the following link, https://github.com/mlampros/ClusterR/issues.
+An updated version of the *ClusterR* package can be found in my Github repository and to report bugs/issues please use the following link, https://github.com/mlampros/ClusterR/issues.
 
 
