@@ -426,7 +426,7 @@ cm = Cluster_Medoids(gwd_mat, clusters = 2, swap_phase = TRUE, verbose = F)
 |      0.5733587     |         0.2545221           |
 
 
-As mentioned before the *gowdis* function of the FD package allows the user to give different weights to each separate variable. The weights parameter can be tuned, for example by using [random search](http://www.math.vu.nl/~sbhulai/papers/paper-vandenhoven.pdf), in order to achieve better clustering results. For instance, by using the following weights for each separate variable one can improve both the *adjusted-rand-index* (external validation) and the *average silhouette width* (internal validation),
+As mentioned before the *gowdis* function of the FD package allows the user to give different weights to each separate variable. The weights parameter can be tuned, for example by using [random search](http://www.math.vu.nl/~sbhulai/papers/paper-vandenhoven.pdf#page=23), in order to achieve better clustering results. For instance, by using the following weights for each separate variable one can improve both the *adjusted-rand-index* (external validation) and the *average silhouette width* (internal validation),
 <br>
 
 |predictors                  | weights  |
