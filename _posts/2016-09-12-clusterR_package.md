@@ -77,7 +77,7 @@ opt_gmm = Optimal_Clusters_GMM(dat, max_clusters = 10, criterion = "BIC",
 
 ```
 
-![](Rplot1.png)
+![Alt text](/images/Rplot1.png)
 
 
 <br>
@@ -157,7 +157,7 @@ plot_2d(data = pca_dat, clusters = as.vector(pr), centroids_medoids = as.matrix(
 ```
 <br>
 
-![](Rplot_2d.png)
+![Alt text](/images/Rplot_2d.png)
 <br><br>
 
 
@@ -192,7 +192,7 @@ imageShow(im)                                                # plot the original
 im2 = apply(im, 3, as.vector)                                # vectorize RGB
 ```
 
-![](Rplot_eleph.png)
+![Alt text](/images/Rplot_eleph.png)
 
 <br>
 
@@ -228,7 +228,7 @@ dim(new_im) = c(nrow(im), ncol(im), 3)        # back-convertion to a 3-dimension
 imageShow(new_im)
 ```
 
-![](Rplot_km.png)
+![Alt text](/images/Rplot_km.png)
 
 <br>
 
@@ -248,7 +248,7 @@ opt = Optimal_Clusters_KMeans(im2, max_clusters = 10, plot_clusters = T,
 ```
 
 
-![](Rplot_distortion.png)
+![Alt text](/images/Rplot_distortion.png)
 
 <br>
 
@@ -284,7 +284,7 @@ imageShow(im_d)                                                # plot the origin
 ```
 <br>
 
-![](Rplot_dog.png)
+![Alt text](/images/Rplot_dog.png)
 
 <br>
 
@@ -329,7 +329,7 @@ imageShow(new_im_init)
 ```
 <br>
 
-![](Rplot_dog_km.png)
+![Alt text](/images/Rplot_dog_km.png)
 
 <br>
 
@@ -367,7 +367,7 @@ imageShow(new_im_mb)
 ```
 <br>
 
-![](Rplot_minibkm.png)
+![Alt text](/images/Rplot_minibkm.png)
 
 <br>
 
@@ -570,7 +570,7 @@ Silhouette_Dissimilarity_Plot(cl_f, silhouette = TRUE)
 ```
 <br>
 
-![](Rplot_clara.png)
+![Alt text](/images/Rplot_clara.png)
 <br><br>
 
 
@@ -583,7 +583,7 @@ Silhouette_Dissimilarity_Plot(cl_e, silhouette = TRUE)
 ```
 <br>
 
-![](Rplot_cluster.png)
+![Alt text](/images/Rplot_cluster.png)
 
 <br><br>
 
@@ -680,4 +680,9 @@ cl_vq_single$medoids
 ```
 
 For this data set (5625 observations and 3 columns) the *Clara_Medoids* function returns the same medoids almost four times faster as the *pam* function if OpenMp is available (6 threads).
+
+<br>
+
+An updated version of the *ClusterR* package can be found in the Github repository and to report bugs/issues please use the following link, https://github.com/mlampros/ClusterR/issues.
+
 
