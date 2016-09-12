@@ -585,7 +585,7 @@ Silhouette_Dissimilarity_Plot(cl_e, silhouette = TRUE)
 
 **References for the K-Medoids functions**
 
-<br>
+
 
 It took me a while to figure out how to implement the K-medoids (*Cluster_Medoids* and *Clara_Medoids*) functions, as I initially thought that the start medoids are initiallized in the same way the centroids are initiallized in the k-means algorithm. Due to the fact that I didn't have access to the book of Kaufman and Rousseeuw (but only to the article: Anja Struyf, Mia Hubert, Peter J. Rousseeuw, (Feb. 1997), Clustering in an Object-Oriented Environment, Journal of Statistical Software, Vol 1, Issue 4) the **cluster** package was a big help as it has a very detailed package documentation. It includes both the partioning around medoids (pam) and the Clustering LARge Applications (clara) algorithms and in that way one can compare the output results.
 
