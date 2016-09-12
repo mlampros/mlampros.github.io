@@ -422,7 +422,7 @@ cm = Cluster_Medoids(gwd_mat, clusters = 2, swap_phase = TRUE, verbose = F)
 
 
 |adusted_rand_index  |     avg_silhouette_width    |
-|--------------------|-----------------------------|
+|:-------------------|:----------------------------|
 |      0.5733587     |         0.2545221           |
 
 
@@ -430,7 +430,7 @@ As mentioned before the *gowdis* function of the FD package allows the user to g
 <br>
 
 |predictors                  | weights  |
-|----------------------------|----------|
+|:---------------------------|:---------|
 |cap_shape                   | 4.626    |  
 |cap_surface                 | 38.323   |
 |cap_color                   | 55.899   |
@@ -474,7 +474,7 @@ cm_w = Cluster_Medoids(gwd_mat_w, clusters = 2, swap_phase = TRUE, verbose = F)
 <br>
 
 |adusted_rand_index  |     avg_silhouette_width    |
-|--------------------|-----------------------------|
+|:-------------------|:----------------------------|
 |      0.6197672     |         0.3000048           |
 
 
@@ -521,7 +521,7 @@ cat('time to complete :', t, attributes(t)$units, '\n')
 
 
 |adusted_rand_index  |     avg_silhouette_width    |
-|--------------------|-----------------------------|
+|:-------------------|:----------------------------|
 |      0.5944456     |         0.2678507           |
 
 <br>
@@ -547,7 +547,7 @@ cat('time to complete :', t, attributes(t)$units, '\n')
 
 
 |adusted_rand_index  |     avg_silhouette_width    |
-|--------------------|-----------------------------|
+|:-------------------|:----------------------------|
 |      0.5733587     |         0.2545221           |
 
 
