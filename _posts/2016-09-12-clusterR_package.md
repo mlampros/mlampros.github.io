@@ -553,7 +553,7 @@ cat('time to complete :', t, attributes(t)$units, '\n')
 
 Using the *hamming* distance, both the *Clara_Medoids* and the *Cluster_Medoids* functions return approximately the same result (comparable also with the *gower* distance results), only that the *Clara_Medoids* function outputs more than four times faster than the *Cluster_Medoids* for this data set.<br><br>
 
-By using the object results of the last two code chunks one can also plot the silhouette widths using the **Silhouette_Dissimilarity_Plot ** function. Worth mentioning here is that the dissimilarities and silhouette widths of the *Clara_Medoids* function are based on the best-selected sample and not on the entire data set, as is the case for the *Cluster_Medoids* function. <br><br>
+By using the object results of the last two code chunks one can also plot the silhouette widths using the **Silhouette_Dissimilarity_Plot** function. Worth mentioning here is that the dissimilarities and silhouette widths of the *Clara_Medoids* function are based on the best-selected sample and not on the entire data set, as is the case for the *Cluster_Medoids* function. <br><br>
 
 
 ```R
