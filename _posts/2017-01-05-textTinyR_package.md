@@ -70,7 +70,7 @@ The following **classes** (based on the R6 package) and **functions** are part o
 
 <br>
 
-The *big_tokenize_transform* class can be utilized to process big data files and I'll illustrate this using the [english wikipedia pages and articles](https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2). The size of the file (after downloading and extracting locally) is aproximalely 59.4 GB and it's of type .xml (to reproduce the results one needs to have free hard drive space of approx. 200 GB). <br> 
+The *big_tokenize_transform* class can be utilized to process big data files and I'll illustrate this using the [english wikipedia pages and articles](https://dumps.wikimedia.org/enwiki/latest/). The size of the file (after downloading and extracting locally) is aproximalely 59.4 GB and it's of type .xml (to reproduce the results one needs to have free hard drive space of approx. 200 GB). <br> 
 *Xml* files have a tree structure and one should use queries to acquire specific information. First, I'll observe the structure of the .xml file by using the utility function *read_rows()*. The *read_rows()* function takes a file as input and by specifying the *rows* argument it returns a subset of the file. It doesn't load the entire file in memory, but it just opens the file and reads the specific number of rows,
 
 <br>
