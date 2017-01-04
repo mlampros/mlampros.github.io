@@ -508,7 +508,7 @@ wordcloud::wordcloud(words = vocab_sbs$X1, freq = vocab_sbs$X2,
 
 <br>
 
-![](Rplot_textTiny.png)
+![Alt text](/images/Rplot_textTiny.png)
 
  
 <br>
