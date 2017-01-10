@@ -1355,7 +1355,7 @@ More information about the helper functions for sparse matrices can be found in 
 
 <br>
 
-The **tokenize_transform_text()** function applies tokenization and transformation in a similar way to the *big_text_tokenizer()* method, however for small to medium data sets. The input can be either a character string (text data) or a path to a file. This method takes as input a single character string (character-string == one line). The parameters for the *tokenize_transform_text()* function are the same to the (already explained) *big_text_tokenizer()* method with the only exception being the input data type.
+The **tokenize_transform_text()** function applies tokenization and transformation in a similar way to the *big_text_tokenizer()* method, however for small to medium data sets. The input can be either a character string (text data) or a path to a file. This method takes as input a single character string (character-string == of length one). The parameters for the *tokenize_transform_text()* function are the same to the (already explained) *big_text_tokenizer()* method with the only exception being the input data type.
 
 <br>
 
