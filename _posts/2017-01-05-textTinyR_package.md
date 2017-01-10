@@ -304,7 +304,7 @@ More information about those parameters can be found in the package documentatio
 
 <br>
 
-In this vignette I'll continue using the following transformations:
+In this blog post I'll continue using the following transformations:
 
 * conversion to lowercase
 * trim each line
