@@ -198,7 +198,9 @@ btt$big_text_splitter(input_path_file = PATH,             # path to the enwiki d
                   
                   batches = 40,                           # split file in 40 batches (files)
                   
-                  trimmed_line = FALSE)                   # the lines will be trimmed
+                  trimmed_line = FALSE,                   # the lines will be trimmed
+                  
+                  verbose = TRUE)
 ```
 
 
@@ -237,7 +239,9 @@ btt$big_text_parser(input_path_folder = "/enwiki_spl_data/", # the previously cr
                     
                     min_lines = 1, 
                     
-                    trimmed_line = TRUE)
+                    trimmed_line = TRUE,
+                    
+                    verbose = TRUE)
 ```
 
 
@@ -344,7 +348,9 @@ btt$big_text_tokenizer(input_path_folder = "/enwiki_parse/",   # the previously 
                        
                        vocabulary_path_folder = "/enwiki_vocab/",  # path to vocabulary folder
                        
-                       path_2folder="/enwiki_token/")   # folder to save the transformed data
+                       path_2folder="/enwiki_token/",   # folder to save the transformed data
+                       
+                       verbose = TRUE)
 
 ```
 
@@ -1391,7 +1397,9 @@ res_txt = tokenize_transform_text(object = "/planets.txt",
                                   
                                   stemmer = "porter2_stemmer", 
                                   
-                                  threads = 1)
+                                  threads = 1,
+                                  
+                                  verbose = TRUE)
 
 
 
@@ -1465,7 +1473,9 @@ res_dct = tokenize_transform_vec_docs(object = inp,
                                       
                                       stemmer_ngram = 3,
                                       
-                                      threads = 1)
+                                      threads = 1,
+                                      
+                                      verbose = TRUE)
 
 
 
@@ -1527,7 +1537,9 @@ res_dct_tok = tokenize_transform_vec_docs(object = inp,
                                           
                                           stemmer_ngram = 3,
                                           
-                                          threads = 1)
+                                          threads = 1,
+                                          
+                                          verbose = TRUE)
 
 
 
