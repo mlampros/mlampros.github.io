@@ -775,7 +775,7 @@ The *term_associations* method returns the correlation of specific terms (*Terms
 
 <br>
 
-```{r, eval = F, echo = T}
+```R
 
 dim(res_adj)
 
@@ -790,14 +790,14 @@ and the resulted terms,
 
 <br>
 
-```{r, eval = F, echo = T}
+```R
 
 init$term_associations(Terms = c('planets', 'by', 'INVALID'), keep_terms = NULL, verbose = TRUE)
 
 ```
 
 
-```{r, eval = F, echo = T}
+```R
 
 the ' INVALID ' term does not exist in the terms vector 
 
@@ -841,7 +841,7 @@ Lastly, the *most_frequent_terms* method gives the frequency of the terms in the
 <br>
 
 
-```{r, eval = F, echo = T}
+```R
 
 init = sparse_term_matrix$new(file_data = PATH, document_term_matrix = TRUE)
 
@@ -863,7 +863,7 @@ init$most_frequent_terms(keep_terms = 10, threads = 1, verbose = TRUE)
 ```
 
 
-```{r, eval = F, echo = T}
+```R
 
 minutes.to.complete: 0.00000
 
