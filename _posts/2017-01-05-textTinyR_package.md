@@ -723,7 +723,7 @@ Details about the parameters of the *Term_Matrix* method can be found in the pac
 
 <br> 
 
-To adjust the sparsity of the output matrix one can take advantage of the *Term_Matrix_Adjust* method, (by adjusting the sparsity_thresh towards 0.0 a proportion of the sparse terms will be removed)
+To adjust the sparsity of the output matrix one can take advantage of the *Term_Matrix_Adjust* method, (by adjusting the *sparsity_thresh* parameter towards 0.0 a proportion of the sparse terms will be removed)
 
 <br>
 
