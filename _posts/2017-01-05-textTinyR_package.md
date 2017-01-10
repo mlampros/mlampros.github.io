@@ -729,7 +729,7 @@ To adjust the sparsity of the output matrix one can take advantage of the *Term_
 
 ```R
 
-init$Term_Matrix_Adjust(sparsity_thresh = 0.6)   
+init$Term_Matrix_Adjust(sparsity_thresh = 0.6)             # terms (here columns) which sum to zero will be removed
 
 ```
 
