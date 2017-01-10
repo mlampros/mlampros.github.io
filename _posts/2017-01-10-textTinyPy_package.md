@@ -12,7 +12,7 @@ This blog post (which has many similarities with the [previous one](http://mlamp
 
 * **pip install textTinyPy**
 
-The package has been tested on Linux using python 2.7. It is based on the same C++ source code as the [*textTinyR*](https://github.com/mlampros/textTinyR) package, but it has a slightly different structure. It will work properly only if the following requirements are satisfied / installed:
+The package has been tested on Linux using python 2.7. It is based on the same C++ source code as the [*textTinyR*](https://github.com/mlampros/textTinyR) package, but it has a slightly different structure. It will work properly only if the following requirements are satisfied / installed: <br>
 
 * **boost** [(boost >= 1.55)](http://www.boost.org/)
 * **armadillo** [(armadillo >= 0.7.5)](http://arma.sourceforge.net/)
