@@ -1898,7 +1898,7 @@ res                     # example output
 
 <br>
 
-An updated version of the textTinyPy package can be found in my Github repository and to report bugs/issues please use the following link, https://github.com/mlampros/textTinyPy/issues.
+An updated version of the textTinyPy package can be found in my [Github repository](https://github.com/mlampros/textTinyPy) and to report bugs/issues please use the following link, [https://github.com/mlampros/textTinyPy/issues](https://github.com/mlampros/textTinyPy/issues).
 
 
 <br>
