@@ -537,7 +537,7 @@ I'm currently interested in word vectors and that's why I also made R-wrappers f
 
 Currently, there are many resources on the web on how to use [pre-trained word vectors (embeddings) as input to neural networks](https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html).
 
-In this vignette I'll use only the *fastTextR* word representation algorithm, however detailed documentation and system requirements on how to use either the *GloveR* or the *fastTextR* can be found in the corresponding repository. If I would train the whole data file (32.2 GB) using the *fastTextR* wrapper, it would take (approx.) 15 hours,
+In this blog post I'll use only the *fastTextR* word representation algorithm, however detailed documentation and system requirements on how to use either the *GloveR* or the *fastTextR* can be found in the corresponding repository. If I would train the whole data file (32.2 GB) using the *fastTextR* wrapper, it would take (approx.) 15 hours,
 
 <br>
 
