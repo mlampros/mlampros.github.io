@@ -674,7 +674,7 @@ init = sparse_term_matrix$new(vector_data = NULL,          # in case of vector o
 
 
 
-tm = init$Term_Matrix(sort_columns = TRUE,      # initial terms are sorted
+tm = init$Term_Matrix(sort_terms = TRUE,      # initial terms are sorted
                  
                       to_lower = TRUE,          # convert to lower case
                  
