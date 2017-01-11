@@ -295,7 +295,7 @@ By extracting the text chunks from the data the .xml file size reduces to (appro
 
 <br>
   
-More information about those parameters can be found in the package documentation.
+More information about those parameters can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/big_text_files.html).
 
 <br>
   
@@ -706,7 +706,7 @@ The *Term_Matrix* method takes almost the same parameters as the ( already expla
 * **tf_idf** ( the term-frequency-inverse-document-frequency will be returned )
 
 
-Details about the parameters of the *Term_Matrix* method can be found in the package documentation. <br>
+Details about the parameters of the *Term_Matrix* method can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/docs_matrix.html#docs_matrix.docs_matrix). <br>
 
 <br> 
 
@@ -896,7 +896,7 @@ minutes.to.complete: 0.00000
 
 <br>
 
-More information about the *docs_matrix* class can be found in the package documentation.
+More information about the *docs_matrix* class can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/docs_matrix.html#docs_matrix.docs_matrix).
 
 <br><br>
 
@@ -1312,7 +1312,7 @@ array(['_astrology_', '_mythology_'],
   
 the underscores are necessary to distinguish the begin and end of each word when computing the n-grams.
 
-More information about the *token_stats* class can be found in the package documentation.
+More information about the *token_stats* class can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/token_stats.html).
 
 <br><br>
 
@@ -1727,7 +1727,7 @@ pars_dat = init_utl.vocabulary_parser(input_path_file = '/folder/input_data.txt'
 
 <br>
 
-The last example chunks are part of the documentation and explain the **xml_parser_subroot_elements()** and **xml_parser_root_elements()** methods, which do xml-tree traversal using the boost library. The logic behind root-child-subchildren of an xml file is explained in [http://www.w3schools.com/xml/xml_tree.asp](http://www.w3schools.com/xml/xml_tree.asp),
+The last example chunks are part of the [documentation](https://mlampros.github.io/textTinyPy/_autosummary/utils.html#utils.utils.xml_parser_subroot_elements) and explain the **xml_parser_subroot_elements()** and **xml_parser_root_elements()** methods, which do xml-tree traversal using the boost library. The logic behind root-child-subchildren of an xml file is explained in [http://www.w3schools.com/xml/xml_tree.asp](http://www.w3schools.com/xml/xml_tree.asp),
 
 <br>
 
