@@ -896,7 +896,7 @@ minutes.to.complete: 0.00000
 
 <br>
 
-More information about the *docs_matrix* class can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/docs_matrix.html#docs_matrix.docs_matrix).
+More information about the *docs_matrix* class can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/docs_matrix.html#).
 
 <br><br>
 
