@@ -295,7 +295,7 @@ By extracting the text chunks from the data the .xml file size reduces to (appro
 
 <br>
   
-More information about those parameters can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/big_text_files.html).
+More information about those parameters can be found in the package [documentation](https://mlampros.github.io/textTinyPy/_autosummary/big_text_files.html#big_text_files.big_text_files.big_text_tokenizer).
 
 <br>
   
