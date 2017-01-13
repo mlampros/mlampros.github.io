@@ -14,18 +14,34 @@ This blog post (which has many similarities with the [previous one](http://mlamp
 
 The package has been tested on Linux using python 2.7. It is based on the same C++ source code as the [*textTinyR*](https://github.com/mlampros/textTinyR) package, but it has a slightly different structure and it's wrapped in Python using Cython. It will work properly only if the following requirements are satisfied / installed: <br>
 
+<br>
+
+#### **System Requirements:**
+
 * **boost** [(boost >= 1.55)](http://www.boost.org/)
 * **armadillo** [(armadillo >= 0.7.5)](http://arma.sourceforge.net/)
+* a **C++11** compiler
+* [OpenMP](http://www.openmp.org/) for parallelization (optional)
+
+<br>
+
+#### **Python Requirements:**
+
 * **Cython**>=0.23.5
 * **pandas**>=0.13.1
 * **scipy**>=0.16.1
 * **numpy**>=1.11.2
 * **future**>=0.15.2
 
+<br>
+
+The **Python Requirements** can be installed using **pip install** and detailed instructions on how to install the **System Requirements** can be found in the [README file of the Github repository](https://github.com/mlampros/textTinyPy/blob/master1/README.rst). 
+
+<br>
 
 The following **classes** are part of the package:
 
-<br>
+
 
 #### **classes** 
 
