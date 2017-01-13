@@ -18,6 +18,8 @@ The package has been tested on Linux using python 2.7. It is based on the same C
 
 #### **System Requirements:**
 
+<br>
+
 * **boost** [(boost >= 1.55)](http://www.boost.org/)
 * **armadillo** [(armadillo >= 0.7.5)](http://arma.sourceforge.net/)
 * a **C++11** compiler
@@ -26,6 +28,8 @@ The package has been tested on Linux using python 2.7. It is based on the same C
 <br>
 
 #### **Python Requirements:**
+
+<br>
 
 * **Cython**>=0.23.5
 * **pandas**>=0.13.1
