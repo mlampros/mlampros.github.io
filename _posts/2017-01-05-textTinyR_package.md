@@ -15,11 +15,7 @@ The advantage of the *textTinyR* package lies in its ability to process big text
 <br>
 
 
-*update (06-01-2017):* On a Unix Operating System (OS) the boost library and especially the boost-locale are necessary,
-
-* **Debian OS** : sudo apt-get install libboost-all-dev
-* **Fedora OS** : yum install boost-devel
-* **Mac OS**    : brew install boost
+*update (21-01-2017):* Detailed installation instructions for the **Debian**, **Fedora** and **Macintosh OS's** were added in the [README file of my Github repository](https://github.com/mlampros/textTinyR).
 
 
 <br>
