@@ -1,10 +1,10 @@
-
 ---
 layout: post
 title: Processing of GeoJson data in R
 tags: [R, package, R-bloggers]
 comments: true
 ---
+
 
 
 This blog post is about my recently released package on CRAN, **geojsonR**. The following notes and examples are based mainly on the package Vignette.
