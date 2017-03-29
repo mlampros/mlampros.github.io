@@ -437,13 +437,13 @@ A secondary thought about the *geojsonR* package was to make some of its functio
 
 or follow the web-links using the [shinyapps.io](http://www.shinyapps.io/) service,
 
-* https://lampros.shinyapps.io/shiny_geocoding/
-* https://lampros.shinyapps.io/shiny_geojson/
-* https://lampros.shinyapps.io/shiny_reverse_geocoding/
+* [https://lampros.shinyapps.io/shiny_geocoding/](https://lampros.shinyapps.io/shiny_geocoding/)
+* [https://lampros.shinyapps.io/shiny_geojson/](https://lampros.shinyapps.io/shiny_geojson/)
+* [https://lampros.shinyapps.io/shiny_reverse_geocoding/](https://lampros.shinyapps.io/shiny_reverse_geocoding/)
 
 The latter service is limited to 25 active hours per month (for free accounts), thus if the limit is exceeded then the applications won't be available to the end users.
 
-I won't go into detail about [shiny](https://shiny.rstudio.com/) and [leaflet](https://rstudio.github.io/leaflet/), because both packages are well documented and users can find information on how to include them in their projects. On the other hand, "*Nominatim* is a tool to search OpenStreetMap (OSM) data by name and address and to generate synthetic addresses of OSM points (reverse geocoding). It can be found at *nominatim.openstreetmap.org*. Nominatim is also used as one of the sources for the search box on the OpenStreetMap home page. Several companies provide hosted instances of Nominatim that you can query via an API." More information on how to use *Nominatim* can be found at http://wiki.openstreetmap.org/wiki/Nominatim).
+I won't go into detail about [shiny](https://shiny.rstudio.com/) and [leaflet](https://rstudio.github.io/leaflet/), because both packages are well documented and users can find information on how to include them in their projects. On the other hand, "*Nominatim* is a tool to search OpenStreetMap (OSM) data by name and address and to generate synthetic addresses of OSM points (reverse geocoding). It can be found at *nominatim.openstreetmap.org*. Nominatim is also used as one of the sources for the search box on the OpenStreetMap home page. Several companies provide hosted instances of Nominatim that you can query via an API." More information on how to use *Nominatim* can be found at [http://wiki.openstreetmap.org/wiki/Nominatim](http://wiki.openstreetmap.org/wiki/Nominatim)).
 
 <br>
 
@@ -451,7 +451,7 @@ I won't go into detail about [shiny](https://shiny.rstudio.com/) and [leaflet](h
 
 <br>
 
-The first application *geocoding_geojson* takes a valid *GeoJson* file, url (beginning from http..) or a valid json character string as input (*Data Input field*) and a *map_provider* (defaults to OpenStreetMap) and returns a leaflet map. If the *map_provider* is other than OpenStreetMap, then the input parameter should match one of the names(leaflet::providers). More information about the leaflet:providers can be found in the following links: https://rstudio.github.io/leaflet/basemaps.html, https://github.com/leaflet-extras/leaflet-providers and http://leaflet-extras.github.io/leaflet-providers/preview/index.html. The following image shows the output for the [california.geojson](https://raw.githubusercontent.com/mlampros/DataSets/master/california.geojson) file using the *CartoDB.Positron* as *map_provider*,
+The first application *geocoding_geojson* takes a valid *GeoJson* file, url (beginning from http..) or a valid json character string as input (*Data Input field*) and a *map_provider* (defaults to OpenStreetMap) and returns a leaflet map. If the *map_provider* is other than OpenStreetMap, then the input parameter should match one of the names(leaflet::providers). More information about the leaflet:providers can be found in the following links: [https://rstudio.github.io/leaflet/basemaps.html](https://rstudio.github.io/leaflet/basemaps.html), [https://github.com/leaflet-extras/leaflet-providers](https://github.com/leaflet-extras/leaflet-providers) and [http://leaflet-extras.github.io/leaflet-providers/preview/index.html](http://leaflet-extras.github.io/leaflet-providers/preview/index.html). The following image shows the output for the [california.geojson](https://raw.githubusercontent.com/mlampros/DataSets/master/california.geojson) file using the *CartoDB.Positron* as *map_provider*,
 
 <br>
 
