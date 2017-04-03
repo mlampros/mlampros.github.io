@@ -6,7 +6,6 @@ comments: true
 ---
 
 
-
 This blog post is about my recently released package on CRAN, **geojsonR**. The following notes and examples are based mainly on the package Vignette.
 
 "[GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) is an open standard format designed for representing simple geographical features, along with their non-spatial attributes, based on JavaScript Object Notation. The features include points (therefore *addresses* and *locations*), line strings (therefore *streets*, *highways* and *boundaries*), polygons (*countries*, *provinces*, *tracts of land*), and multi-part collections of these types. GeoJSON features need not represent entities of the physical world only; *mobile routing* and *navigation apps*, for example, might describe their service coverage using GeoJSON. The GeoJSON format differs from other GIS standards in that it was written and is maintained not by a formal standards organization, but by an Internet working group of developers." <br>
