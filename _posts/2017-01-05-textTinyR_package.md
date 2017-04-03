@@ -1526,7 +1526,6 @@ res_dct = tokenize_transform_vec_docs(object = inp,
                                       threads = 1)
 
 
-
 ```
 
 <br>

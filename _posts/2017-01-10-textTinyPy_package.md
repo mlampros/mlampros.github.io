@@ -1385,13 +1385,15 @@ res_txt = init_trans_tok.transform_text(input_string = "/planets.txt",
                                         
                                         language = "english",
                                         
-                                        stemmer = "porter2_stemmer", 
-                                        
+                                        stemmer = "ngram_sequential",
+
+                                        stemmer_ngram = 3,
+
                                         threads = 1)
 ```
 <br>
 
-the output is a list of *tokens* after the english stopwords were removed and the terms were stemmed (*porter2-stemming*),
+the output is a vector of *tokens* after the english stopwords were removed and the terms were stemmed (*ngram_sequential* of length 3),
 
 <br>
 
@@ -1400,11 +1402,34 @@ the output is a list of *tokens* after the english stopwords were removed and th
 res_txt             # example output
 
 
-['term', 'planet', 'ancient', 'tie', 'histori', 'astrolog', 'scienc', 'mytholog', 'religion', 'planet', 'solar', 'system', 'nake', 'eye', 'regard', 'ear', 'cultur', 'divin', 'emissari', 'deiti', 'scientif', 'knowledg', 'advanc', 'human', 'percept', 'planet', 'chang', 'incorpor', 'number', 'dispar', 'object', '2006', 'intern', 'astronom', 'union', 'iau', 'offici', 'adopt', 'resolut', 'defin', 'planet', 'solar', 'system', 'definit', 'controversi', 'exclud', 'object', 'planetari', 'mass', 'base', 'orbit', 'planetari', 'bodi', 'discov', '1950', 'remain', 'planet', 'modern', 'definit', 
-.
-.
-.
-'probe', 'found', 'earth', 'planet', 'share', 'characterist', 'volcan', 'hurrican', 'tecton', 'hydrolog', 'planet', 'general', 'divid', 'main', 'type', 'larg', 'lowdens', 'giant', 'planet', 'smaller', 'rocki', 'terrestri', 'iau', 'definit', 'planet', 'solar', 'system', 'order', 'increas', 'distanc', 'sun', 'terrestri', 'mercuri', 'venus', 'earth', 'mar', 'giant', 'planet', 'jupit', 'saturn', 'uranus', 'neptun', 'planet', 'orbit', 'natur', 'satellit']
+['ter', 'planet', 'anci', 'ties', 'hist', 'astro', 'scien', 'mythol',
+ 'relig', 'planet', 'solar', 'system', 'naked', 'eye', 'regar',
+ 'early', 'cultu', 'divi', 'emissar', 'deit', 'scien', 'knowle',
+ 'advan', 'human', 'percept', 'planet', 'chan', 'incorporat',
+ 'number', 'dispar', 'object', '2006', 'internatio', 'astro',
+ 'union', 'iau', 'officia', 'adop', 'resolut', 'defini', 'planet',
+ 'solar', 'system', 'defini', 'controvers', 'exclu', 'object',
+ 'planet', 'mass', 'based', 'orbit', 'planet', 'bodies', 'discove',
+ '1950', 'remain', '"plane', 'modern', 'defini', 'celest', 'bodies',
+ 'ceres', 'pallas', 'juno', 'vesta', 'object', 'solar', 'aster',
+ 'belt', 'pluto', 'trans-neptun', 'object', 'discove', 'conside',
+ 'planet', 'scien', 'commun', 'longer', 'view', 'planet', 'thou',
+ 'ptol', 'orbit', 'earth', 'defer', 'epicy', 'moti', 'idea',
+ 'planet', 'orbit', 'sun', 'sugges', 'time', '17th', 'cent', 'view',
+ 'suppor', 'evide', 'telesco', 'astro', 'observation', 'perfor',
+ 'galile', 'galile', 'time', 'care', 'analy', 'pre-telesco',
+ 'observat', 'data', 'collec', 'tycho', 'brahe', 'johan', 'kepler',
+ 'found', 'planet', 'orbit', 'circu', 'ellipti', 'observation',
+ 'tools', 'impro', 'astro', 'earth', 'planet', 'rota', 'tilted',
+ 'axes', 'share', 'featu', 'ice', 'caps', 'seas', 'dawn', 'space',
+ 'age', 'close', 'observat', 'space', 'probes', 'found', 'earth',
+ 'planet', 'share', 'characterist', 'volcan', 'hurrica', 'tecton',
+ 'hydrol', 'planet', 'genera', 'divi', 'main', 'types', 'large',
+ 'low-dens', 'giant', 'planet', 'smal', 'rocky', 'terrestri', 'iau',
+ 'defini', 'planet', 'solar', 'system', 'order', 'increas', 'dista',
+ 'sun', 'terrestri', 'merc', 'venus', 'earth', 'mars', 'giant',
+ 'planet', 'jupi', 'saturn', 'uranus', 'nept', 'planet', 'orbit',
+ 'natu', 'satelli']
 
 ```
 
@@ -1455,23 +1480,27 @@ res_dct = init_trans_tok.transform_vec_docs(input_list = list(vec_docs),       #
                                             remove_stopwords = True, 
                                             
                                             language = "english",
-                                            
-                                            stemmer = "ngram_sequential",
-                                            
-                                            stemmer_ngram = 3,
-                                            
+                                      
+                                            stemmer = "porter2_stemmer", 
+                                  
                                             threads = 1)
 ```
 
 <br>
 
-the output is a list (of equal length as the vec_docs array) of *transformed documents* after the english stopwords were removed and the terms were stemmed (*ngram_sequential* of length 3),
+the output is a list (of equal length as the vec_docs array) of *transformed documents* after the english stopwords were removed and the terms were stemmed (*porter2-stemming*),
 
 <br>
 
 ```py
 
-['term planet anci ties hist astro scien mythol relig planet solar system naked eye regar early cultu divine emissar deit scien knowle advan human percept planet chan incorporat number dispar obje 2006 internatio astro union iau officia adop resolut defini planet solar system defini controvers exclu obje planet mass based orbit', 'planet bodies discove 1950 remain planet modern definit celest bodies ceres pallas juno vesta object solar aster belt pluto trans-neptun object discove conside planet scienti commun longer viewed', 'plan thou ptol orbit earth defer epicy moti idea plan orbit sun sugges times 17th cent view suppor evide telesco astronomi observati perfor galile galile', 'time care analy pre-telesco observat data collec tycho brahe johan kepler found plan orbits circu ellipti observation tools impro astronom earth plan rota tilted axes share featu ice caps seas dawn space age close observat space probes found earth plan share characterist volcan hurrica tecton hydrol', 'plan genera divi main types large lowdens giant plan smal rocky terrestri iau definiti plan solar system order increas dista sun terrestri merc venus earth mars giant plan jupi saturn uranus nept plan orbi natu satelli']
+res_dct             # example output
+
+['term planet ancient tie histori astrolog scienc mytholog religion planet solar system nake eye regard ear cultur divin emissari deiti scientif knowledg advanc human percept planet chang incorpor number dispar object 2006 intern astronom union iau    offici adopt resolut defin planet solar system definit controversi exclud object planetari mass base orbit', 'planetari bodi discov 1950 remain "planets" modern definit celesti bodi cere palla juno vesta object solar asteroid belt pluto     
+  trans-neptunian object discov consid planet scientif communiti longer view', 'planet thought ptolemi orbit earth defer epicycl motion idea planet orbit sun suggest time 17th centuri view support evid telescop astronom observ perform galileo 
+  galilei', 'time care analysi pre-telescop observ data collect tycho brahe johann kepler found planet orbit circular ellipt observ tool improv astronom earth planet rotat tilt axe share featur ice cap season dawn space age close observ space probe  
+  found earth planet share characterist volcan hurrican tecton hydrolog', 'planet general divid main type larg low-dens giant planet smaller rocki terrestri iau definit planet solar system order increas distanc sun terrestri mercuri venus earth mar 
+  giant planet jupit saturn uranus neptun planet orbit natur satellit']
 
 ```
 
@@ -1499,10 +1528,8 @@ res_dct = init_trans_tok.transform_vec_docs(input_list = list(vec_docs),       #
                                             
                                             language = "english",
                                             
-                                            stemmer = "ngram_sequential",
-                                            
-                                            stemmer_ngram = 3,
-                                            
+                                            stemmer = "porter2_stemmer", 
+                                  
                                             threads = 1)
 
 ```
@@ -1514,7 +1541,12 @@ res_dct = init_trans_tok.transform_vec_docs(input_list = list(vec_docs),       #
 res_dct               # example output
 
 
-[['term', 'planet', 'anci', 'ties', 'hist', 'astro', 'scien', 'mythol', 'relig', 'planet', 'solar', 'system', 'naked', 'eye', 'regar', 'early', 'cultu', 'divine', 'emissar', 'deit', 'scien', 'knowle', 'advan', 'human', 'percept', 'planet', 'chan', 'incorporat', 'number', 'dispar', 'obje', '2006', 'internatio', 'astro', 'union', 'iau', 'officia', 'adop', 'resolut', 'defini', 'planet', 'solar', 'system', 'defini', 'controvers', 'exclu', 'obje', 'planet', 'mass', 'based', 'orbit'], ['planet', 'bodies', 'discove', '1950', 'remain', 'planet', 'modern', 'definit', 'celest', 'bodies', 'ceres', 'pallas', 'juno', 'vesta', 'object', 'solar', 'aster', 'belt', 'pluto', 'trans-neptun', 'object', 'discove', 'conside', 'planet', 'scienti', 'commun', 'longer', 'viewed'], ['plan', 'thou', 'ptol', 'orbit', 'earth', 'defer', 'epicy', 'moti', 'idea', 'plan', 'orbit', 'sun', 'sugges', 'times', '17th', 'cent', 'view', 'suppor', 'evide', 'telesco', 'astronomi', 'observati', 'perfor', 'galile', 'galile'], ['time', 'care', 'analy', 'pre-telesco', 'observat', 'data', 'collec', 'tycho', 'brahe', 'johan', 'kepler', 'found', 'plan', 'orbits', 'circu', 'ellipti', 'observation', 'tools', 'impro', 'astronom', 'earth', 'plan', 'rota', 'tilted', 'axes', 'share', 'featu', 'ice', 'caps', 'seas', 'dawn', 'space', 'age', 'close', 'observat', 'space', 'probes', 'found', 'earth', 'plan', 'share', 'characterist', 'volcan', 'hurrica', 'tecton', 'hydrol'], ['plan', 'genera', 'divi', 'main', 'types', 'large', 'lowdens', 'giant', 'plan', 'smal', 'rocky', 'terrestri', 'iau', 'definiti', 'plan', 'solar', 'system', 'order', 'increas', 'dista', 'sun', 'terrestri', 'merc', 'venus', 'earth', 'mars', 'giant', 'plan', 'jupi', 'saturn', 'uranus', 'nept', 'plan', 'orbi', 'natu', 'satelli']]
+[ ['term', 'planet', 'ancient', 'tie', 'histori', 'astrolog', 'scienc', 'mytholog', 'religion', 'planet', 'solar', 'system', 'nake', 'eye', 'regard', 'ear', 'cultur', 'divin', 'emissari', 'deiti', 'scientif', 'knowledg', 'advanc', 'human', 'percept', 'planet', 'chang', 'incorpor', 'number', 'dispar', 'object', '2006', 'intern', 'astronom', 'union', 'iau', 'offici', 'adopt', 'resolut', 'defin', 'planet', 'solar', 'system', 'definit', 'controversi', 'exclud', 'object', 'planetari', 'mass', 'base', 'orbit'],
+['planetari', 'bodi', 'discov', '1950', 'remain', '"planets"', 'modern', 'definit', 'celesti', 'bodi', 'cere', 'palla', 'juno', 'vesta', 'object', 'solar', 'asteroid', 'belt', 'pluto', 'trans-neptunian', 'object', 'discov', 'consid', 'planet', 'scientif', 'communiti', 'longer', 'view'],
+['planet', 'thought', 'ptolemi', 'orbit', 'earth', 'defer', 'epicycl', 'motion', 'idea', 'planet', 'orbit', 'sun', 'suggest', 'time', '17th', 'centuri', 'view', 'support', 'evid', 'telescop', 'astronom', 'observ', 'perform', 'galileo', 'galilei'],
+['time', 'care', 'analysi', 'pre-telescop', 'observ', 'data', 'collect', 'tycho', 'brahe', 'johann', 'kepler', 'found', 'planet', 'orbit', 'circular', 'ellipt', 'observ', 'tool', 'improv', 'astronom', 'earth', 'planet', 'rotat', 'tilt', 'axe', 'share', 'featur', 'ice', 'cap', 'season', 'dawn', 'space', 'age', 'close', 'observ', 'space', 'probe', 'found', 'earth', 'planet', 'share', 'characterist', 'volcan', 'hurrican', 'tecton', 'hydrolog'],
+['planet', 'general', 'divid', 'main', 'type', 'larg', 'low-dens', 'giant', 'planet', 'smaller', 'rocki', 'terrestri', 'iau', 'definit', 'planet', 'solar', 'system', 'order', 'increas', 'distanc', 'sun', 'terrestri', 'mercuri', 'venus', 'earth', 'mar', 'giant', 'planet', 'jupit', 'saturn', 'uranus', 'neptun', 'planet', 'orbit', 'natur', 'satellit']]
+
 ```
 
 
@@ -1533,8 +1565,8 @@ A few words about the **LOCALE_UTF**, **remove_stopwords** and **stemmer** param
 <br>
 
 * The **stemmer** parameter can take as input one of the **porter2_stemmer**, **ngram_sequential** or **ngram_overlap**. 
-    + The [*porter2_stemmer*](https://github.com/smassung/porter2_stemmer) is a C++ implementation of the [snowball-porter2](http://snowball.tartarus.org/algorithms/english/stemmer.html) stemming algorithm. 
-    + On the other hand, *n-gram stemming* is *"language independent"* and supported by the **ngram_sequential** and **ngram_overlap** functions.
+    + The [*porter2_stemmer*](https://github.com/smassung/porter2_stemmer) is a C++ implementation of the [snowball-porter2](http://snowball.tartarus.org/algorithms/english/stemmer.html) stemming algorithm. The *porter2_stemmer* applies to all methods of the *textTinyR* package.
+    + On the other hand, *n-gram stemming* is *"language independent"* and supported by the **ngram_sequential** and **ngram_overlap** functions. The *n-gram stemming* applies to all methods except for the *Term_Matrix*, *transform_vec_docs* and *vocabulary_parser* methods of the corresponding *tokenizer*, *docs_matrix* and *utils* classes
         - [*ngram_overlap*](http://clef.isti.cnr.it/2007/working_notes/mcnameeCLEF2007.pdf) : The ngram_overlap stemming method is based on N-Gram Morphemes for Retrieval, Paul McNamee and James Mayfield
         - [*ngram_sequential*](https://arxiv.org/pdf/1312.4824.pdf) : The ngram_sequential stemming method is a modified version based on Generation, Implementation and Appraisal of an N-gram based Stemming Algorithm, B. P. Pande, Pawan Tamta, H. S. Dhami
 
