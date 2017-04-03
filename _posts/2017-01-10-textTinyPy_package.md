@@ -1496,17 +1496,17 @@ the output is a list (of equal length as the vec_docs array) of *transformed doc
 
 res_dct             # example output
 
-['term planet ancient tie histori astrolog scienc mytholog religion planet solar system nake eye regard ear cultur divin emissari deiti scientif knowledg advanc human percept planet chang incorpor number dispar object 2006 intern astronom union iau    offici adopt resolut defin planet solar system definit controversi exclud object planetari mass base orbit', 'planetari bodi discov 1950 remain "planets" modern definit celesti bodi cere palla juno vesta object solar asteroid belt pluto     
-  trans-neptunian object discov consid planet scientif communiti longer view', 'planet thought ptolemi orbit earth defer epicycl motion idea planet orbit sun suggest time 17th centuri view support evid telescop astronom observ perform galileo 
-  galilei', 'time care analysi pre-telescop observ data collect tycho brahe johann kepler found planet orbit circular ellipt observ tool improv astronom earth planet rotat tilt axe share featur ice cap season dawn space age close observ space probe  
-  found earth planet share characterist volcan hurrican tecton hydrolog', 'planet general divid main type larg low-dens giant planet smaller rocki terrestri iau definit planet solar system order increas distanc sun terrestri mercuri venus earth mar 
-  giant planet jupit saturn uranus neptun planet orbit natur satellit']
+['term planet ancient tie histori astrolog scienc mytholog religion planet solar system nake eye regard ear cultur divin emissari deiti scientif knowledg advanc human percept planet chang incorpor number dispar object 2006 intern astronom union iau offici adopt resolut defin planet solar system definit controversi exclud object planetari mass base orbit',
+'planetari bodi discov 1950 remain "planets" modern definit celesti bodi cere palla juno vesta object solar asteroid belt pluto trans-neptunian object discov consid planet scientif communiti longer view', 
+'planet thought ptolemi orbit earth defer epicycl motion idea planet orbit sun suggest time 17th centuri view support evid telescop astronom observ perform galileo galilei', 
+'time care analysi pre-telescop observ data collect tycho brahe johann kepler found planet orbit circular ellipt observ tool improv astronom earth planet rotat tilt axe share featur ice cap season dawn space age close observ space probe found earth planet share characterist volcan hurrican tecton hydrolog', 
+'planet general divid main type larg low-dens giant planet smaller rocki terrestri iau definit planet solar system order increas distanc sun terrestri mercuri venus earth mar giant planet jupit saturn uranus neptun planet orbit natur satellit']
 
 ```
 
 <br>
 
-The documents can be returned as a list of lists by specifying, *as_token* = TRUE,
+The documents can be returned as a list of lists by specifying, *as_token* = True,
 
 <br>
 
@@ -1565,7 +1565,7 @@ A few words about the **LOCALE_UTF**, **remove_stopwords** and **stemmer** param
 <br>
 
 * The **stemmer** parameter can take as input one of the **porter2_stemmer**, **ngram_sequential** or **ngram_overlap**. 
-    + The [*porter2_stemmer*](https://github.com/smassung/porter2_stemmer) is a C++ implementation of the [snowball-porter2](http://snowball.tartarus.org/algorithms/english/stemmer.html) stemming algorithm. The *porter2_stemmer* applies to all methods of the *textTinyR* package.
+    + The [*porter2_stemmer*](https://github.com/smassung/porter2_stemmer) is a C++ implementation of the [snowball-porter2](http://snowball.tartarus.org/algorithms/english/stemmer.html) stemming algorithm. The *porter2_stemmer* applies to all methods of the *textTinyPy* package.
     + On the other hand, *n-gram stemming* is *"language independent"* and supported by the **ngram_sequential** and **ngram_overlap** functions. The *n-gram stemming* applies to all methods except for the *Term_Matrix*, *transform_vec_docs* and *vocabulary_parser* methods of the corresponding *tokenizer*, *docs_matrix* and *utils* classes
         - [*ngram_overlap*](http://clef.isti.cnr.it/2007/working_notes/mcnameeCLEF2007.pdf) : The ngram_overlap stemming method is based on N-Gram Morphemes for Retrieval, Paul McNamee and James Mayfield
         - [*ngram_sequential*](https://arxiv.org/pdf/1312.4824.pdf) : The ngram_sequential stemming method is a modified version based on Generation, Implementation and Appraisal of an N-gram based Stemming Algorithm, B. P. Pande, Pawan Tamta, H. S. Dhami
