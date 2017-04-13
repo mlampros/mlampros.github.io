@@ -51,8 +51,7 @@ The *fuzzywuzzyR* package includes R6-classes / functions for string matching,
 <br>
 
 | GetCloseMatches() |
-|                   |
-| :---------------- |
+
 
 <br>
 
