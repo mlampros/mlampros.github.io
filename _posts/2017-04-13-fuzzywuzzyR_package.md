@@ -480,7 +480,9 @@ MCLAPPLY_RATIOS = function(QUERY1, QUERY2, class_fuzz = 'FuzzMatcher', method_fu
 
   else {
 
-    res_qrat = parallel::mclapply(1:length(QUERY1), function(x) do.call(eval(parse(text = METHOD)), list(QUERY1[[x]], QUERY2[[x]], ...)), mc.cores = threads)
+    res_qrat = parallel::mclapply(1:length(QUERY1), function(x) do.call(eval(parse(text = METHOD)), list(QUERY1[[x]], QUERY2[[x]], ...)), 
+    
+    mc.cores = threads)
   }
 
   return(res_qrat)
@@ -520,7 +522,7 @@ My personal opinion is that the newly released [reticulate](https://github.com/r
 
 <br>
 
-As an R user I'd always liked to have a *truncated svd* function similar to the one of the [sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html) python library. So, now in R using the reticulate package and the [mnist data](https://github.com/mlampros/DataSets) set one can do,
+As an R user I'd always like to have a *truncated svd* function similar to the one of the [sklearn](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html) python library. So, now in R using the reticulate package and the [mnist data](https://github.com/mlampros/DataSets) set one can do,
 
 <br>
 
@@ -535,7 +537,7 @@ reticulate::py_module_available('sklearn')       # check that 'sklearn' is avail
 
 ```R
 
-dim(mnist)                # after downloading and open the data from the previous link
+dim(mnist)                # after downloading and opening the data from the previous link
 
 70000   785
 
@@ -611,6 +613,7 @@ dim(tmp_im)
 ```R
 
 image = color$rgb2gray(tmp_im)                       # convert to gray
+
 dim(image)
 
 # [1] 512 512
@@ -620,6 +623,7 @@ dim(image)
 ```R
 
 res = feat$hog(image, orientations = 8L, pixels_per_cell = c(16L, 16L), cells_per_block = c(1L, 1L), visualise=T)
+
 str(res)
 
 # List of 2
@@ -635,7 +639,7 @@ OpenImageR::imageShow(res[[2]])       # using the OpenImageR to plot the data
 
 ```
 
-![](hog_plot_astronaut.png)
+![Alt text](/images/hog_plot_astronaut.png)
 
 <br>
 
