@@ -482,7 +482,7 @@ MCLAPPLY_RATIOS = function(QUERY1, QUERY2, class_fuzz = 'FuzzMatcher', method_fu
 
     res_qrat = parallel::mclapply(1:length(QUERY1), function(x) do.call(eval(parse(text = METHOD)), list(QUERY1[[x]], QUERY2[[x]], ...)), 
     
-    mc.cores = threads)
+                                  mc.cores = threads)
   }
 
   return(res_qrat)
