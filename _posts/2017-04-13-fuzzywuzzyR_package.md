@@ -7,7 +7,9 @@ comments: true
 
 
 I recently released an (other one) R package on CRAN - **fuzzywuzzyR** - which ports the [fuzzywuzzy](https://github.com/seatgeek/fuzzywuzzy) python library in R. "fuzzywuzzy does fuzzy string matching by using the Levenshtein Distance to calculate the differences between sequences (of character strings)."
+
 There is no *big news* here as in R already exist similar packages such as the [stringdist](https://github.com/markvanderloo/stringdist) package. Why then creating the package? Well, I intend to participate in a recently launched [kaggle competition](https://www.kaggle.com/c/quora-question-pairs) and one popular method to build features (predictors) is fuzzy string matching as explained in this [blog post](https://www.linkedin.com/pulse/duplicate-quora-question-abhishek-thakur). My (second) aim was to use the (newly released from Rstudio) [reticulate](https://github.com/rstudio/reticulate) package, which "provides an R interface to Python modules, classes, and functions" and makes the process of porting python code in R not cumbersome.
+
 First, I'll explain the functionality of the **fuzzywuzzyR** package and then I'll give some examples on how to take advantage of the *reticulate* package in R.
 
 <br>
