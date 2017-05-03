@@ -381,9 +381,9 @@ res = lapply(1:length(samp_rot), function(x)
                     
                shift_rows = samp_shif_rows[x], shift_cols = samp_shif_cols[x], 
                
-               rotate_angle = samp_rot[x], rotate_method = 'bilinear', zca_comps = 100, 
+               rotate_angle = samp_rot[x], rotate_method = 'bilinear', zca_comps = 0, 
               
-               zca_epsilon = 0.1, image_thresh = 0.0, threads = 1, verbose = F))
+               zca_epsilon = 0.0, image_thresh = 0.0, threads = 1, verbose = F))
 ```
 <br><br>
 
