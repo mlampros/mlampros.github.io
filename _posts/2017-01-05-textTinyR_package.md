@@ -832,14 +832,14 @@ $by
 
 <br>
 
-Lastly, the *most_frequent_terms* method gives the frequency of the terms in the corpus. However, the function returns only if the *normalize* parameter is NULL and the *tf_idf* parameter is FALSE ( the latter two parameters belong to the *init$Term_Matrix()* method ),
+Lastly, the *most_frequent_terms* method gives the frequency of the terms in the corpus. However, the function returns only if the *normalize* parameter is NULL and the *tf_idf* parameter is FALSE ( those two parameters belong to the *init$Term_Matrix()* method ),
 
 <br>
 
 
 ```R
 
-init = sparse_term_matrix$new(file_data = PATH, document_term_matrix = TRUE)
+init = sparse_term_matrix$new(file_data = "/planets.txt", document_term_matrix = TRUE)
 
 tm = init$Term_Matrix(sort_terms = TRUE,     
                  
