@@ -29,10 +29,21 @@ Random forest feature selection has some [drawbacks](https://en.wikipedia.org/wi
 <br>
 <br>
 
+
+
 ### a wrapper package
 
 To experiment with the previously mentioned algorithms, I have built a wrapper package called **FeatureSelection**, which can be installed from [Github](https://github.com/mlampros/FeatureSelection) using install_github('mlampros/FeatureSelection') of the devtools package. Furthermore, I will use the high-dimensional *africa soil properties* data from a past kaggle competition, which can be downloaded [here](https://www.kaggle.com/c/afsis-soil-properties/data). The purpose of the competition was to predict physical and chemical properties of soil using spectral measurements. The data came with a preprocessing script, which took the [first derivatives to smooth out the measurement noise](http://afsiskaggle.qed.ai/) 
 <br>
+<br>
+
+**UPDATE : 13-06-2017** [ One needs an older xgboost version (= 0.4-4) to install (and experiment with) the package ]
+
+```R
+
+devtools::install_version("xgboost", version = "0.4-4", repos = "http://cran.us.r-project.org")
+
+```
 <br>
 
 
