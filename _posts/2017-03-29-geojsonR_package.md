@@ -250,13 +250,13 @@ The **FROM_GeoJson_Schema** is the *relaxed* version of the **FROM_GeoJson** fun
 
 ```R
 
-tmp_str = '{
-             "name" : "example_name",
-             "location" : {
-                 "type" : "Point",
-                 "coordinates" : [ -120.24, 39.21 ]
+tmp_str = "{
+             'name' : 'example_name',
+             'location' : {
+                 'type' : 'Point',
+                 'coordinates' : [ -120.24, 39.21 ]
                }
-            }'
+            }"
 
 res = FROM_GeoJson_Schema(url_file_string = tmp_str, geometry_name = "location")
 
