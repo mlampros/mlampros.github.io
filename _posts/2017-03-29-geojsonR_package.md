@@ -237,10 +237,12 @@ List of 4
  $ type      : chr "Feature"
 
 ```
-<br><br>
 
+<br>
 
 ##### **FROM_GeoJson_Schema**
+
+<br>
 
 The **FROM_GeoJson_Schema** is the *relaxed* version of the **FROM_GeoJson** function. By *relaxed* I mean that it can take property names other than those that the *RFC 7946* specification determines. The following example shows the output when someone specifies the additional parameter **geometry_name**, 
 
