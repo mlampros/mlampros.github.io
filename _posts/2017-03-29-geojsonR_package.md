@@ -283,7 +283,7 @@ $name
   
 The **geometry_name** takes the property name of the geometry object as input and if set to the default value (""), then recursion will be used which can be slower especially in case that the dimensions of the geometry object's coordinates are big. The **FROM_GeoJson_Schema** function is appropriate in cases where the **FROM_GeoJson** function raises an error.
 
-<br><br>
+<br>
 
 
 ##### **TO_GeoJson**
