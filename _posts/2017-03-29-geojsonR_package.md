@@ -237,7 +237,53 @@ List of 4
  $ type      : chr "Feature"
 
 ```
+<br>
+  
+##### **FROM_GeoJson_Schema**
+  
+<br>
+  
+The **FROM_GeoJson_Schema** is the *relaxed* version of the **FROM_GeoJson** function. By *relaxed* I mean that it can take property names other than those that the *RFC 7946* specification determines. The following example shows the output when someone specifies the additional parameter **geometry_name**, 
 
+<br>
+  
+```R
+
+tmp_str = '{
+             "name" : "example_name",
+             "location" : {
+                 "type" : "Point",
+                 "coordinates" : [ -120.24, 39.21 ]
+               }
+            }'
+
+res = FROM_GeoJson_Schema(url_file_string = tmp_str, geometry_name = "location")
+
+res
+
+```
+
+```R
+
+$location
+$location$type
+[1] "Point"
+
+$location$coordinates
+[1] -120.24   39.21
+
+
+$name
+[1] "example_name"
+
+```
+
+
+<br>
+  
+The **geometry_name** takes the property name of the geometry object as input and if set to the default value (""), then recursion will be used which can be slower especially in case that the dimensions of the geometry object's coordinates are big. The **FROM_GeoJson_Schema** function is appropriate in cases where the **FROM_GeoJson** function raises an error.
+
+<br><br>
 
 
 ##### **TO_GeoJson**
