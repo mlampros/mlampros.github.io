@@ -14,7 +14,7 @@ I use the Lanyon theme of the Poole sliding sidebar theme, which is a jekyll set
 
 The following blogs are very popular and give nice hints on how to set up a jekyll based blog with diqus, google analytics etc.
 
-- [How I Created a Beautiful and Minimal Blog Using Jekyll, Github Pages, and poole](http://joshualande.com/jekyll-github-pages-poole/)
+- [How I Created a Beautiful and Minimal Blog Using Jekyll, Github Pages, and poole](http://joshualande.com/jekyll-github-pages-poole)
 - [Build A Blog With Jekyll And GitHub Pages](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
 
 As I said I use the Lanyon theme, so I thought a nice idea would be to search on the web using the terms 'Poole Lanyon jekyll'. The search gave many results and the interesting thing is that many bloggers use this kind of framework. I think the true reasons are that

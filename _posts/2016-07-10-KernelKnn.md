@@ -390,7 +390,7 @@ system("wget https://raw.githubusercontent.com/mlampros/DataSets/master/cifar_10
 ```
 <br>
 
-Moreover, the **irlba** and the **OpenImageR** packages are needed for comparison purposes, which can be installed directly from CRAN using the install.packages() function. A 4-fold cross-validation using the KernelKnnCV function can take approximately 26-30 minutes utilizing 6 threads (for each data set). An alternative to reduce the computation time would be a train-test split of the data at the cost of performance validation.
+Moreover, the **irlba** and the **OpenImageR** packages are needed for comparison purposes, which can be installed directly from CRAN using the install.packages() function. A 4-fold cross-validation using the KernelKnnCV function can take approximately 26 minutes (depending on the system configuration) utilizing 6 threads (for each data set). An alternative to reduce the computation time would be a train-test split of the data at the cost of performance validation.
 
 <br>
 

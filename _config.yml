@@ -23,8 +23,10 @@ author:
   name: 'Mouselimis Lampros'
   github: mlampros
   email_md5: abe1a64ce1807f540ca9deeebdf47820
-  google_analytics_id: UA-72555431-1
-  google_analytics_url: mlampros.github.io
+  
+  # 05/12/2017 : after almost two years I remembered I've enabled google analytics, which currently (as is) ... does not go along withe the EU cookies law. goodby
+  # google_analytics_id: UA-72555431-1
+  # google_analytics_url: mlampros.github.io
 
 # Custom vars
 version:          1.0.0

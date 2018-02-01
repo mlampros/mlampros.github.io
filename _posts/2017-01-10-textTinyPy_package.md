@@ -808,7 +808,7 @@ The associations for the terms ['planets', 'by', 'INVALID'] are,
 
 ```py
 
-asc = dcm.term_associations(Terms = ['planets', 'by', 'INVALID'], keep_terms = None, threads = 1, verbose = True)
+asc = dcm.term_associations(Terms = ['planets', 'by', 'INVALID'], keep_terms = None, verbose = True)
 
 ```
 

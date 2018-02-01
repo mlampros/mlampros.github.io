@@ -7,7 +7,7 @@ comments: true
 
 
 
-In this blog post, I'll explain my approach for the San Francisco Crime Classification competition, in which I participated for the past two months. This competition was hosted by [kaggle](www.kaggle.com), a free online platform for predictive modelling and analytics. I ended up in the first 60 places out of 2335 participants and so far is my best personal result. This competition belongs to the knowledge competitions, meaning that the submissions of the participants are evaluated on the whole test data, so there wasn't any danger of overfitting the leaderboard, as after every submission the true (end) leaderboard score was calculated (no secrets). Furthermore, there weren't any ranking points, so no particular gain except for learning new methods on how to tackle machine learning problems. 
+In this blog post, I'll explain my approach for the San Francisco Crime Classification competition, in which I participated for the past two months. This competition was hosted by [kaggle](https://www.kaggle.com/), a free online platform for predictive modelling and analytics. I ended up in the first 60 places out of 2335 participants and so far is my best personal result. This competition belongs to the knowledge competitions, meaning that the submissions of the participants are evaluated on the whole test data, so there wasn't any danger of overfitting the leaderboard, as after every submission the true (end) leaderboard score was calculated (no secrets). Furthermore, there weren't any ranking points, so no particular gain except for learning new methods on how to tackle machine learning problems. 
 <br><br>
 
 
@@ -656,4 +656,4 @@ barplot_feat_select(feat, params_barplot, xgb_sort = 'Cover')
 
 <br>
 
-The complete script of this blog post can be found as a single file in my [Github account](https://github.com/mlampros/kaggle_competitions/tree/san_francisco_crime_classification_competition).
+The complete script of this blog post can be found as a single file in my [Github account](https://github.com/mlampros/kaggle_competitions/tree/master/sfcc_competition).

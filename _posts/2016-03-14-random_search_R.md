@@ -128,9 +128,10 @@ The following algorithms were tested and can be run in regression and classifica
 
 **Worth mentioning**
 
+* it is a good practice (in case of the RandomSearchR package) to always use **library(RandomSearchR)** before utilizing any of the functions.
 * detailed examples with code of the previous table can be found on the [Github repository](https://github.com/mlampros/RandomSearchR/blob/master/tests/testthat/test-randomsearch.R)
 * depending on the number of optimized parameters some algorithms can be run fewer/more times than other (for instance knn will be run fewer times than svm)
-* to hide the progressbar when xgboost runs adjust the 'print_every_n' argument. 
+* to hide the progressbar when xgboost runs adjust the 'verbose' argument (set it to 0). 
 If it happens that you use the package and came across a problem then commit an issue on github.
 <br>
 <br>
@@ -178,7 +179,7 @@ res_xgb = random_search_resample(y1, tune_iters = 30,
                               
                               DATA = list(watchlist = list(label = y1, data = X)),
                               
-                              Args = list(nrounds = 200, verbose = 0, print.every.n = 500, early.stop.round = 30, maximize = FALSE),
+                              Args = list(nrounds = 200, verbose = 0, print_every_n = 500, early_stop_round = 30, maximize = FALSE),
                               
                               regression = TRUE, re_run_params = FALSE)
 ```
