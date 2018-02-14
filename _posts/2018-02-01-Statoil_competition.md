@@ -6,8 +6,9 @@ comments: true
 ---
 
 
-In the last two months, I participated in a machine learning competition organized by [Kaggle](http://www.kaggle.com/) (platform for predictive modeling and analytics), where I ended up in the **top 1 %** on the private leaderboard or 24th out of 3343 participants. I thought it would be worth writing a blog post in order to both share my experience / insights and keep a reference of key features for satellite imagery ( Sentinel-1 satellite data and specifically HH - transmit/receive horizontally - and HV - transmit horizontally and receive vertically ) in case it might be useful in the future.
+For the last two months, I had participated in a machine learning competition organized by [Kaggle](http://www.kaggle.com/) (platform for predictive modeling and analytics), where I ended up in the **top 1 %** on the private leaderboard or 24th out of 3343 participants. I thought it would be worth writing a blog post in order to both share my experience / insights and keep a reference of key features for satellite imagery ( Sentinel-1 satellite data and specifically HH - transmit/receive horizontally - and HV - transmit horizontally and receive vertically ) in case it might be useful in the future.
 
+<br>
 
 ### **The data**
 
@@ -150,6 +151,7 @@ Dual polarization images, when plotted, seem to include simple noise. However, "
 
 ![Alt text](/images/speckle_im.png)
 
+<br>
 
 In this challenge, one of my thoughts was, how to remove the speckle from the images so that the algorithm can improve the classification of ships and icebergs. There are already despeckling technics (such as the [*Boxcar* or the *Lee* filters](https://earth.esa.int/documents/653194/656796/Speckle_Filtering.pdf)) which appear to have an effect on dual polarization images. One of the participants in the competition wrote also a detailed kernel on [image despeckling using the Lee filtering in Python](https://www.kaggle.com/jgroff/despeckling-synthetic-aperture-radar-sar-images).
 
@@ -165,15 +167,15 @@ In general, for the same deep learning configuration, the switch from max-poolin
 
 <br>
 
-Data leakage can appear from time to time in Kaggle competitions and it's obvious especially if the gap between some of the top 10 kagglers and the rest of the participants, in terms of leaderboard score, is kind of big. In my opinion, data leakage does not offer any benefits both to the organizers and to participants, because it's a temporary feature, that can't be incorporated to a long-term predictive model (as far as I can tell). I'm generally unlucky with data leaks, however, in this one, it appeared as a [kernel](https://www.kaggle.com/brassmonkey381/viewing-leak-and-machine-images) and it was accessible to all participants. After I observed the previously said gap (I think a few weeks before the end of the competition), I kind of was looking for a way to take advantage of the incidence angle to improve the leaderboard score without harming the generalization of the already trained deep learning models.
+Data leakage can appear from time to time in Kaggle competitions and it's obvious especially if the gap between some of the top 10 kagglers and the rest of the participants, in terms of leaderboard score, is kind of big. In my opinion, data leakage does not offer any benefits both to the organizers and to participants, because it's a temporary feature, that can't be incorporated to a long-term predictive model (as far as I can tell). I'm generally unlucky with data leaks, however, in this one, it appeared as a [kernel](https://www.kaggle.com/brassmonkey381/viewing-leak-and-machine-images) and it was accessible by all participants. After I observed the previously said gap (I think a few weeks before the end of the competition), I kind of was looking for a way to take advantage of the incidence angle to improve the leaderboard score without harming the generalization of the already trained deep learning models.
 
 I used the data leak in the following way,
 
 * first I created a file of the true images (not the machine-generated ones)
-* then I merged the train images with the test images using the incidence angle as merge ID
+* then I merged the train images with the true test images using the incidence angle as merge ID
 * then for the subset of test data that the incidence angle matched with the incidence angle of the train data I took either the *1st quartile* (if the true label was 0) or the *3rd quartile* (if the true label was 1). I decided to take the 1st and 3rd quartiles so that in case of false positives / negatives the increase of log-loss would not harm the score considerably. 
 
-Although I had my doubts in picking a submission, which included the incidence angle "manipulation", finally in the private leaderboard this submission gave pretty similar log-loss, whereas for my second selected submission I experienced a big discrepancy (ensemble of multiple seeded models). I guess the data leak worked as a stability factor for the same output predictions, as indeed dual polarization images in both train and test data, which shared the same incidence angle, had also the same label.
+Although I had my doubts in picking a submission, which included the incidence angle "manipulation", finally in the private leaderboard this submission gave a pretty similar log-loss, whereas for my second selected submission I experienced a big discrepancy (ensemble of multiple seeded models). I guess the data leak worked as a stability factor for the same output predictions, as indeed dual polarization images in both train and test data, which shared the same incidence angle, had also the same label.
 
 My final submission included different deep learning configurations, both simple and pre-trained. So, in total 4 deep learning models, where each model consisted of an average of 3 (using a different seed each time). The running time of all these deep learning models, on a recent GPU, might take more than a week.
 
@@ -181,12 +183,14 @@ My final submission included different deep learning configurations, both simple
 
 #### **Things I tried which didn't work**
 
+<br>
+
 * I experimented also with autoencoders as a pre-processing step having in mind to remove the speckle of the images. Although it worked it didn't give good scores ( [a similar kernel](https://www.kaggle.com/atom1231/keras-autoencoder-with-simple-cnn-kfold4-lb-1704) ).  
 
 * I also tried to replace the missing values of the incidence angle,
     * using a convolutional neural network with the incidence angle as a response variable. I used the non-missing values as train data and the missing values as test data.
     * with 0. 
-    * However, in both cases, I saw a big difference between local (cross-validation) and leaderboard score, so I included the incidence angle in one of my 4 selected models as an additional feature.
+    * However, in both cases, I saw a big difference between local (cross-validation) and leaderboard score, so I included the incidence angle in one of my 4 selected models as an additional feature besides the dual polarization bands.
 
 <br>
 
@@ -196,7 +200,6 @@ My final submission included different deep learning configurations, both simple
 
 Every time I participate in an online challenge it's kind of a learning experience for me because I learn things that I wasn't aware before, as was the case with the dual polarization images in this competition. I've also refreshed my knowledge in deep learning and in coding as well.
 
-<br>
 
 I included a single R file in my [github repository](https://github.com/mlampros/kaggle_competitions/tree/master/statoil_competition) with the data leak processing step (incidence angle). I'm certain that by applying it to [any kernel in the competition web site](https://www.kaggle.com/c/statoil-iceberg-classifier-challenge/kernels), it should give a descent leaderboard score.
 
