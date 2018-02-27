@@ -18,7 +18,7 @@ At the time of writing this blog post (14 - 02 - 2018), there isn't a correspond
 
 <br>
 
-#### The RGF package
+#### **The RGF package**
 
 <br> 
 
@@ -50,14 +50,11 @@ The *RGF* package includes the following R6-classes / functions,
 
 <br>
 
-| dgCMatrix_2scipy_sparse() |
-| :------------------------ |
+dgCMatrix_2scipy_sparse()
 
-| RGF_cleanup_temp_files() |
-| :------------------------|
+RGF_cleanup_temp_files()
 
-| mat_2scipy_sparse() |
-| :-------------------|
+mat_2scipy_sparse()
 
 <br>
 
@@ -67,7 +64,7 @@ The package documentation includes details and examples for all R6-classes and f
 <br>
 
 
-#### Sparse matrices as input
+#### **Sparse matrices as input**
 
 <br>
 
@@ -131,7 +128,7 @@ print(x_sparse$shape)
 <br>
 
 
-#### Comparison of RGF with ranger and xgboost
+#### **Comparison of RGF with ranger and xgboost**
 
 <br>
 
@@ -219,8 +216,8 @@ regr_folds = function(folds, RESP, stratified = FALSE) {
 
 <br>
 
-| single threaded    [ small data set ] |
-| ------------------------------------- |
+#### **single threaded    ( small data set )**
+
 
 
 <br>
@@ -305,7 +302,9 @@ for (i in 1:length(FOLDS)) {
                
                "nthread" = 1)
 
-  fit = xgb.train(param, dtrain, nround = 500, print_every_n  = 100, watchlist = watchlist, early_stopping_rounds = 20, maximize = FALSE, verbose = 0)
+  fit = xgb.train(param, dtrain, nround = 500, print_every_n  = 100, watchlist = watchlist, early_stopping_rounds = 20,
+                  
+                  maximize = FALSE, verbose = 0)
 
   p_te = xgboost:::predict.xgb.Booster(fit, as.matrix(Boston[samp_, -ncol(Boston)]), ntreelimit = fit$best_iteration)
 
@@ -316,6 +315,11 @@ for (i in 1:length(FOLDS)) {
   boston_xgb_te[i] = MLmetrics::RMSE(Boston[samp_, 'medv'], p_te)
 }
 
+```
+
+<br>
+
+```R
 
 fold :  1 
 fold :  2 
@@ -323,7 +327,11 @@ fold :  3
 fold :  4 
 fold :  5 
 
+```
 
+<br>
+
+```R
 
 cat("total time rgf 5 fold cross-validation : ", sum(boston_rgf_time), " mean rmse on test data : ", mean(boston_rgf_te), "\n")
 
@@ -346,8 +354,8 @@ total time xgb 5 fold cross-validation :  0.4316094  mean rmse on test data :  3
 
 <br>
 
-| 5 threads    [ high dimensional dataset and presence of multicollinearity ] |
-| ---------------------------------------------------------------------------- |
+#### **5 threads    ( high dimensional dataset and presence of multicollinearity )**
+
 
 
 <br>
@@ -475,6 +483,11 @@ for (i in 1:length(FOLDS)) {
   highdim_xgb_te[i] = MLmetrics::RMSE(y[new_samp_], p_te)
 }
 
+```
+
+<br>
+
+```R
 
 fold :  1 
 fold :  2 
@@ -482,6 +495,11 @@ fold :  3
 fold :  4 
 fold :  5 
 
+```
+
+<br>
+
+```R
 
 cat("total time rgf 5 fold cross-validation : ", sum(highdim_rgf_time), " mean rmse on test data : ", mean(highdim_rgf_te), "\n")
 
