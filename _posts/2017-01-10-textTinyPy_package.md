@@ -39,7 +39,7 @@ The package has been tested on Linux using python 2.7. It is based on the same C
 
 <br>
 
-The **Python Requirements** can be installed using **pip install** and detailed instructions on how to install the **System Requirements** can be found in the [README file of the Github repository](https://github.com/mlampros/textTinyPy/blob/master1/README.rst). 
+The **Python Requirements** can be installed using **pip install** and detailed instructions on how to install the **System Requirements** can be found in the [README file of the Github repository](https://github.com/mlampros/textTinyPy). 
 
 <br>
 

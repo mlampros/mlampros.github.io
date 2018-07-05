@@ -15,7 +15,7 @@ The advantage of the *textTinyR* package lies in its ability to process big text
 <br>
 
 
-*update (21-01-2017):* Detailed installation instructions for the **Debian**, **Fedora** and **Macintosh OS's** were added in the [README file of my Github repository](https://github.com/mlampros/textTinyR).
+**update (04-04-2018):** *boost-locale* is no longer a system requirement for the textTinyR package
 
 
 <br>
