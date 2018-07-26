@@ -135,9 +135,9 @@ cat('the rmse error for extreme-learning-machine is :', rmse(yte, pr_te_elm[, 1]
 ## the rmse error for extreme-learning-machine is : 22.00705
 
 
-cat('the rmse error for liner-model is :', rmse(yte, pr_te_lm), '\n')
+cat('the rmse error for linear-model is :', rmse(yte, pr_te_lm), '\n')
 
-## the rmse error for liner-model is : 23.36543
+## the rmse error for linear-model is : 23.36543
 
 ```
 
@@ -243,7 +243,7 @@ cat('the accuracy for glm is :', mean(yte_class == pr_glm), '\n')
 
 ### Classify MNIST digits using elmNNRcpp
 
-I found an interesting [Python implementation / Code on the web](https://www.kaggle.com/robertbm/extreme-learning-machine-example) and I thought I give it a try to reproduce the results. I downloaded the MNIST data from my [Github repository](https://github.com/mlampros/DataSets) and I used the following parameter setting,
+I found an interesting [Python implementation / Code on the web](https://www.kaggle.com/robertbm/extreme-learning-machine-example) and I thought I give it a try to reproduce the results. I downloaded the MNIST data from my [Github repository](https://github.com/mlampros/DataSets) and I used the following parameter setting in combination with the HOG features of the OpenImageR package,
 
 
 ```R
@@ -260,51 +260,81 @@ mnist <- read.table(unz("mnist.zip", "mnist.csv"), nrows = 70000, header = T,
 
 x = mnist[, -ncol(mnist)]
 
-y = mnist[, ncol(mnist)]
-
-y_expand = onehot_encode(y)
+y = mnist[, ncol(mnist)] + 1
 
 
+# use the hog-features as input data
+#-----------------------------------
 
-# split the data randomly in train-test
-#--------------------------------------
+hog = OpenImageR::HOG_apply(x, cells = 6, orientations = 9, rows = 28, columns = 28, threads = 6)
 
-idx_train = sample(1:nrow(y_expand), round(0.85 * nrow(y_expand)))
-
-idx_test = setdiff(1:nrow(y_expand), idx_train)
-
-fit = elm_train(as.matrix(x[idx_train, ]), y_expand[idx_train, ], nhid = 2500, 
-                
-                actfun = 'relu', init_weights = 'uniform_negative', bias = TRUE,
-                
-                verbose = TRUE)
+y_expand = elmNNRcpp::onehot_encode(y - 1)
 
 
-# Input weights will be initialized ...
-# Dot product of input weights and data starts ...
-# Bias will be added to the dot product ...
-# 'relu' activation function will be utilized ...
-# The computation of the Moore-Pseudo-inverse starts ...
-# The computation is finished!
-# 
-# Time to complete : 1.607153 mins 
+# 4-fold cross-validation
+#------------------------
+
+folds = KernelKnn:::class_folds(folds = 4, as.factor(y))
+str(folds)
+
+START = Sys.time()
 
 
-# predictions for test-data
-#--------------------------
+fit = lapply(1:length(folds), function(x) {
+  
+  cat('\n'); cat('fold', x, 'starts ....', '\n')
+  
+  tmp_fit = elmNNRcpp::elm_train(as.matrix(hog[unlist(folds[-x]), ]), y_expand[unlist(folds[-x]), ], 
+  
+                                 nhid = 2500, actfun = 'relu', init_weights = 'uniform_negative',
+                                 
+                                 bias = TRUE, verbose = TRUE)
+  
+  cat('******************************************', '\n')
+  
+  tmp_fit
+})
 
-pr_test = elm_predict(fit, newdata = as.matrix(x[idx_test, ]))
+END = Sys.time()
 
-pr_max_col = max.col(pr_test, ties.method = "random")
+END - START
 
-y_true = max.col(y_expand[idx_test, ])
+# Time difference of 5.698552 mins
 
 
-cat('Accuracy ( Mnist data ) :', mean(pr_max_col == y_true), '\n')
+str(fit)
 
-# Accuracy ( Mnist data ) : 96.13  
+
+# predictions for 4-fold cross validation
+#----------------------------------------
+
+test_acc = unlist(lapply(1:length(fit), function(x) {
+  
+  pr_te = elmNNRcpp::elm_predict(fit[[x]], newdata = as.matrix(hog[folds[[x]], ]))
+  
+  pr_max_col = max.col(pr_te, ties.method = "random")
+  
+  y_true = max.col(y_expand[folds[[x]], ])
+  
+  mean(pr_max_col == y_true)
+}))
+  
+  
+
+test_acc
+
+# [1] 0.9825143 0.9848571 0.9824571 0.9822857
+
+
+cat('Accuracy ( Mnist data ) :', round(mean(test_acc) * 100, 2), '\n')
+
+# Accuracy ( Mnist data ) : 98.3
 
 ```
+
+<br>
+
+The accuracy of the Extreme Learning Machine algorithm is very close to the one of the [KernelKnn using HOG features](http://mlampros.github.io/2016/07/10/KernelKnn/), however it is more than 5 times faster in my operating system in case of a 4-fold cross-validation.
 
 <br>
 
