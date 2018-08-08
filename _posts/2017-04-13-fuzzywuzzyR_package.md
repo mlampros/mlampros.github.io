@@ -14,6 +14,12 @@ First, I'll explain the functionality of the **fuzzywuzzyR** package and then I'
 
 <br>
 
+
+**UPDATE 26-07-2018**: A [Singularity image file](http://mlampros.github.io/2018/07/26/singularity_containers/) is available in case that someone intends to run *fuzzywuzzyR* on Ubuntu Linux (locally or in a cloud instance) with all package requirements pre-installed. This allows the user to utilize the *fuzzywuzzyR* package without having to spend time on the installation process.
+
+<br>
+
+
 #### **fuzzywuzzyR**
 
 <br>

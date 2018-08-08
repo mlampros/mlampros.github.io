@@ -12,6 +12,10 @@ I've searched for some time (before wrapping NMSLIB) for a nearest neighbor libr
 
 <br>
 
+**UPDATE 26-07-2018**: A [Singularity image file](http://mlampros.github.io/2018/07/26/singularity_containers/) is available in case that someone intends to run *nmslibR* on Ubuntu Linux (locally or in a cloud instance) with all package requirements pre-installed. This allows the user to utilize the *nmslibR* package without having to spend time on the installation process.
+
+<br>
+
 The NMSLIB Library,
 
 * is a collection of search methods for generic spaces

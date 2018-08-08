@@ -25,6 +25,7 @@ data(Boston)
 
 X = Boston[, -dim(Boston)[2]]
 y1 = Boston[, dim(Boston)[2]]
+y_elm = matrix(Boston[, ncol(Boston)], nrow = length(Boston[, ncol(Boston)]), ncol = 1)
 
 form <- as.formula(paste('medv ~', paste(names(X), collapse = '+')))  
 
@@ -38,18 +39,18 @@ The main function of the *RandomSearchR* package is the **random_search_resample
 ```R
 # extreme learning machines
 
-grid_extrLm = list(nhid = 5:50, actfun = c('sig', 'sin', 'purelin', 'radbas', 'poslin'))
+grid_extrLm = list(nhid = 5:50, actfun = c('sig', 'sin', 'purelin', 'radbas', 'relu'))
 
 
 res_exttLm = random_search_resample(y = y1, tune_iters = 30,
                              
                                     resampling_method = list(method = 'cross_validation', repeats = NULL, sample_rate = NULL, folds = 5),
                              
-                                    ALGORITHM = list(package = require(elmNN), algorithm = elmtrain), 
+                                    ALGORITHM = list(package = require(elmNNRcpp), algorithm = elm_train), 
                              
                                     grid_params = grid_extrLm, 
                                    
-                                    DATA = list(x = X, y = y1),
+                                    DATA = list(x = X, y = y_elm),
                                    
                                     Args = NULL,
                                    
@@ -62,7 +63,7 @@ res_exttLm = random_search_resample(y = y1, tune_iters = 30,
 * **y** is the response variable
 * **tune_iters** is the number of times the algorithm should be run. In each iteration, a different subset of parameters from the grid_extLm list will be fitted to the algorithm.
 * **resampling_method**,  there are 3 methods available: cross-validation, bootstrap and train-test-split. If more than one algorithm will be employed, then it's recommended to use the same resampling technique, so that a performance comparison between models is possible
-* **ALGORITHM**, takes the package and the function to be used as parameters, here the *elmtrain* function of the *elmNN* package
+* **ALGORITHM**, takes the package and the function to be used as parameters, here the *elmtrain* function of the *elmNNRcpp* package
 * **grid_params** takes the defined grid of parameters, here the *nhid* and *actfun* of the *elmtrain* function
 * **DATA** should be a list with the data. The following forms, as they appear in most of the packages, can be included: (x, y), (formula, data) or (target, data). In order to make xgboost and h2o work, I made some modifications, thus for **xgboost** the DATA should be a *watchlist*, such as **watchlist = list(label = y1, data = X)** and for **h2o** a pair of the following form (h2o.x, h2o.y), i.e. **list(h2o.x = X, h2o.y = y1)**
 * **Args** list takes arguments that are necessary for the function, such as *scale = TRUE* (it can be also NULL, to indicate that no further arguments for the function are needed)
@@ -100,7 +101,7 @@ The following algorithms were tested and can be run in regression and classifica
 
 |    package      |   algorithm        |  regression   |  binary classification   |   multiclass classification   |
 | :-----------:   |  :-------------:   | :-----------: | :----------------------: | :---------------------------: |  
-|   elmNN         |  elmtrain          |    **x**      |                          |                               | 
+|   elmNNRcpp     |  elm_train         |    **x**      |             **x**        |              **x**            | 
 |   randomForest  |  randomForest      |    **x**      |             **x**        |              **x**            | 
 |   kernlab       |  ksvm              |    **x**      |             **x**        |              **x**            |
 |   caret         |  knnreg, knn3      |    **x**      |             **x**        |              **x**            |

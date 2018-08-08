@@ -23,7 +23,20 @@ In the following lines I'll make use of an Ubuntu cloud instance (the same steps
 
 <br>
 
-Assuming someone uses the command line console, the first thing to do is to install the [system requirements](https://github.com/mlampros/singularity_containers/blob/master/system_requirements.sh) (in case of an Ubuntu Desktop upgrading the system should be skipped). Once the installation of the system requirements is finished the following folder should appear in the home directory,
+Assuming someone uses the command line console, the first thing to do is to install the [system requirements](https://github.com/mlampros/singularity_containers/blob/master/system_requirements.sh) (in case of an Ubuntu Desktop upgrading the system should be skipped),
+
+<br>
+
+```R
+
+bash system_requirements.sh
+
+
+```
+
+<br>
+
+Once the installation of the system requirements is finished the following folder should appear in the home directory,
 
 <br>
 

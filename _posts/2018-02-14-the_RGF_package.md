@@ -10,6 +10,11 @@ This blog post is about my newly released [RGF package](https://github.com/mlamp
 
 <br>
 
+
+**UPDATE 26-07-2018**: A [Singularity image file](http://mlampros.github.io/2018/07/26/singularity_containers/) is available in case that someone intends to run *RGF* on Ubuntu Linux (locally or in a cloud instance) with all package requirements pre-installed. This allows the user to utilize the *RGF* package without having to spend time on the installation process.
+
+<br>
+
 The *Regularized Greedy Forest* algorithm is explained in detail in the paper [*Rie Johnson and Tong Zhang, Learning Nonlinear Functions Using Regularized Greedy Forest*](https://arxiv.org/abs/1109.0887). A small synopsis would be *"... the resulting method, which we refer to as regularized greedy forest (RGF), integrates two ideas: one is to include tree-structured regularization into the learning formulation; and the other is to employ the fully-corrective regularized greedy algorithm ...."*.
 
 <br>
