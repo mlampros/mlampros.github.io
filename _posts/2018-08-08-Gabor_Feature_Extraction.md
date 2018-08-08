@@ -10,6 +10,7 @@ This blog post illustrates the new functionality of the OpenImageR package (*Gab
 
 In the following lines I'll describe the *GaborFeatureExtract* R6 class which includes the following methods,
 
+<br>
 
 |    GaborFeatureExtract       | 
 | :------------------:         | 
@@ -32,7 +33,7 @@ There are many resources on the web if someone intends to deepen his / her knowl
 
 <br>
 
-![](car.png)
+![Alt text](/images/car.png)
 
 
 ### gabor_filter_bank
@@ -72,7 +73,7 @@ plt_f = init_gb$plot_gabor(real_matrices = gb_f$gabor_real, margin_btw_plots = 0
 
 <br>
 
-![](gabor_filter_bank.png)
+![Alt text](/images/gabor_filter_bank.png)
 
 <br>
 
@@ -197,7 +198,7 @@ plt_im = init_gb$plot_gabor(real_matrices = gb_im$gabor_features_real,
 <br>
 
 
-![](gabor_car.png)
+![Alt text](/images/gabor_car.png)
 
 <br>
 
@@ -218,7 +219,7 @@ plt_im_thresh = init_gb$plot_gabor(real_matrices = gb_im$gabor_features_real,
 
 <br>
 
-![](gabor_car_thresholding.png)
+![Alt text](/images/gabor_car_thresholding.png)
 
 
 <br>
