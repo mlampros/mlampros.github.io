@@ -50,7 +50,7 @@ res_exttLm = random_search_resample(y = y1, tune_iters = 30,
                              
                                     grid_params = grid_extrLm, 
                                    
-                                    DATA = list(x = X, y = y_elm),
+                                    DATA = list(x = as.matrix(X), y = y_elm),
                                    
                                     Args = NULL,
                                    

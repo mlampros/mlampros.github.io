@@ -19,6 +19,7 @@ In the following lines I'll describe the *GaborFeatureExtract* R6 class which in
 |   gabor_feature_engine()     |
 |   plot_gabor()               |
 
+<br>
 
 These methods are based on the Matlab code *[Gabor Feature Extraction](https://github.com/mhaghighat/gabor)* of the paper *M. Haghighat, S. Zonouz, M. Abdel-Mottaleb, "CloudID: Trustworthy cloud-based and cross-enterprise biometric identification," Expert Systems with Applications, vol. 42, no. 21, pp. 7905-7916, 2015*, http://dx.doi.org/10.1016/j.eswa.2015.06.025. The initial Matlab code was modified (I added the **Magnitude** feature and the **gabor_feature_engine()** method) and parallelized using Rcpp wherever it was possible.
 
@@ -35,6 +36,7 @@ There are many resources on the web if someone intends to deepen his / her knowl
 
 ![Alt text](/images/car.png)
 
+<br><br>
 
 ### gabor_filter_bank
 
