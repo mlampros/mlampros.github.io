@@ -167,7 +167,7 @@ For simplicity, I'll use the *Reuters* data as input to the *fastTextR::skipgram
                                                    min_num_char = 3, max_num_char = 100, 
                                                    stemmer = "porter2_stemmer", 
                                                    path_2folder = "/path_to_your_folder/", 
-                                                   threads = 1,                      # whenever I save data to file set the number threads to 1
+                                                   threads = 1,           # whenever I save data to file set the number threads to 1
                                                    verbose = T)
 ```
 
