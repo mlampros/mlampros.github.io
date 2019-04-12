@@ -216,12 +216,6 @@ efS = 100
 query_time_params = list('efSearch' = efS)
 
 
-# Number of neighbors 
-#--------------------
-
-K = 100
-
-
 # space to use
 #---------------
 

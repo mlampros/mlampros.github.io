@@ -147,6 +147,10 @@ str(gl_term_w)
 
 <br>
 
+**UPDATE 11-04-2019**: There is an [updated version of the fastText R package](https://github.com/mlampros/fastText) which includes all the features of the ported [fasttext library](https://github.com/facebookresearch/fastText). Therefore the old **fastTextR** repository **is archived**. See also the corresponding [blog-post](http://mlampros.github.io/2019/04/11/fastText_updated_version/).
+
+<br>
+
 For simplicity, I'll use the *Reuters* data as input to the *fastTextR::skipgram_cbow* function. The data has to be first pre-processed and then saved to a file,
 
 <br>
@@ -163,7 +167,8 @@ For simplicity, I'll use the *Reuters* data as input to the *fastTextR::skipgram
                                                    min_num_char = 3, max_num_char = 100, 
                                                    stemmer = "porter2_stemmer", 
                                                    path_2folder = "/path_to_your_folder/", 
-                                                   threads = 4, verbose = T)
+                                                   threads = 1,                      # whenever I save data to file set the number threads to 1
+                                                   verbose = T)
 ```
 
 <br>

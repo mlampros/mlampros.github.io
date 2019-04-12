@@ -528,6 +528,12 @@ wordcloud::wordcloud(words = vocab_sbs$X1, freq = vocab_sbs$X2,
 
 #### *word vectors*
 
+<br>
+
+**UPDATE 11-04-2019**: There is an [updated version of the fastText R package](https://github.com/mlampros/fastText) which includes all the features of the ported [fasttext library](https://github.com/facebookresearch/fastText). Therefore the old **fastTextR** repository **is archived**. See also the corresponding [blog-post](http://mlampros.github.io/2019/04/11/fastText_updated_version/).
+
+<br>
+
 I'm currently interested in word vectors and that's why I also made R-wrappers for the [GloVe](http://nlp.stanford.edu/projects/glove/) and the [fastText](https://github.com/facebookresearch/fastText) word representation algorithms. The latter two reside in my Github account as separate repositories ([GloveR](https://github.com/mlampros/GloveR) and [fastTextR](https://github.com/mlampros/fastTextR)) and can be installed using the *install_github* function of the devtools package (devtools::install_github('mlampros/GloveR'), devtools::install_github('mlampros/fastTextR')). <br>
 "A [word representation](http://www.iro.umontreal.ca/~lisa/pointeurs/turian-wordrepresentations-acl10.pdf) is a mathematical object associated with each word, often a vector. Each dimension's value corresponds to a feature and might even have a semantic or grammatical interpretation, so we call it a word feature. Conventionally, supervised lexicalized NLP approaches take a word and convert it to a symbolic ID, which is then transformed into a feature vector using a one-hot representation: The feature vector has the same length as the size of the vocabulary, and only one dimension is on." <br>
 
