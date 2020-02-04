@@ -37,15 +37,6 @@ To experiment with the previously mentioned algorithms, I have built a wrapper p
 <br>
 <br>
 
-**UPDATE : 13-06-2017** [ One needs an older xgboost version (= 0.4-4) to install (and experiment with) the package ]
-
-```R
-
-devtools::install_version("xgboost", version = "0.4-4", repos = "http://cran.us.r-project.org")
-
-```
-<br>
-
 
 ```R
 trainingdata <- read.csv("~/training.csv")
