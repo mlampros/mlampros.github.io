@@ -348,10 +348,11 @@ acc = function(y_true, preds) {
 #............................................................................
 # multi-class classification in case that the algorithm returns probabilities
 # ( I might also have to subtract 1 from the output predictions 'preds' if I
-# initially have modified the input response variable )
+# initially have modified the input response variable - run 'str(res_)' first
+# to observe if the output of 'random_search_resample' includes probabilities
 #............................................................................
 
-acc = function(y_true, preds) {
+acc_multiclass = function(y_true, preds) {
   
   preds = apply(preds, 1, which.max)
   
