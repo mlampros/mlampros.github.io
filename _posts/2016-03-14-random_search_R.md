@@ -330,6 +330,11 @@ res_j48 = random_search_resample(as.factor(y1), tune_iters = 30,
 Assuming that multiple model algorithms have been fitted, as previously in classification examples, then it would be of interest to observe which grid parameters optimize the evaluation metric. This can be done using the **performance_measures** function, which takes as arguments : *a list of the resulted objects*, *the evaluation metric* and *the sorting method of the results*. In the *performance measures* function we'll try to maximize the evaluation metric (here accuracy), 
 
 ```R
+
+#......................
+# binary classification
+#......................
+
 acc = function(y_true, preds) {             
   
   out = table(y_true, max.col(preds, ties.method = "random"))
@@ -338,6 +343,21 @@ acc = function(y_true, preds) {
   
   acc
 }
+
+
+#............................................................................
+# multi-class classification in case that the algorithm returns probabilities
+# ( I might also have to subtract 1 from the output predictions 'preds' if I
+# initially have modified the input response variable )
+#............................................................................
+
+acc = function(y_true, preds) {
+  
+  preds = apply(preds, 1, which.max)
+  
+  return(sum(y_true == preds) / length(y_true))
+}
+
 ```
 
 The evaluation metric can be customized to any other metric as long as the order of the arguments is (y_true, preds).
