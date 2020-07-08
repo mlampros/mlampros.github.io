@@ -4,7 +4,6 @@
 
 <br>
 
-
 ## Lanyon theme 
 
 I use the Lanyon theme for my blog. Lanyon is a theme built on top of [Poole](https://github.com/poole/poole).
