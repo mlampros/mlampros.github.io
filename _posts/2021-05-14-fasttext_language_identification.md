@@ -925,7 +925,7 @@ If you use the **fastText** R package in your paper or research please cite both
 
 ```R
 @Manual{,
-  title = {{fastText}: Efficient Learning of Word Representations and Sentence Classification},
+  title = {fastText: Efficient Learning of Word Representations and Sentence Classification},
   author = {Lampros Mouselimis},
   year = {2021},
   note = {R package version 1.0.0},
