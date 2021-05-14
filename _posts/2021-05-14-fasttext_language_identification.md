@@ -916,3 +916,22 @@ From the results one can come to the following **conclusions**:
 An updated version of the **fastText** package can be found in my [Github repository](https://github.com/mlampros/fastText) and to report bugs/issues please use the following link, [https://github.com/mlampros/fastText/issues](https://github.com/mlampros/fastText/issues).
 
 <br>
+
+### **Citation:**
+
+If you use the **fastText** R package in your paper or research please cite both **fastText** and the **original articles / software** [https://cran.r-project.org/web/packages/fastText/citation.html](https://cran.r-project.org/web/packages/fastText/citation.html):
+
+<br>
+
+```R
+@Manual{,
+  title = {{fastText}: Efficient Learning of Word Representations and
+    Sentence Classification},
+  author = {Lampros Mouselimis},
+  year = {2021},
+  note = {R package version 1.0.0},
+  url = {https://CRAN.R-project.org/package=fastText},
+}
+```
+
+<br>
