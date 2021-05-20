@@ -427,6 +427,14 @@ rgl::rglwidget()
 
 <br>
 
+In the output map we observe
+
+* the *3 specified elevation vertical lines* (including their *altitude values* in meters) 
+* in *blue* color the *ascending* route
+* in *red* color the *descending* route
+
+<br>
+
 ![Alt text](/images/fitbitviz_images/rayshader_map.png)
 
 <br>
