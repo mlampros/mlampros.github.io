@@ -14,7 +14,7 @@ You can read more about the **Fitbit** [Web API](https://dev.fitbit.com/build/re
 
 <br>
 
-For the rest of this vignette I'll assume that the following variables are defined and that you intend to use the functions of the **fitbitViz** package from the R Console (or RStudio IDE):
+For the rest of this blog post I'll assume that the following variables are defined and that you intend to use the functions of the **fitbitViz** package from the R Console (or RStudio IDE):
 
 <br>
 
