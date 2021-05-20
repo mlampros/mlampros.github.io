@@ -118,7 +118,7 @@ for (FILE in files) {
 
 ```
 
-![Alt text](./images/copernicusDEM_images/progress_logs.png)
+![Alt text](/images/copernicusDEM_images/progress_logs.png)
 
 <br>
 
@@ -154,7 +154,7 @@ lft
 
 <br>
 
-![Alt text](./images/copernicusDEM_images/leaflet_map.png)
+![Alt text](/images/copernicusDEM_images/leaflet_map.png)
 
 <br>
 
@@ -171,7 +171,7 @@ tmap_data$`Rangifer tarandus`                            # caribou
 
 <br>
 
-![Alt text](./images/copernicusDEM_images/tarandus_elevation.png)
+![Alt text](/images/copernicusDEM_images/tarandus_elevation.png)
 
 <br>
 
@@ -188,7 +188,7 @@ for the **Wolves** only **12**,
 
 <br>
 
-![Alt text](./images/copernicusDEM_images/wolves_elevation.png)
+![Alt text](/images/copernicusDEM_images/wolves_elevation.png)
 
 <br>
 
