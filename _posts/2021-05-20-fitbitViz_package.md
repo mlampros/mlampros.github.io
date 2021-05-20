@@ -447,7 +447,7 @@ If you use the **fitbitViz** R package in your paper or research please cite [ht
 
 ```R
 @Manual{,
-  title = {{fitbitViz}: Fitbit Visualizations},
+  title = {fitbitViz: Fitbit Visualizations},
   author = {Lampros Mouselimis},
   year = {2021},
   note = {R package version 1.0.1},
