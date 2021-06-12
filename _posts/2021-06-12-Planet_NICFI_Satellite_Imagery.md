@@ -371,8 +371,8 @@ sp::plot(cva$angle, axes = F)
 ```
 
 
-Change Vector Analysis     |
-:-------------------------:|:------:
+Change Vector Analysis     
+:-------------------------:
 <img src="/images/screenshots_nicfi/CVA.png" width="1050" height="500">
 
 <br>
