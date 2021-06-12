@@ -373,12 +373,11 @@ sp::plot(cva$angle, axes = F)
 
 Change Vector Analysis     |
 :-------------------------:|:------:
-
 <img src="/images/screenshots_nicfi/CVA.png" width="1050" height="500">
 
 <br>
 
-By solely plotting the **angle** of the **Change Vector Analysis** we can clearly see the deforested areas in green color.
+By solely plotting the **angle** of the **Change Vector Analysis** we can clearly see the deforestation of the area in green color.
 
 <br>
 
