@@ -1773,7 +1773,7 @@ If you use the **IceSat2R** R package in your paper or research please cite both
 
 ```R
 @Manual{,
-  title = {{IceSat2R}: ICESat-2 Altimeter Data using R},
+  title = {IceSat2R: ICESat-2 Altimeter Data using R},
   author = {Lampros Mouselimis},
   year = {2022},
   note = {R package version 1.0.0},
