@@ -42,7 +42,7 @@ The [OpenAltimetry API](https://openaltimetry.org/data/swagger-ui/) **restricts*
 
 <br>
 
-![Alt Text](https://github.com/mlampros/IceSat2R/blob/master/man/figures/shiny_app_grid.gif)
+![Alt Text](/images/IceSat2R_images/shiny_app_grid.gif)
 
 <br>
 
@@ -1754,7 +1754,7 @@ fig_height
 
 <br>
 
-![Alt Text](https://github.com/mlampros/IceSat2R/blob/master/man/figures/3_dim_plot.gif)
+![Alt Text](/images/IceSat2R_images/3_dim_plot.gif)
 
 <br>
 
