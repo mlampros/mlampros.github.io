@@ -97,8 +97,6 @@ for (FILE in files) {
 
   raysh_rst = fitbitViz::crop_DEM(tif_or_vrt_dem_file = file_out,
                                   sf_buffer_obj = sf_rst_ext$sfc_obj,
-                                  CRS = 4326,
-                                  digits = 6,
                                   verbose = TRUE)
 
   # convert to character to receive the correct labels in the 'tmap' object

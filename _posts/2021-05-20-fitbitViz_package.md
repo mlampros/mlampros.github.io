@@ -359,8 +359,6 @@ if (length(TIF) == 1) {
 
 raysh_rst = fitbitViz::crop_DEM(tif_or_vrt_dem_file = file_out,
                                 sf_buffer_obj = sf_rst_ext$sfc_obj,
-                                CRS = 4326,
-                                digits = 6,
                                 verbose = VERBOSE)
 # sp::plot(raysh_rst)
 
@@ -407,13 +405,21 @@ and finally we visualize the *3-dimensional Rayshader Map*,
 
 ```R
 
+#.....................................................
+# Conversion of the 'SpatRaster' to a raster object
+# because the 'rayshader' package accepts only rasters
+#.....................................................
+
+rst_obj = raster::raster(raysh_rst)
+raster::projection(rst_obj) <- terra::crs(raysh_rst, proj = TRUE)
+
+
 snapshot_rayshader_path = file.path(tempdir(), 'rayshader_img.png')
 
 rgl::open3d(useNULL = TRUE)                       # this removes the second rgl-popup-window
 
-fitbitViz::rayshader_3d_DEM(rst_buf = raysh_rst,
+fitbitViz::rayshader_3d_DEM(rst_buf = rst_obj,
                             rst_ext = sf_rst_ext$raster_obj_extent,
-                            rst_bbx = sf_rst_ext$buffer_bbox,
                             linestring_ASC_DESC = linestring_dat,
                             elevation_sample_points = dat_3m,
                             zoom = 0.3,
@@ -457,8 +463,8 @@ If you use the **fitbitViz** R package in your paper or research please cite [ht
 @Manual{,
   title = {fitbitViz: Fitbit Visualizations},
   author = {Lampros Mouselimis},
-  year = {2021},
-  note = {R package version 1.0.1},
+  year = {2022},
+  note = {R package version 1.0.3},
   url = {https://CRAN.R-project.org/package=fitbitViz},
 }
 ```
