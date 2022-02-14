@@ -50,7 +50,7 @@ The [OpenAltimetry API](https://openaltimetry.org/data/swagger-ui/) **restricts*
 
 <br>
 
-This *second part* of the blog post is a slight modification of the [first vignette](https://mlampros.github.io/IceSat2R/articles/IceSat-2_Mission_Orbits_HTML.html) and includes only the code snippets on how to download and process *time specific orbits*. The user can reproduce this second part by using the [binder web-link of the IceSat2R](https://mybinder.org/v2/gh/mlampros/IceSat2R/master?urlpath=rstudio) R package or can go through the [complete document](https://mlampros.github.io/IceSat2R/articles/IceSat-2_Mission_Orbits_HTML.html) (including the tables and visualizations) of the first vignette.
+This *second part* of the blog post is a slight modification of the [first vignette](https://mlampros.github.io/IceSat2R/articles/IceSat-2_Mission_Orbits_HTML.html) and includes only the code snippets on how to download and process *time specific orbits*. The user can reproduce this second part by using the [binder web-link of the IceSat2R](https://mybinder.org/v2/gh/mlampros/IceSat2R/HEAD?urlpath=rstudio) R package or can go through the [complete document](https://mlampros.github.io/IceSat2R/articles/IceSat-2_Mission_Orbits_HTML.html) (including the tables and visualizations) of the first vignette.
 
 <br>
 
@@ -434,7 +434,7 @@ lft
 
 <br>
 
-This *third part* of the blog post relies on the computation of *time specific orbits* (as was the case in the *first* part) and explains how to use the 'atl06' *ATLAS OpenAltimetry* product. The [complete third part](https://mlampros.github.io/IceSat2R/articles/IceSat-2_Atlas_products_HTML.html) (including the tables and interactive visualizations) can be found in *HTML* format in the mentioned web link. In the same way, as for the first part, the user can reproduce this second part by using the [binder web-link of the IceSat2R](https://mybinder.org/v2/gh/mlampros/IceSat2R/master?urlpath=rstudio) R package.
+This *third part* of the blog post relies on the computation of *time specific orbits* (as was the case in the *first* part) and explains how to use the 'atl06' *ATLAS OpenAltimetry* product. The [complete third part](https://mlampros.github.io/IceSat2R/articles/IceSat-2_Atlas_products_HTML.html) (including the tables and interactive visualizations) can be found in *HTML* format in the mentioned web link. In the same way, as for the first part, the user can reproduce this second part by using the [binder web-link of the IceSat2R](https://mybinder.org/v2/gh/mlampros/IceSat2R/HEAD?urlpath=rstudio) R package.
 
 <br>
 
