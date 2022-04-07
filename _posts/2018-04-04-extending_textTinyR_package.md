@@ -50,7 +50,6 @@ str(category_docs)
 
 
 one_doc = text_reuters$raw("test/14843")
-
 one_doc
 
 ```
@@ -88,7 +87,7 @@ test_labels = as.vector(sapply(test_docs_id, function(x) text_reuters$categories
 
 <br>
 
-### textTinyR - fastTextR - doc2vec - kmeans - cluster_medoids
+### textTinyR - fastText - doc2vec - kmeans - cluster_medoids
 
 <br>
 
@@ -104,7 +103,6 @@ First, I'll perform the following pre-processing steps :
 
 ```R
 concat = c(unlist(train_docs), unlist(test_docs))
-
 length(concat)
 
 
@@ -141,21 +139,18 @@ tm = utl$Term_Matrix(sort_terms = FALSE, to_lower = T, remove_punctuation_vector
                      threads = 6, verbose = T)
 
 gl_term_w = utl$global_term_weights()
-
 str(gl_term_w)
 ```
 
 <br>
 
-**UPDATE 11-04-2019**: There is an [updated version of the fastText R package](https://github.com/mlampros/fastText) which includes all the features of the ported [fasttext library](https://github.com/facebookresearch/fastText). Therefore the old **fastTextR** repository **is archived**. See also the corresponding [blog-post](http://mlampros.github.io/2019/04/11/fastText_updated_version/).
-
-<br>
-
-For simplicity, I'll use the *Reuters* data as input to the *fastTextR::skipgram_cbow* function. The data has to be first pre-processed and then saved to a file,
+For simplicity, I'll use the *Reuters* data as input to the *fastText* algorithm. The data has to be first pre-processed and then saved to a file,
 
 <br>
 
 ```R
+
+ word_vecs_dir = '/path_to_your_folder/'            # the tail forward slash is required
 
  save_dat = textTinyR::tokenize_transform_vec_docs(object = concat, as_token = T, 
                                                    to_lower = T, 
@@ -166,30 +161,49 @@ For simplicity, I'll use the *Reuters* data as input to the *fastTextR::skipgram
                                                    remove_stopwords = T, language = "english", 
                                                    min_num_char = 3, max_num_char = 100, 
                                                    stemmer = "porter2_stemmer", 
-                                                   path_2folder = "/path_to_your_folder/", 
+                                                   path_2folder = word_vecs_dir, 
                                                    threads = 1,           # whenever I save data to file set the number threads to 1
                                                    verbose = T)
 ```
 
 <br>
 
-Then, I'll load the previously saved data and I'll use [fastTextR](https://github.com/mlampros/fastTextR) to build the word-vectors, 
+Then, I'll load the previously saved data and I'll use [fastText](https://github.com/mlampros/fastText) to build the word-vectors, 
 
 <br>
 
 ```R
 
-PATH_INPUT = "/path_to_your_folder/output_token_single_file.txt"
+PATH_INPUT = glue::glue("{word_vecs_dir}output_token_single_file.txt")    # load the "output_token_single_file.txt" file
+DIR_OUT = file.path(glue::glue("{word_vecs_dir}rt_fst_model"))            # directory where the .bin and .vec files will be saved
+if (!dir.exists(DIR_OUT)) dir.create(DIR_OUT)
 
-PATH_OUT = "/path_to_your_folder/rt_fst_model"
+PATH_OUT = file.path(DIR_OUT, 'rt_fst_model')                             # file name that will take the '.bin' and '.vec' extensions
 
+list_params = list(command = 'skipgram',
+                   lr = 0.075,
+                   dim = 300,
+                   lrUpdateRate = 100,
+                   ws = 5, 
+                   epoch = 5,
+                   minCount = 1, 
+                   neg = 5,
+                   wordNgrams = 2, 
+                   loss = "ns", 
+                   bucket = 2e+06,
+                   minn = 0, 
+                   maxn = 0, 
+                   thread = 6,
+                   t = 1e-04, 
+                   verbose = 2,
+                   input = PATH_INPUT,
+                   output = PATH_OUT,
+                   verbose = 2,
+                   thread = 6)
 
-vecs = fastTextR::skipgram_cbow(input_path = PATH_INPUT, output_path = PATH_OUT, 
-                                method = "skipgram", lr = 0.075, lrUpdateRate = 100, 
-                                dim = 300, ws = 5, epoch = 5, minCount = 1, neg = 5, 
-                                wordNgrams = 2, loss = "ns", bucket = 2e+06,
-                                minn = 0, maxn = 0, thread = 6, t = 1e-04, verbose = 2)
-
+vecs = fastText::fasttext_interface(list_params,
+                                   path_output = file.path(DIR_OUT,"model_logs.txt"),
+                                   MilliSecs = 100)
 ```
 
 <br>
@@ -201,13 +215,9 @@ Before using one of the three methods, it would be better to reduce the initial 
 ```R
 
 init = textTinyR::Doc2Vec$new(token_list = clust_vec$token, 
-                              
-                              word_vector_FILE = "path_to_your_folder/rt_fst_model.vec",
-                              
+                              word_vector_FILE = file.path(DIR_OUT, "rt_fst_model.vec"),
                               print_every_rows = 5000, 
-                              
                               verbose = TRUE, 
-                              
                               copy_data = FALSE)                  # use of external pointer
 
 
@@ -224,7 +234,7 @@ total.number.lines.processed.output: 25000
 
 <br>
 
-In case that *copy_data = TRUE* then the pre-processed data can be observed before invoking one of the 'doc2vec' methods,
+In case that *copy_data = TRUE* (in the previous "textTinyR::Doc2Vec$new()" function) then the user can observe the pre-processed data before using one of the 'doc2vec' methods (uncomment the next 2 lines if this is the case),
 
 <br>
 
