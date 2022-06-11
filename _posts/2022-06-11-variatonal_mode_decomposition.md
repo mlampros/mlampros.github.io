@@ -24,6 +24,8 @@ based on the papers,
 The Matlab code is available to download in the Author’s website
 (<https://math.montana.edu/dzosso/code/>).
 
+<br>
+
 ## Example Use Cases
 
 VMD has been used in many scientific areas with true or synthetic data.
