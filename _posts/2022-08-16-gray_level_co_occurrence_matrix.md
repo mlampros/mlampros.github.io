@@ -139,7 +139,7 @@ plot_multi_images(list_images = res_glcm,
                   titles = methods)
 ```
 
-<img src="/images/fastGLCM_images/multiplot.png" width="900" height="560">
+<img src="/images/fastGLCM_images/multiplot.png" width="1600" height="650">
 
 <br>
 
