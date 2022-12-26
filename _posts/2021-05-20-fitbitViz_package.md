@@ -20,6 +20,8 @@ For the rest of this blog post I'll assume that the following variables are defi
 
 ```R
 
+require(fitbitViz)
+
 #..................
 # parameter setting
 #..................
@@ -32,6 +34,35 @@ token = "My token"                 # Specify here your 'token'
 
 <br>
 
+**Be aware** that the **token expires after 8 hours**. If you receive a **401 HTTP error** it means that you have to **refresh your token**. You can do that using the ***refresh_token_app()*** function which requires the **client id**, **client secret** and **refresh token** of your registered Fitbit application in the following way (you can find more information on how to receive these three parameters in the [README.md](https://github.com/mlampros/fitbitViz#requirements) file):
+
+<br>
+
+```R
+
+#..............................................
+# Refresh token once it expires (after 8 hours)
+#..............................................
+
+client_id = 'xxxxxx'
+client_secret = 'xxxxxxxxxxxxxxxxxx'
+refresh_token = 'xxxxxxxxxxxxxxxxxxxxxxxx'
+
+# refresh the token
+new_token = refresh_token_app(client_id = client_id,
+                              client_secret = client_secret,
+                              refresh_token = refresh_token)
+
+# a named list that includes the new 'access_token' and 'refresh_token'
+str(new_token)
+
+```
+
+<br>
+
+We can now continue defining the remaining variables,
+
+<br>
 
 ```R
 
@@ -142,7 +173,7 @@ hrt_heat
 
 <br>
 
-This function computes the **root mean square of successive differences (RMSSD)** and a *higher heart rate variability is linked with better health*. Based on the Fitbit application information and the [Wikipedia article](https://en.wikipedia.org/wiki/Heart_rate_variability) the heart rate variability is computed normally in ms (milliseconds), however I use the *'1min'* rather than the *'1sec'* interval because I observed that it is more consistent,
+Heart Rate Variability (HRV) intraday data for a single date. HRV data applies specifically to a user's "main sleep", which is the longest single period of time asleep on a given date. It measures the HRV rate at various times and returns the *Root Mean Square of Successive Differences (rmssd)*, *Low Frequency (LF)*, *High Frequency (HF)*, and *Coverage* data for a given measurement. **Rmssd** measures short-term variability in your heart rate while asleep. **LF** and **HF** capture the power in interbeat interval fluctuations within either high frequency or low frequency bands. Finally, **coverage** refers to data completeness in terms of the number of interbeat intervals. The **fitbit_data_type_by_date()** function allows the user to also compute the 'spo2' (Blood Oxygen Saturation), 'br' (Breathing Rate), 'temp' (Temperature) and 'cardioscore' (Cardio Fitness Score or VO2 Max) by adjusting the **type** parameter.
 
 <br>
 
@@ -152,12 +183,13 @@ This function computes the **root mean square of successive differences (RMSSD)*
 # heart rate variability
 #.......................
 
-hrt_rt_var = fitbitViz::heart_rate_variability_sleep_time(heart_rate_data = heart_dat,
-                                                          sleep_begin = sleep_time_begins,
-                                                          sleep_end = sleep_time_ends,
-                                                          ggplot_hr_var = TRUE,
-                                                          angle_x_axis = 25)
-hrt_rt_var$hr_var_plot
+hrt_rt_var = fitbitViz::fitbit_data_type_by_date(user_id = USER_ID,
+                                                 token = token,
+                                                 date = as.character(date_start),
+                                                 type = 'hrv',
+                                                 plot = TRUE,
+                                                 show_nchar_case_error = num_character_error)
+hrt_rt_var
 
 ```
 
