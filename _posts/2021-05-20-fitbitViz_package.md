@@ -8,7 +8,7 @@ comments: true
 
 **2026-04-27**:
 
-- **Breaking change: Fitbit Web API dependency removed from the (fitbitViz)[https://github.com/mlampros/fitbitViz]** All functions that previously required a `user_id` and `token` have been refactored to accept pre-downloaded data directly, eliminating the dependency on `httr`, `jsonlite`, and `base64enc`. This change was driven by recurring Fitbit API policy changes (GitHub issues [#4](https://github.com/mlampros/fitbitViz/issues/4), [#5](https://github.com/mlampros/fitbitViz/issues/5), [#7](https://github.com/mlampros/fitbitViz/issues/7), [#8](https://github.com/mlampros/fitbitViz/issues/8), [#11](https://github.com/mlampros/fitbitViz/issues/11)).
+- **Breaking change: Fitbit Web API dependency removed from the [fitbitViz](https://github.com/mlampros/fitbitViz) R package**. All functions that previously required a `user_id` and `token` have been refactored to accept pre-downloaded data directly, eliminating the dependency on `httr`, `jsonlite`, and `base64enc`. This change was driven by recurring Fitbit API policy changes (GitHub issues [#4](https://github.com/mlampros/fitbitViz/issues/4), [#5](https://github.com/mlampros/fitbitViz/issues/5), [#7](https://github.com/mlampros/fitbitViz/issues/7), [#8](https://github.com/mlampros/fitbitViz/issues/8), [#11](https://github.com/mlampros/fitbitViz/issues/11)).
 - Users who need the previous API-based version can install it with `remotes::install_github("mlampros/fitbitViz@v1.0.7")` or from the CRAN archive at `https://cran.r-project.org/src/contrib/Archive/fitbitViz/fitbitViz_1.0.7.tar.gz` (**the version 1.0.7 is no longer maintained**)
 - This blog post is based on **version 1.0.7** (or earlier)
 
