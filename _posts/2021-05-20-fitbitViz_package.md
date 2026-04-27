@@ -6,11 +6,19 @@ comments: true
 ---
 
 
-This blog post explains the functionality of the [fitbitViz](https://github.com/mlampros/fitbitViz) R package. If you own any of the **Fitbit activity trackers** you can take advantage of this package to visualize your data using *‘ggplot2’*, *‘Leaflet’* and *3-dimensionsal ‘Rayshader’ Maps*. The 3-dimensional Rayshader Map requires the installation of the [CopernicusDEM](https://github.com/mlampros/CopernicusDEM) R package which includes the **30- and 90-meter elevation data**.
+**2026-04-27**:
+
+- **Breaking change: Fitbit Web API dependency removed from the (fitbitViz)[https://github.com/mlampros/fitbitViz]** All functions that previously required a `user_id` and `token` have been refactored to accept pre-downloaded data directly, eliminating the dependency on `httr`, `jsonlite`, and `base64enc`. This change was driven by recurring Fitbit API policy changes (GitHub issues [#4](https://github.com/mlampros/fitbitViz/issues/4), [#5](https://github.com/mlampros/fitbitViz/issues/5), [#7](https://github.com/mlampros/fitbitViz/issues/7), [#8](https://github.com/mlampros/fitbitViz/issues/8), [#11](https://github.com/mlampros/fitbitViz/issues/11)).
+- Users who need the previous API-based version can install it with `remotes::install_github("mlampros/fitbitViz@v1.0.7")` or from the CRAN archive at `https://cran.r-project.org/src/contrib/Archive/fitbitViz/fitbitViz_1.0.7.tar.gz` (**the version 1.0.7 is no longer maintained**)
+- This blog post is based on **version 1.0.7** (or earlier)
+
+<br>
+
+This blog post explains the functionality of the [fitbitViz](https://github.com/mlampros/fitbitViz) R package. If you own any of the **Fitbit activity trackers** you can take advantage of this package to visualize your data using *???ggplot2???*, *???Leaflet???* and *3-dimensionsal ???Rayshader??? Maps*. The 3-dimensional Rayshader Map requires the installation of the [CopernicusDEM](https://github.com/mlampros/CopernicusDEM) R package which includes the **30- and 90-meter elevation data**.
 You can read more about the **Fitbit** [Web API](https://dev.fitbit.com/build/reference/web-api/) and how to create an application to receive a **token** and the [user-id](https://community.fitbit.com/t5/Web-API-Development/Where-do-I-find-my-User-ID/m-p/1138667/highlight/true#M4375) in the [README.md](https://github.com/mlampros/fitbitViz/blob/master/README.md) file of the package. In the **README.md** file you will find information on how to,
 
 * [Register an Application and receive the token](https://github.com/mlampros/fitbitViz#requirements)
-* [Keep track of your activities using ‘fitbitViz’, ‘Blogdown’ and ‘Github Actions’](https://github.com/mlampros/fitbitViz#keep-track-of-your-activities-using-fitbitviz-blogdown-and-github-actions) (for instance you can see [my personal setup](https://mlampros.github.io/fitbitVizBlog/) which runs on a weekly basis)
+* [Keep track of your activities using ???fitbitViz???, ???Blogdown??? and ???Github Actions???](https://github.com/mlampros/fitbitViz#keep-track-of-your-activities-using-fitbitviz-blogdown-and-github-actions) (for instance you can see [my personal setup](https://mlampros.github.io/fitbitVizBlog/) which runs on a weekly basis)
 
 <br>
 
